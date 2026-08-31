@@ -1,0 +1,15 @@
+{
+  "name": "G.E.M. I AM GLORIA 私人歌词本",
+  "short_name": "GLORIA 歌词本",
+  "description": "多版本、双语、本地优先并支持 A4/A5/A4 对折打印的私人歌词本。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5fb",
+  "theme_color": "#6d28d9",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

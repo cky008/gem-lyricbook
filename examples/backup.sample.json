@@ -1,0 +1,36 @@
+{
+  "format": "gem-lyricbook-backup-v4",
+  "exportedAt": "2026-01-01T00:00:00.000Z",
+  "state": {
+    "lyrics": {
+      "song-001": "示例第一行\n示例第二行"
+    },
+    "lyricLibrary": {
+      "song-001": {
+        "versions": [
+          {
+            "id": "version-example",
+            "name": "默认版",
+            "type": "default",
+            "originalLabel": "歌词",
+            "translationLabel": "中文翻译",
+            "original": "示例第一行\n示例第二行",
+            "translation": "Example line one\nExample line two",
+            "note": "仅用于格式演示，不是真实歌词。",
+            "lineAligned": true
+          }
+        ],
+        "defaultVersionId": "version-example",
+        "selectedVersionId": "version-example"
+      }
+    },
+    "favorites": [],
+    "learned": [],
+    "setlists": [],
+    "activeSetlistId": "",
+    "showAllVersions": false
+  },
+  "titles": {
+    "song-001": "示例歌名"
+  }
+}

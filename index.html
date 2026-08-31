@@ -1,0 +1,450 @@
+<!doctype html>
+<html data-bs-theme="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#6d28d9" name="theme-color"/>
+<meta content="G.E.M. I AM GLORIA 多端歌词本：2026 四图与现场补充核对、多版本与双语歌词、本地导入、智能紧凑排版、A4/A5/A4 对折打印。" name="description"/>
+<title>G.E.M. I AM GLORIA 歌词本</title>
+<link href="./icons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="./manifest.webmanifest" rel="manifest"/>
+<link href="./icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="./vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+<link href="./src/styles/app.css" rel="stylesheet"/>
+
+
+<meta content="© 2026 iocky.com" name="copyright"/>
+<script src="./vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="./src/main.js" type="module"></script>
+</head>
+<body>
+<div aria-hidden="true" class="ambient ambient-one"></div>
+<div aria-hidden="true" class="ambient ambient-two"></div>
+<header class="app-topbar sticky-top">
+<div class="container-fluid topbar-inner">
+<button aria-controls="songSidebar" aria-expanded="false" aria-label="打开曲目目录" class="icon-button d-lg-none" id="sidebarToggle" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+<a aria-label="回到歌词本首页" class="brand" href="#">
+<span class="brand-mark">G</span>
+<span class="brand-copy"><b>I AM GLORIA</b><small>2026 多版本双语 · 自适应单页版</small></span>
+</a>
+<div class="topbar-actions">
+<button aria-label="沉浸阅读" class="icon-button" id="focusButton" title="沉浸阅读" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"></path></svg>
+</button>
+<button aria-label="切换明暗主题" class="icon-button" id="themeButton" title="切换明暗主题" type="button">
+<svg aria-hidden="true" class="theme-sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+<svg aria-hidden="true" class="theme-moon" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+</button>
+<button class="btn btn-sm btn-gloria" data-bs-target="#printModal" data-bs-toggle="modal" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"></path></svg>
+<span class="d-none d-sm-inline">生成 PDF / 打印</span>
+</button>
+</div>
+</div>
+</header>
+<main class="container-fluid app-main">
+<section aria-labelledby="heroTitle" class="hero-card">
+<div class="hero-content">
+<div class="eyebrow">G.E.M. · I AM GLORIA · 2026 多版本双语 · 自适应单页版</div>
+<h1 id="heroTitle">把演唱会记忆，做成一本真正好读的歌词本。</h1>
+<p>四张截图逐项归一，并补入 2026 已发生现场的遗漏曲目；每首歌可保存多个版本，每个版本可同时保存外语原文与中文翻译。打印时会实测页面高度，自动放大短歌、合并超短歌词行，并在需要时启用左右双栏；默认让单版本歌曲控制在 1 页，多版本歌曲控制在最多 2 页。</p>
+<div class="hero-actions">
+<button class="btn btn-light btn-sm" data-bs-target="#importModal" data-bs-toggle="modal" type="button">导入我的歌词</button>
+<button class="btn btn-outline-light btn-sm" data-bs-target="#verificationModal" data-bs-toggle="modal" type="button">查看逐项核对</button>
+<button class="btn btn-link-light btn-sm" data-bs-target="#aboutModal" data-bs-toggle="modal" type="button">版权与使用说明</button>
+</div>
+</div>
+<div aria-label="曲目统计" class="hero-stats">
+<div class="stat"><strong id="statSongs">89</strong><span>曲目条目</span></div>
+<div class="stat"><strong id="statCoverage">236</strong><span>截图可见条目</span></div>
+<div class="stat"><strong id="statFilled">0</strong><span>已导入歌词</span></div>
+<div class="stat"><strong id="statVerified">4</strong><span>新增补充</span></div>
+</div>
+<div aria-hidden="true" class="hero-orbit orbit-a"></div>
+<div aria-hidden="true" class="hero-orbit orbit-b"></div>
+</section>
+<section aria-label="2026 核实结论" class="research-strip">
+<span class="research-dot"></span>
+<div><b>本次更新：</b>新图里只有“新歌彩蛋”是旧版没有的文字，已作为待官宣占位项加入；另补入《我只在乎你》《写不完的温柔》《夜空中最亮的星》。新图为演出前粉丝整理，日期与官方场次存在一处不一致。</div>
+<button class="text-button" data-bs-target="#sourcesModal" data-bs-toggle="modal" type="button">研究来源</button>
+</section>
+<section aria-label="曲目筛选和显示设置" class="control-deck">
+<label class="search-field">
+<svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<input autocomplete="off" id="searchInput" placeholder="搜索歌名、别名或版本…" type="search"/>
+<kbd class="d-none d-md-inline">⌘ K</kbd>
+</label>
+<select aria-label="筛选曲目" class="form-select form-select-sm" id="filterSelect">
+<option value="all">全部曲目</option>
+<option value="2026-main">2026 主歌单</option>
+<option value="2026-encore">2026 返场</option>
+<option value="2026-medley">2026 特别串烧</option>
+<option value="pending">报批新增 / 待官宣</option>
+<option value="live-extra">2026 现场补充</option>
+<option value="filled">已导入歌词</option>
+<option value="empty">尚未导入</option>
+<option value="favorite">我的收藏</option>
+<option value="learned">已熟悉</option>
+<option value="image1">来自截图 1</option>
+<option value="image2">来自截图 2</option>
+<option value="image3">来自截图 3</option>
+<option value="image4">来自截图 4（深圳预测图）</option>
+</select>
+<select aria-label="曲目排序" class="form-select form-select-sm" id="sortSelect">
+<option value="setlist">按选定演出歌单</option>
+<option value="source">按截图首次出现</option>
+<option value="title">按歌名</option>
+<option value="status">按 2026 状态</option>
+<option value="progress">按歌词完成度</option>
+</select>
+<div class="font-control" title="阅读字号">
+<span>A</span>
+<input aria-label="阅读字号" id="fontRange" max="4" min="0" step="1" type="range" value="2"/>
+<span class="font-large">A</span>
+</div>
+</section>
+<div class="workspace">
+<aside aria-label="曲目目录" class="song-sidebar" id="songSidebar">
+<div class="sidebar-head">
+<div><b>曲目目录</b><small id="resultCount">89 首</small></div>
+<button aria-label="关闭曲目目录" class="icon-button d-lg-none" id="sidebarClose" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+</button>
+</div>
+<div aria-label="歌曲列表" class="song-list" id="songList" role="listbox"></div>
+<div class="sidebar-foot d-grid gap-2">
+<button class="btn btn-outline-secondary btn-sm w-100" data-bs-target="#setlistModal" data-bs-toggle="modal" type="button">演出歌单 / 排序</button>
+<button class="btn btn-outline-secondary btn-sm w-100" data-bs-target="#importModal" data-bs-toggle="modal" type="button">批量导入 / 导出</button>
+</div>
+</aside>
+<div aria-hidden="true" class="sidebar-backdrop" id="sidebarBackdrop"></div>
+<article aria-live="polite" class="reader-card" id="readerCard">
+<div class="reader-toolbar">
+<div class="breadcrumb-copy"><span id="songNumber">01</span><span class="separator">/</span><span id="songTotal">89</span></div>
+<div class="reader-actions">
+<button aria-label="上一首" class="icon-button" id="previousSong" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<button aria-label="下一首" class="icon-button" id="nextSong" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<button aria-label="收藏这首歌" aria-pressed="false" class="icon-button" id="favoriteButton" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2 7.5 14 3 9.6l6.2-.9z"></path></svg>
+</button>
+</div>
+</div>
+<div class="song-heading">
+<div class="song-kicker" id="songKicker">2026 主歌单</div>
+<h2 id="songTitle">喜欢你</h2>
+<div class="song-aliases" id="songAliases"></div>
+<div class="tag-row" id="songTags"></div>
+</div>
+<div class="song-note" hidden="" id="songNote"></div>
+<section aria-label="歌词版本" class="version-deck" id="versionDeck">
+<div class="version-deck-head">
+<div><b>歌词版本</b><small id="versionSummary">默认版</small></div>
+<div class="version-deck-actions">
+<button aria-pressed="false" class="btn btn-sm btn-outline-secondary" id="showAllVersionsButton" type="button">阅读全部版本</button>
+<button class="btn btn-sm btn-gloria" id="addVersionButton" type="button">＋ 添加版本</button>
+</div>
+</div>
+<div aria-label="选择歌词版本" class="version-tabs" id="versionTabs" role="tablist"></div>
+</section>
+<div aria-label="歌词显示模式" class="lyric-mode-tabs" role="tablist">
+<button aria-selected="true" class="mode-tab active" id="previewTab" role="tab" type="button">阅读</button>
+<button aria-selected="false" class="mode-tab" id="editTab" role="tab" type="button">编辑</button>
+<span class="save-status" id="saveStatus">仅保存在本机</span>
+</div>
+<section class="lyric-panel" id="previewPanel" role="tabpanel">
+<div class="empty-state" id="emptyState">
+<div class="empty-symbol">♪</div>
+<h3>这首歌的歌词尚未导入</h3>
+<p>为避免未经授权复制完整歌词，本项目不从网络内置歌词。你可以粘贴自己拥有或获授权使用的文本；输入会自动保存在当前浏览器；完成后请导出“含歌词离线 HTML”或 JSON 备份。</p>
+<button class="btn btn-gloria" id="startEditing" type="button">粘贴歌词</button>
+</div>
+<div class="lyric-preview" hidden="" id="lyricPreview"></div>
+</section>
+<section class="lyric-panel" hidden="" id="editPanel" role="tabpanel">
+<div class="version-editor-meta-grid">
+<label><span>版本名称</span><input class="form-control form-control-sm" id="versionName" maxlength="40" placeholder="例如：默认版、国语版、现场版" type="text"/></label>
+<label><span>版本类型</span><select class="form-select form-select-sm" id="versionType"><option value="default">默认 / 录音室</option><option value="mandarin">国语版</option><option value="cantonese">粤语版</option><option value="english">英语版</option><option value="live">现场版</option><option value="acoustic">不插电 / 弹唱</option><option value="translation">翻译对照版</option><option value="other">其他</option></select></label>
+<label><span>原文标题</span><input class="form-control form-control-sm" id="originalLabel" maxlength="30" placeholder="例如：英文原文 / 国语歌词" type="text"/></label>
+<label><span>翻译标题</span><input class="form-control form-control-sm" id="translationLabel" maxlength="30" placeholder="例如：中文翻译" type="text"/></label>
+</div>
+<div class="version-editor-text-grid">
+<div>
+<label class="editor-label" for="lyricEditor">原文 / 主歌词</label>
+<textarea class="lyric-editor" id="lyricEditor" placeholder="在此粘贴这一版本的主歌词。原始换行会完整保存；打印时可选择智能合并短行。" spellcheck="false"></textarea>
+</div>
+<div>
+<label class="editor-label" for="translationEditor">翻译 / 对照歌词（可留空）</label>
+<textarea class="lyric-editor" id="translationEditor" placeholder="外语歌可粘贴中文翻译；没有翻译时留空。" spellcheck="false"></textarea>
+</div>
+</div>
+<div class="version-editor-bottom">
+<label class="version-note-label"><span>版本说明（可选）</span><input class="form-control form-control-sm" id="versionNote" maxlength="160" placeholder="例如：2026 深圳站现场编曲；粤语歌词" type="text"/></label>
+<label class="form-check form-switch align-pairs-switch"><input class="form-check-input" id="lineAligned" type="checkbox"/><span class="form-check-label">原文与翻译逐行对应</span></label>
+</div>
+<div class="editor-meta version-editor-actions">
+<span id="charCount">原文 0 字 · 翻译 0 字</span>
+<div>
+<button class="text-button" id="setDefaultVersion" type="button">设为默认版本</button>
+<button class="text-button" id="duplicateVersion" type="button">复制版本</button>
+<button class="text-button danger" id="deleteVersion" type="button">删除版本</button>
+<button class="text-button danger" id="clearLyrics" type="button">清空当前版本</button>
+</div>
+</div>
+</section>
+<footer class="song-footer">
+<div class="source-pills" id="sourcePills"></div>
+<div class="song-footer-actions">
+<button aria-pressed="false" class="btn btn-sm btn-outline-secondary" id="learnedButton" type="button">标记为已熟悉</button>
+<div class="dropdown">
+<button aria-expanded="false" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">试听 / 核对</button>
+<ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="#" id="appleLink" rel="noopener" target="_blank">Apple Music 搜索</a></li>
+<li><a class="dropdown-item" href="#" id="youtubeLink" rel="noopener" target="_blank">YouTube 搜索</a></li>
+<li><a class="dropdown-item" href="#" id="officialLink" rel="noopener" target="_blank">官方频道检索</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</article>
+</div>
+</main>
+<div class="focus-overlay" hidden="" id="focusOverlay">
+<button aria-label="退出沉浸阅读" class="focus-exit" id="exitFocus" type="button">退出</button>
+<div class="focus-sheet">
+<div class="focus-kicker" id="focusKicker"></div>
+<h2 id="focusTitle"></h2>
+<div class="focus-lyrics" id="focusLyrics"></div>
+</div>
+</div>
+<div aria-hidden="true" class="print-root" id="printRoot"></div>
+<footer class="site-footer">
+  <span>G.E.M. I AM GLORIA 私人歌词本</span>
+  <span>Copyright © 2026 <a href="https://iocky.com" rel="noopener" target="_blank">iocky.com</a></span>
+</footer>
+
+<style id="dynamicPrintStyle"></style>
+<!-- Import / export modal -->
+<div aria-hidden="true" aria-labelledby="importModalLabel" class="modal fade" id="importModal" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">LOCAL-FIRST</div><h2 class="modal-title fs-5" id="importModalLabel">导入或备份歌词</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<div class="privacy-callout"><b>隐私：</b>歌词不会上传到服务器。输入时会自动存入当前浏览器；完成后建议同时导出“含歌词离线 HTML”和 JSON 备份，避免清理浏览器数据或更换设备后丢失。</div>
+<div class="row g-3 mt-1">
+<div class="col-md-6">
+<div class="action-card h-100">
+<h3>批量导入</h3>
+<p>支持旧版与新版 JSON；旧版单文本会自动迁移为“默认版”。新版 Markdown 还能保存版本、原文和翻译。</p>
+<input accept=".json,.md,.txt,text/plain,application/json" class="form-control form-control-sm" id="importFile" type="file"/>
+<button class="btn btn-gloria btn-sm mt-3" id="importButton" type="button">读取并匹配</button>
+<div class="import-result" id="importResult" role="status"></div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="action-card h-100">
+<h3>导出备份</h3>
+<p>离线 HTML 会封装全部版本、翻译和歌单顺序；JSON 可完整恢复并兼容旧版，Markdown 便于人工编辑。</p>
+<div class="d-grid gap-2">
+<button class="btn btn-gloria btn-sm" id="exportHtml" type="button">导出含歌词的离线 HTML</button>
+<button class="btn btn-outline-secondary btn-sm" id="exportJson" type="button">导出 JSON 备份</button>
+<button class="btn btn-outline-secondary btn-sm" id="exportMarkdown" type="button">导出 Markdown 歌词</button>
+<button class="btn btn-outline-secondary btn-sm" id="downloadTemplate" type="button">下载空白导入模板</button>
+</div>
+</div>
+</div>
+</div>
+<hr/>
+<div class="bulk-paste">
+<label class="form-label" for="bulkPaste"><b>也可直接粘贴 Markdown</b></label>
+<textarea class="form-control" id="bulkPaste" placeholder="## 喜欢你
+第一段…
+
+## 光年之外
+第一段…" rows="8"></textarea>
+<button class="btn btn-outline-primary btn-sm mt-2" id="pasteImportButton" type="button">匹配粘贴内容</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Print modal -->
+<div aria-hidden="true" aria-labelledby="printModalLabel" class="modal fade" id="printModal" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">PRINT STUDIO</div><h2 class="modal-title fs-5" id="printModalLabel">生成打印版 / 保存为 PDF</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<div class="print-grid">
+<fieldset class="option-card">
+<legend>版式</legend>
+<label class="radio-tile"><input checked="" name="printSize" type="radio" value="a4"/><span><b>A4 阅读版</b><small>单页竖版，最清晰稳妥</small></span></label>
+<label class="radio-tile"><input name="printSize" type="radio" value="a5"/><span><b>A5 小本页</b><small>逻辑 A5 页面，可单页打印</small></span></label>
+<label class="radio-tile"><input name="printSize" type="radio" value="booklet"/><span><b>A4 对折小册</b><small>自动拼版为横向 A4，双面后对折</small></span></label>
+</fieldset>
+<fieldset class="option-card">
+<legend>范围</legend>
+<label class="radio-tile"><input name="printScope" type="radio" value="current"/><span><b>当前歌曲</b><small>只输出正在阅读的一首</small></span></label>
+<label class="radio-tile"><input checked="" name="printScope" type="radio" value="filtered"/><span><b>当前筛选结果</b><small>按左侧目录中的顺序</small></span></label>
+<label class="radio-tile"><input name="printScope" type="radio" value="all"/><span><b>全部曲目</b><small>89 个曲目条目（含 1 个待定占位）</small></span></label>
+</fieldset>
+</div>
+<div class="print-advanced-grid mt-3">
+<label><span>分页策略</span><select class="form-select form-select-sm" id="printPagePolicy"><option value="limit">单版本 1 页 / 多版本最多 2 页（推荐）</option><option value="readable">可读性优先，必要时自动续页</option></select></label>
+<label><span>版本输出</span><select class="form-select form-select-sm" id="printVersions"><option value="default">每首仅默认版本</option><option value="current">当前歌曲用当前版本，其余用默认版本</option><option value="all">每首输出全部版本</option></select></label>
+<label><span>短行处理</span><select class="form-select form-select-sm" id="printLineFlow"><option value="auto">自动：必要时用 / 合并</option><option value="slash">总是智能合并短行</option><option value="preserve">严格保留原始换行</option></select></label>
+<label><span>单语栏数</span><select class="form-select form-select-sm" id="printColumns"><option value="auto">自动选择一栏 / 两栏</option><option value="one">固定一栏</option><option value="two">固定左右两栏</option></select></label>
+<label><span>原文 + 翻译</span><select class="form-select form-select-sm" id="printBilingual"><option value="auto">自动选择左右 / 上下</option><option value="parallel">左右对照</option><option value="stacked">上下分区</option></select></label>
+</div>
+<div class="print-switches mt-3">
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printCover" type="checkbox"/><span class="form-check-label">加入全彩封面</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printToc" type="checkbox"/><span class="form-check-label">加入曲目目录</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printEmpty" type="checkbox"/><span class="form-check-label">包含尚未导入歌词的曲目</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printNotes" type="checkbox"/><span class="form-check-label">显示版本与核实说明</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printCompact" type="checkbox"/><span class="form-check-label">清理网页复制产生的多余空行</span></label>
+</div>
+<div class="booklet-tip mt-3"><b>自适应单页排版：</b>原始歌词不会被修改。系统会为每首歌实测一栏、双栏、短句合并、双语左右对照等方案，并寻找能放进目标页数的最大字号。短歌会自动放大；只有在选择“可读性优先”时才允许普通续页。</div>
+<div class="booklet-tip mt-2"><b>A4 对折：</b>打印对话框请选择双面打印，通常使用“短边翻转”，缩放保持 100%。不同打印机方向定义可能不同，正式打印前建议先用 4 页测试。</div>
+<div class="print-estimate mt-3" id="printEstimate"></div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">取消</button>
+<button class="btn btn-gloria" id="printBuildButton" type="button">打开系统打印 / 保存 PDF</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Setlist modal -->
+<div aria-hidden="true" aria-labelledby="setlistModalLabel" class="modal fade" id="setlistModal" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">SETLIST ORDER</div><h2 class="modal-title fs-5" id="setlistModalLabel">演出歌单顺序</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<div class="privacy-callout"><b>排序逻辑：</b>选定歌单中的歌曲按 Part / Encore 等真实顺序输出；未列入歌单的曲目会自动接在后面，先放“返场候选”，再放“额外歌曲”。歌单会写入 JSON 和含歌词离线 HTML。</div>
+<div class="setlist-grid mt-3">
+<div class="action-card">
+<h3>当前歌单</h3>
+<label class="form-label small" for="setlistSelect">选择排序方案</label>
+<select class="form-select form-select-sm" id="setlistSelect"></select>
+<div class="d-flex flex-wrap gap-2 mt-3">
+<button class="btn btn-gloria btn-sm" id="newSetlistButton" type="button">新建歌单</button>
+<button class="btn btn-outline-danger btn-sm" id="deleteSetlistButton" type="button">删除当前歌单</button>
+</div>
+<div class="import-result mt-3" id="setlistStats"></div>
+</div>
+<div class="action-card">
+<h3>名称与状态</h3>
+<label class="form-label small" for="setlistName">歌单名称</label>
+<input class="form-control form-control-sm" id="setlistName" placeholder="例如：深圳 2026-09-11 正式歌单" type="text"/>
+<label class="form-label small mt-3" for="setlistStatus">资料状态</label>
+<select class="form-select form-select-sm" id="setlistStatus"><option value="official">正式 / 已核实</option><option value="observed">现场记录</option><option value="predicted">预测 / 待核实</option><option value="draft">自定义草稿</option></select>
+</div>
+</div>
+<div class="bulk-paste mt-3">
+<label class="form-label" for="setlistEditor"><b>按演出顺序粘贴</b></label>
+<p class="small text-secondary">用 <code>## Part 1</code>、<code>## Encore</code> 等标题分段，每行一首。别名会自动匹配；无法匹配的行会提示但不会丢失。</p>
+<textarea class="form-control setlist-editor" id="setlistEditor" placeholder="## Part 1
+摩天动物园
+灰狼
+来自天堂的魔鬼
+
+## Encore
+泡沫
+天空没有极限" rows="18"></textarea>
+<div class="d-flex flex-wrap gap-2 mt-2">
+<button class="btn btn-gloria btn-sm" id="saveSetlistButton" type="button">保存并匹配歌单</button>
+<button class="btn btn-outline-primary btn-sm" id="useSetlistSortButton" type="button">设为当前排序</button>
+</div>
+<div class="import-result" id="setlistResult" role="status"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Verification modal -->
+<div aria-hidden="true" aria-labelledby="verificationModalLabel" class="modal fade" id="verificationModal" tabindex="-1">
+<div class="modal-dialog modal-xl modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">ZERO-OMISSION CHECK</div><h2 class="modal-title fs-5" id="verificationModalLabel">四张截图逐项核对</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<div class="verification-summary">
+<div><b>截图 1</b><strong>43</strong><span>可见曲目</span></div>
+<div><b>截图 2</b><strong>85</strong><span>报批条目</span></div>
+<div><b>截图 3</b><strong>37</strong><span>巡演曲目</span></div>
+<div><b>截图 4</b><strong>71</strong><span>可见条目（含重复返场）</span></div>
+<div><b>当前曲目库</b><strong>88 + 1</strong><span>已命名歌曲 + 待定占位</span></div>
+</div>
+<ul class="nav nav-pills verification-tabs" id="verificationTabs" role="tablist">
+<li class="nav-item"><button class="nav-link active" data-bs-target="#verify1" data-bs-toggle="pill" type="button">截图 1</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-target="#verify2" data-bs-toggle="pill" type="button">截图 2</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-target="#verify3" data-bs-toggle="pill" type="button">截图 3</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-target="#verify4" data-bs-toggle="pill" type="button">截图 4</button></li>
+</ul>
+<div class="tab-content mt-3">
+<div class="tab-pane fade show active" id="verify1"><div class="coverage-grid" id="coverageImage1"></div></div>
+<div class="tab-pane fade" id="verify2"><div class="coverage-grid" id="coverageImage2"></div></div>
+<div class="tab-pane fade" id="verify3"><div class="coverage-grid" id="coverageImage3"></div></div>
+<div class="tab-pane fade" id="verify4"><div class="coverage-grid" id="coverageImage4"></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- About modal -->
+<div aria-hidden="true" aria-labelledby="aboutModalLabel" class="modal fade" id="aboutModal" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">ABOUT THIS EDITION</div><h2 class="modal-title fs-5" id="aboutModalLabel">版权与使用说明</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body prose">
+<h3>为什么没有直接内置网络歌词？</h3>
+<p>完整流行歌曲歌词通常受版权保护。本歌词本完成了曲目检索、归一、版本核对、阅读界面和印刷排版，但不会从网络复制并打包未经授权的完整歌词。</p>
+<h3>怎样得到完整的私人歌词本？</h3>
+<p>把你自行整理、购买、获授权或有权使用的歌词粘贴进编辑器。每首歌可建立多个版本，并分别保存原文、翻译和版本说明；完成后可导出一份真正内含全部资料的离线 HTML，再输出 A4、A5 或 A4 对折版。</p>
+<h3>曲目覆盖</h3>
+<p>四张截图中的每个可见条目都保留在“逐项核对”中；同一歌曲的英文大小写和中文译名会归并到统一曲目页；国语、粤语、英语、现场等完整歌词版本则作为同一曲目下的多个版本保存，不会被拆成重复歌曲。新图属于演出前粉丝整理，因此其返场日期分配只作线索，不作官方结论。</p>
+<h3>项目版权</h3>
+<p>网页程序、界面设计与项目文档 Copyright © 2026 iocky.com。歌词版权归各自权利人所有；公开仓库不附带使用者导入的歌词数据。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sources modal -->
+<div aria-hidden="true" aria-labelledby="sourcesModalLabel" class="modal fade" id="sourcesModal" tabindex="-1">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+<div class="modal-content glass-modal">
+<div class="modal-header">
+<div><div class="modal-eyebrow">RESEARCH LOG</div><h2 class="modal-title fs-5" id="sourcesModalLabel">2026 曲目核实来源</h2></div>
+<button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<div class="source-list" id="sourceList"></div>
+<p class="small text-secondary mt-3 mb-0">演唱会临场返场可能变化；报批曲目、粉丝预测图和正式实际演唱并不等同。本版核实日期：2026-08-30。</p>
+</div>
+</div>
+</div>
+</div>
+<div aria-atomic="true" aria-live="polite" class="toast-region" id="toastRegion"></div>
+
+
+
+</body>
+</html>

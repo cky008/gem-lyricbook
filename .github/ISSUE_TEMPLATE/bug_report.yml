@@ -1,0 +1,45 @@
+name: 问题反馈
+about: 报告网页、数据导入或打印排版问题
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请说明实际表现与期望表现。
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 使用环境
+      options:
+        - iPhone / iPad Safari
+        - Android Chrome
+        - macOS Chrome / Safari
+        - Windows Chrome / Edge
+        - 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: print_mode
+    attributes:
+      label: 打印版式
+      options:
+        - 不涉及打印
+        - A4
+        - A5
+        - A4 对折小册
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      placeholder: "1. 打开……\n2. 选择……\n3. 点击……"
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: 可公开的示例
+      description: 请勿粘贴完整受版权保护歌词或上传私人歌词备份；可用自编测试文本替代。

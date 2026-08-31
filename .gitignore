@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+
+# 用户私有歌词备份不得提交到公开仓库
+private-data/
+*.private.json
+GEM歌词本备份_*.json
+GEM歌词本_含歌词_*.html
+
+# 本地测试输出
+artifacts/
+test-results/
+playwright-report/

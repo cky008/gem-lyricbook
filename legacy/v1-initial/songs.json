@@ -1,0 +1,3733 @@
+{
+  "metadata": {
+    "title": "G.E.M. I AM GLORIA 歌词本 - 授权导入版",
+    "generated_on": "2026-08-30",
+    "copyright_notice": "本项目不预置受版权保护的完整歌词。请仅导入你有权使用的歌词文本。",
+    "counts": {
+      "image1_entries": 43,
+      "image2_entries_including_other": 85,
+      "image3_entries": 37,
+      "unique_records_including_other": 86,
+      "unique_songs_excluding_other": 85,
+      "verified_2026_missing_from_images": 0
+    },
+    "source_labels": {
+      "image1": "截图 1 - 44 项编号（编号 12 缺失，共 43 首）",
+      "image2": "截图 2 - 深圳报批演出内容（85 项，其中“其他”为非歌曲笼统项）",
+      "image3": "截图 3 - 37 首巡演目录",
+      "web2026": "2026 网络核实补充"
+    },
+    "research_summary": {
+      "official_playlist": "Apple Music 的 I AM GLORIA 2.0 演出曲目单显示 33 首、2 小时 12 分钟。",
+      "comparison": "三张截图合并后，已覆盖截至 2026-08-30 可核验的 2026 I AM GLORIA 2.0 舞台主歌单、常见返场及特别串烧；没有发现需要额外新增的已确认舞台歌曲。",
+      "pending": "“自由的你”已在截图 2 中出现，近期深圳报批更新也出现该名，但仍应标注为未发行/待官宣。"
+    },
+    "sources": [
+      {
+        "label": "Apple Music - 演出曲目单：邓紫棋《I AM GLORIA 2.0》巡演",
+        "url": "https://music.apple.com/cn/playlist/%E6%BC%94%E5%87%BA%E6%9B%B2%E7%9B%AE%E5%8D%95-%E9%82%93%E7%B4%AB%E6%A3%8B-i-am-gloria-2-0-%E5%B7%A1%E6%BC%94/pl.324d5804f46e41fbadeba455c4227e6b"
+      },
+      {
+        "label": "G.E.M. I AM GLORIA 世界巡回演唱会 - 2026 场次曲目汇总",
+        "url": "https://zh.wikipedia.org/wiki/G.E.M._I_AM_GLORIA_%E4%B8%96%E7%95%8C%E5%B7%A1%E8%BF%B4%E6%BC%94%E5%94%B1%E6%9C%83"
+      },
+      {
+        "label": "2025 英雄联盟全球总决赛主题曲《Sacrifice》（争）",
+        "url": "https://lol.qq.com/v/v2/detail.shtml?docid=2082958798738296455"
+      },
+      {
+        "label": "邓紫棋深圳演唱会报批歌单更新 - 《自由的你》相关报道",
+        "url": "https://www.sina.cn/news/detail/5336847078395601.html"
+      }
+    ]
+  },
+  "songs": [
+    {
+      "id": "song-001",
+      "title": "喜欢你",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "1",
+          "raw": "喜欢你"
+        },
+        {
+          "source": "image2",
+          "position": "52",
+          "raw": "喜欢你"
+        },
+        {
+          "source": "image3",
+          "position": "27",
+          "raw": "喜欢你"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%96%9C%E6%AC%A2%E4%BD%A0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%96%9C%E6%AC%A2%E4%BD%A0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%96%9C%E6%AC%A2%E4%BD%A0"
+      }
+    },
+    {
+      "id": "song-002",
+      "title": "HELL",
+      "aliases": [
+        "HELL 坠落天堂",
+        "HELL（坠落天堂）"
+      ],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "2",
+          "raw": "HELL 坠落天堂"
+        },
+        {
+          "source": "image2",
+          "position": "72",
+          "raw": "HELL（坠落天堂）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20HELL",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20HELL",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20HELL"
+      }
+    },
+    {
+      "id": "song-003",
+      "title": "龙卷风",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "3",
+          "raw": "龙卷风"
+        },
+        {
+          "source": "image2",
+          "position": "69",
+          "raw": "龙卷风"
+        },
+        {
+          "source": "image3",
+          "position": "17",
+          "raw": "龙卷风"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%BE%99%E5%8D%B7%E9%A3%8E",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%BE%99%E5%8D%B7%E9%A3%8E",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%BE%99%E5%8D%B7%E9%A3%8E"
+      }
+    },
+    {
+      "id": "song-004",
+      "title": "存在",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "4",
+          "raw": "存在"
+        },
+        {
+          "source": "image2",
+          "position": "30",
+          "raw": "存在"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%98%E5%9C%A8",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%98%E5%9C%A8",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%98%E5%9C%A8"
+      }
+    },
+    {
+      "id": "song-005",
+      "title": "受难曲",
+      "aliases": [],
+      "sources": [
+        "image1"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "5",
+          "raw": "受难曲"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%97%E9%9A%BE%E6%9B%B2",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%97%E9%9A%BE%E6%9B%B2",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%97%E9%9A%BE%E6%9B%B2"
+      }
+    },
+    {
+      "id": "song-006",
+      "title": "A.I.N.Y.",
+      "aliases": [
+        "A.I.N.Y. 爱你"
+      ],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "6",
+          "raw": "A.I.N.Y. 爱你"
+        },
+        {
+          "source": "image2",
+          "position": "54",
+          "raw": "A.I.N.Y."
+        },
+        {
+          "source": "image3",
+          "position": "13",
+          "raw": "A.I.N.Y."
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20A.I.N.Y.",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20A.I.N.Y.",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20A.I.N.Y."
+      }
+    },
+    {
+      "id": "song-007",
+      "title": "夜的尽头",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "7",
+          "raw": "夜的尽头"
+        },
+        {
+          "source": "image2",
+          "position": "39",
+          "raw": "夜的尽头"
+        },
+        {
+          "source": "image3",
+          "position": "28",
+          "raw": "夜的尽头"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9C%E7%9A%84%E5%B0%BD%E5%A4%B4",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9C%E7%9A%84%E5%B0%BD%E5%A4%B4",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9C%E7%9A%84%E5%B0%BD%E5%A4%B4"
+      }
+    },
+    {
+      "id": "song-008",
+      "title": "孤独",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "8",
+          "raw": "孤独"
+        },
+        {
+          "source": "image2",
+          "position": "66",
+          "raw": "孤独"
+        },
+        {
+          "source": "image3",
+          "position": "7",
+          "raw": "孤独"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%A4%E7%8B%AC",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%A4%E7%8B%AC",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AD%A4%E7%8B%AC"
+      }
+    },
+    {
+      "id": "song-009",
+      "title": "Where Did U Go",
+      "aliases": [
+        "Where Did U Go（你去哪）"
+      ],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "9",
+          "raw": "Where Did U Go"
+        },
+        {
+          "source": "image2",
+          "position": "49",
+          "raw": "Where Did U Go（你去哪）"
+        },
+        {
+          "source": "image3",
+          "position": "14",
+          "raw": "Where Did U Go"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Where%20Did%20U%20Go",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Where%20Did%20U%20Go",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Where%20Did%20U%20Go"
+      }
+    },
+    {
+      "id": "song-010",
+      "title": "你不是第一个离开的人",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "10",
+          "raw": "你不是第一个离开的人"
+        },
+        {
+          "source": "image2",
+          "position": "35",
+          "raw": "你不是第一个离开的人"
+        },
+        {
+          "source": "image3",
+          "position": "11",
+          "raw": "你不是第一个离开的人"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A6%BB%E5%BC%80%E7%9A%84%E4%BA%BA",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A6%BB%E5%BC%80%E7%9A%84%E4%BA%BA",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A6%BB%E5%BC%80%E7%9A%84%E4%BA%BA"
+      }
+    },
+    {
+      "id": "song-011",
+      "title": "后会无期",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "11",
+          "raw": "后会无期"
+        },
+        {
+          "source": "image2",
+          "position": "1",
+          "raw": "后会无期"
+        },
+        {
+          "source": "image3",
+          "position": "33",
+          "raw": "后会无期"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%90%8E%E4%BC%9A%E6%97%A0%E6%9C%9F",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%90%8E%E4%BC%9A%E6%97%A0%E6%9C%9F",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%90%8E%E4%BC%9A%E6%97%A0%E6%9C%9F"
+      }
+    },
+    {
+      "id": "song-012",
+      "title": "红蔷薇白玫瑰",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "13",
+          "raw": "红蔷薇白玫瑰"
+        },
+        {
+          "source": "image2",
+          "position": "65",
+          "raw": "红蔷薇白玫瑰"
+        },
+        {
+          "source": "image3",
+          "position": "18",
+          "raw": "红蔷薇白玫瑰"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%BA%A2%E8%94%B7%E8%96%87%E7%99%BD%E7%8E%AB%E7%91%B0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%BA%A2%E8%94%B7%E8%96%87%E7%99%BD%E7%8E%AB%E7%91%B0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%BA%A2%E8%94%B7%E8%96%87%E7%99%BD%E7%8E%AB%E7%91%B0"
+      }
+    },
+    {
+      "id": "song-013",
+      "title": "泡沫",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "14",
+          "raw": "泡沫"
+        },
+        {
+          "source": "image2",
+          "position": "55",
+          "raw": "泡沫"
+        },
+        {
+          "source": "image3",
+          "position": "32",
+          "raw": "泡沫"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB"
+      }
+    },
+    {
+      "id": "song-014",
+      "title": "我的秘密",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "15",
+          "raw": "我的秘密"
+        },
+        {
+          "source": "image2",
+          "position": "68",
+          "raw": "我的秘密"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%88%91%E7%9A%84%E7%A7%98%E5%AF%86",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%88%91%E7%9A%84%E7%A7%98%E5%AF%86",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%88%91%E7%9A%84%E7%A7%98%E5%AF%86"
+      }
+    },
+    {
+      "id": "song-015",
+      "title": "光年之外",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "16",
+          "raw": "光年之外"
+        },
+        {
+          "source": "image2",
+          "position": "38",
+          "raw": "光年之外"
+        },
+        {
+          "source": "image3",
+          "position": "4",
+          "raw": "光年之外"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%89%E5%B9%B4%E4%B9%8B%E5%A4%96",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%89%E5%B9%B4%E4%B9%8B%E5%A4%96",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%89%E5%B9%B4%E4%B9%8B%E5%A4%96"
+      }
+    },
+    {
+      "id": "song-016",
+      "title": "All About U",
+      "aliases": [
+        "All About You",
+        "All About You（关于你）"
+      ],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "17",
+          "raw": "All About You"
+        },
+        {
+          "source": "image2",
+          "position": "27",
+          "raw": "All About You（关于你）"
+        }
+      ],
+      "tags": [
+        "2026特别串烧"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20All%20About%20U",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20All%20About%20U",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20All%20About%20U"
+      }
+    },
+    {
+      "id": "song-017",
+      "title": "新的心跳",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "18",
+          "raw": "新的心跳"
+        },
+        {
+          "source": "image2",
+          "position": "4",
+          "raw": "新的心跳"
+        },
+        {
+          "source": "image3",
+          "position": "30",
+          "raw": "新的心跳"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3"
+      }
+    },
+    {
+      "id": "song-018",
+      "title": "差不多姑娘",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "19",
+          "raw": "差不多姑娘"
+        },
+        {
+          "source": "image2",
+          "position": "59",
+          "raw": "差不多姑娘"
+        },
+        {
+          "source": "image3",
+          "position": "5",
+          "raw": "差不多姑娘"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B7%AE%E4%B8%8D%E5%A4%9A%E5%A7%91%E5%A8%98",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B7%AE%E4%B8%8D%E5%A4%9A%E5%A7%91%E5%A8%98",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B7%AE%E4%B8%8D%E5%A4%9A%E5%A7%91%E5%A8%98"
+      }
+    },
+    {
+      "id": "song-019",
+      "title": "G.E.M. (Get Everybody Moving)",
+      "aliases": [
+        "G.E.M. (Get Everybody Moving 所有人动起来)"
+      ],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "20",
+          "raw": "G.E.M. (Get Everybody Moving)"
+        },
+        {
+          "source": "image2",
+          "position": "46",
+          "raw": "G.E.M. (Get Everybody Moving 所有人动起来)"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "巡演中常与 Walk On Water 连演；两首仍分开建档。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20G.E.M.%20%28Get%20Everybody%20Moving%29",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20G.E.M.%20%28Get%20Everybody%20Moving%29",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20G.E.M.%20%28Get%20Everybody%20Moving%29"
+      }
+    },
+    {
+      "id": "song-020",
+      "title": "回忆的沙漏",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "21",
+          "raw": "回忆的沙漏"
+        },
+        {
+          "source": "image2",
+          "position": "9",
+          "raw": "回忆的沙漏"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%9B%9E%E5%BF%86%E7%9A%84%E6%B2%99%E6%BC%8F",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%9B%9E%E5%BF%86%E7%9A%84%E6%B2%99%E6%BC%8F",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%9B%9E%E5%BF%86%E7%9A%84%E6%B2%99%E6%BC%8F"
+      }
+    },
+    {
+      "id": "song-021",
+      "title": "海阔天空",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "22",
+          "raw": "海阔天空"
+        },
+        {
+          "source": "image2",
+          "position": "8",
+          "raw": "海阔天空"
+        },
+        {
+          "source": "image3",
+          "position": "36",
+          "raw": "海阔天空"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA"
+      }
+    },
+    {
+      "id": "song-022",
+      "title": "你把我灌醉",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "23",
+          "raw": "你把我灌醉"
+        },
+        {
+          "source": "image2",
+          "position": "22",
+          "raw": "你把我灌醉"
+        },
+        {
+          "source": "image3",
+          "position": "15",
+          "raw": "你把我灌醉"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%8A%8A%E6%88%91%E7%81%8C%E9%86%89",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%8A%8A%E6%88%91%E7%81%8C%E9%86%89",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%8A%8A%E6%88%91%E7%81%8C%E9%86%89"
+      }
+    },
+    {
+      "id": "song-023",
+      "title": "来自天堂的魔鬼",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "24",
+          "raw": "来自天堂的魔鬼"
+        },
+        {
+          "source": "image2",
+          "position": "24",
+          "raw": "来自天堂的魔鬼"
+        },
+        {
+          "source": "image3",
+          "position": "3",
+          "raw": "来自天堂的魔鬼"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%A5%E8%87%AA%E5%A4%A9%E5%A0%82%E7%9A%84%E9%AD%94%E9%AC%BC",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%A5%E8%87%AA%E5%A4%A9%E5%A0%82%E7%9A%84%E9%AD%94%E9%AC%BC",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%A5%E8%87%AA%E5%A4%A9%E5%A0%82%E7%9A%84%E9%AD%94%E9%AC%BC"
+      }
+    },
+    {
+      "id": "song-024",
+      "title": "摩天动物园",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "25",
+          "raw": "摩天动物园"
+        },
+        {
+          "source": "image2",
+          "position": "61",
+          "raw": "摩天动物园"
+        },
+        {
+          "source": "image3",
+          "position": "1",
+          "raw": "摩天动物园"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%91%A9%E5%A4%A9%E5%8A%A8%E7%89%A9%E5%9B%AD",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%91%A9%E5%A4%A9%E5%8A%A8%E7%89%A9%E5%9B%AD",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%91%A9%E5%A4%A9%E5%8A%A8%E7%89%A9%E5%9B%AD"
+      }
+    },
+    {
+      "id": "song-025",
+      "title": "句号",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "26",
+          "raw": "句号"
+        },
+        {
+          "source": "image2",
+          "position": "42",
+          "raw": "句号"
+        },
+        {
+          "source": "image3",
+          "position": "20",
+          "raw": "句号"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%A5%E5%8F%B7",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%A5%E5%8F%B7",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%A5%E5%8F%B7"
+      }
+    },
+    {
+      "id": "song-026",
+      "title": "李香兰",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "27",
+          "raw": "李香兰"
+        },
+        {
+          "source": "image2",
+          "position": "78",
+          "raw": "李香兰"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%8E%E9%A6%99%E5%85%B0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%8E%E9%A6%99%E5%85%B0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%8E%E9%A6%99%E5%85%B0"
+      }
+    },
+    {
+      "id": "song-027",
+      "title": "平凡天使",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "28",
+          "raw": "平凡天使"
+        },
+        {
+          "source": "image2",
+          "position": "48",
+          "raw": "平凡天使"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E5%87%A1%E5%A4%A9%E4%BD%BF",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E5%87%A1%E5%A4%A9%E4%BD%BF",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E5%87%A1%E5%A4%A9%E4%BD%BF"
+      }
+    },
+    {
+      "id": "song-028",
+      "title": "冰河时代",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "29",
+          "raw": "冰河时代"
+        },
+        {
+          "source": "image2",
+          "position": "37",
+          "raw": "冰河时代"
+        },
+        {
+          "source": "image3",
+          "position": "8",
+          "raw": "冰河时代"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%B0%E6%B2%B3%E6%97%B6%E4%BB%A3",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%B0%E6%B2%B3%E6%97%B6%E4%BB%A3",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%B0%E6%B2%B3%E6%97%B6%E4%BB%A3"
+      }
+    },
+    {
+      "id": "song-029",
+      "title": "情人",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "30",
+          "raw": "情人"
+        },
+        {
+          "source": "image2",
+          "position": "50",
+          "raw": "情人"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%85%E4%BA%BA",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%85%E4%BA%BA",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%85%E4%BA%BA"
+      }
+    },
+    {
+      "id": "song-030",
+      "title": "再见",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "31",
+          "raw": "再见"
+        },
+        {
+          "source": "image2",
+          "position": "44",
+          "raw": "再见"
+        },
+        {
+          "source": "image3",
+          "position": "10",
+          "raw": "再见"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%8D%E8%A7%81",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%8D%E8%A7%81",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%8D%E8%A7%81"
+      }
+    },
+    {
+      "id": "song-031",
+      "title": "天空没有极限",
+      "aliases": [
+        "天空没有极限（国语版）",
+        "天空没有极限（粤语版）"
+      ],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "32",
+          "raw": "天空没有极限"
+        },
+        {
+          "source": "image2",
+          "position": "41",
+          "raw": "天空没有极限（国语版）"
+        },
+        {
+          "source": "image2",
+          "position": "43",
+          "raw": "天空没有极限（粤语版）"
+        },
+        {
+          "source": "image3",
+          "position": "37",
+          "raw": "天空没有极限"
+        }
+      ],
+      "tags": [
+        "2026主歌单",
+        "含粤语版",
+        "含国语版"
+      ],
+      "note": "截图同时列出国语版与粤语版，统一为一个曲目并保留版本标签。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%A9%E7%A9%BA%E6%B2%A1%E6%9C%89%E6%9E%81%E9%99%90",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%A9%E7%A9%BA%E6%B2%A1%E6%9C%89%E6%9E%81%E9%99%90",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%A9%E7%A9%BA%E6%B2%A1%E6%9C%89%E6%9E%81%E9%99%90"
+      }
+    },
+    {
+      "id": "song-032",
+      "title": "倒数",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "33",
+          "raw": "倒数"
+        },
+        {
+          "source": "image2",
+          "position": "60",
+          "raw": "倒数"
+        },
+        {
+          "source": "image3",
+          "position": "29",
+          "raw": "倒数"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%95%B0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%95%B0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%95%B0"
+      }
+    },
+    {
+      "id": "song-033",
+      "title": "You Raise Me Up",
+      "aliases": [
+        "You Raise Me Up（你的鼓舞）"
+      ],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "34",
+          "raw": "You Raise Me Up"
+        },
+        {
+          "source": "image2",
+          "position": "15",
+          "raw": "You Raise Me Up（你的鼓舞）"
+        },
+        {
+          "source": "image3",
+          "position": "22",
+          "raw": "You Raise Me Up"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20You%20Raise%20Me%20Up",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20You%20Raise%20Me%20Up",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20You%20Raise%20Me%20Up"
+      }
+    },
+    {
+      "id": "song-034",
+      "title": "唯一",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "35",
+          "raw": "唯一"
+        },
+        {
+          "source": "image2",
+          "position": "36",
+          "raw": "唯一"
+        },
+        {
+          "source": "image3",
+          "position": "19",
+          "raw": "唯一"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%94%AF%E4%B8%80",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%94%AF%E4%B8%80",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%94%AF%E4%B8%80"
+      }
+    },
+    {
+      "id": "song-035",
+      "title": "让世界暂停一分钟",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "36",
+          "raw": "让世界暂停一分钟"
+        },
+        {
+          "source": "image2",
+          "position": "32",
+          "raw": "让世界暂停一分钟"
+        },
+        {
+          "source": "image3",
+          "position": "23",
+          "raw": "让世界暂停一分钟"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%B8%96%E7%95%8C%E6%9A%82%E5%81%9C%E4%B8%80%E5%88%86%E9%92%9F",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%B8%96%E7%95%8C%E6%9A%82%E5%81%9C%E4%B8%80%E5%88%86%E9%92%9F",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%B8%96%E7%95%8C%E6%9A%82%E5%81%9C%E4%B8%80%E5%88%86%E9%92%9F"
+      }
+    },
+    {
+      "id": "song-036",
+      "title": "Someday I'll Fly",
+      "aliases": [
+        "Someday I'll Fly（有一天我会飞翔）"
+      ],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "37",
+          "raw": "Someday I'll Fly"
+        },
+        {
+          "source": "image2",
+          "position": "82",
+          "raw": "Someday I'll Fly（有一天我会飞翔）"
+        }
+      ],
+      "tags": [
+        "2026特别串烧"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Someday%20I%27ll%20Fly",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Someday%20I%27ll%20Fly",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Someday%20I%27ll%20Fly"
+      }
+    },
+    {
+      "id": "song-037",
+      "title": "Fly Away",
+      "aliases": [
+        "Fly Away（远走高飞）"
+      ],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "38",
+          "raw": "Fly Away"
+        },
+        {
+          "source": "image2",
+          "position": "3",
+          "raw": "Fly Away（远走高飞）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Fly%20Away",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Fly%20Away",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Fly%20Away"
+      }
+    },
+    {
+      "id": "song-038",
+      "title": "透明",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "39",
+          "raw": "透明"
+        },
+        {
+          "source": "image2",
+          "position": "28",
+          "raw": "透明"
+        },
+        {
+          "source": "image3",
+          "position": "6",
+          "raw": "透明"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%80%8F%E6%98%8E",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%80%8F%E6%98%8E",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E9%80%8F%E6%98%8E"
+      }
+    },
+    {
+      "id": "song-039",
+      "title": "FIND YOU",
+      "aliases": [
+        "Find You（找到你）"
+      ],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "40",
+          "raw": "FIND YOU"
+        },
+        {
+          "source": "image2",
+          "position": "57",
+          "raw": "Find You（找到你）"
+        },
+        {
+          "source": "image3",
+          "position": "26",
+          "raw": "FIND YOU"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20FIND%20YOU",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20FIND%20YOU",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20FIND%20YOU"
+      }
+    },
+    {
+      "id": "song-040",
+      "title": "少年与海",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "41",
+          "raw": "少年与海"
+        },
+        {
+          "source": "image2",
+          "position": "79",
+          "raw": "少年与海"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B0%91%E5%B9%B4%E4%B8%8E%E6%B5%B7",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B0%91%E5%B9%B4%E4%B8%8E%E6%B5%B7",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B0%91%E5%B9%B4%E4%B8%8E%E6%B5%B7"
+      }
+    },
+    {
+      "id": "song-041",
+      "title": "多远都要在一起",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "42",
+          "raw": "多远都要在一起"
+        },
+        {
+          "source": "image2",
+          "position": "13",
+          "raw": "多远都要在一起"
+        },
+        {
+          "source": "image3",
+          "position": "25",
+          "raw": "多远都要在一起"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9A%E8%BF%9C%E9%83%BD%E8%A6%81%E5%9C%A8%E4%B8%80%E8%B5%B7",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9A%E8%BF%9C%E9%83%BD%E8%A6%81%E5%9C%A8%E4%B8%80%E8%B5%B7",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9A%E8%BF%9C%E9%83%BD%E8%A6%81%E5%9C%A8%E4%B8%80%E8%B5%B7"
+      }
+    },
+    {
+      "id": "song-042",
+      "title": "画",
+      "aliases": [],
+      "sources": [
+        "image1",
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "43",
+          "raw": "画"
+        },
+        {
+          "source": "image2",
+          "position": "64",
+          "raw": "画"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%BB",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%BB",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%BB"
+      }
+    },
+    {
+      "id": "song-043",
+      "title": "Amazing Grace",
+      "aliases": [],
+      "sources": [
+        "image1"
+      ],
+      "source_entries": [
+        {
+          "source": "image1",
+          "position": "44",
+          "raw": "Amazing Grace"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "传统赞美诗；本项目仍不预置歌词，以保持统一的授权导入流程。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Amazing%20Grace",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Amazing%20Grace",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Amazing%20Grace"
+      }
+    },
+    {
+      "id": "song-044",
+      "title": "于是",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "2",
+          "raw": "于是"
+        },
+        {
+          "source": "image3",
+          "position": "9",
+          "raw": "于是"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BA%8E%E6%98%AF",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BA%8E%E6%98%AF",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BA%8E%E6%98%AF"
+      }
+    },
+    {
+      "id": "song-045",
+      "title": "让你知道",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "5",
+          "raw": "让你知道"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%BD%A0%E7%9F%A5%E9%81%93",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%BD%A0%E7%9F%A5%E9%81%93",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%AE%A9%E4%BD%A0%E7%9F%A5%E9%81%93"
+      }
+    },
+    {
+      "id": "song-046",
+      "title": "生日快乐歌",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "6",
+          "raw": "生日快乐歌"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%E6%AD%8C",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%E6%AD%8C",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%E6%AD%8C"
+      }
+    },
+    {
+      "id": "song-047",
+      "title": "想讲你知",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "7",
+          "raw": "想讲你知"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%B3%E8%AE%B2%E4%BD%A0%E7%9F%A5",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%B3%E8%AE%B2%E4%BD%A0%E7%9F%A5",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%83%B3%E8%AE%B2%E4%BD%A0%E7%9F%A5"
+      }
+    },
+    {
+      "id": "song-048",
+      "title": "依然睡公主",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "10",
+          "raw": "依然睡公主"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BE%9D%E7%84%B6%E7%9D%A1%E5%85%AC%E4%B8%BB",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BE%9D%E7%84%B6%E7%9D%A1%E5%85%AC%E4%B8%BB",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BE%9D%E7%84%B6%E7%9D%A1%E5%85%AC%E4%B8%BB"
+      }
+    },
+    {
+      "id": "song-049",
+      "title": "等一个他",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "11",
+          "raw": "等一个他"
+        }
+      ],
+      "tags": [
+        "2026特别串烧"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%AD%89%E4%B8%80%E4%B8%AA%E4%BB%96",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%AD%89%E4%B8%80%E4%B8%AA%E4%BB%96",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%AD%89%E4%B8%80%E4%B8%AA%E4%BB%96"
+      }
+    },
+    {
+      "id": "song-050",
+      "title": "你成为了谁的幸福",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "12",
+          "raw": "你成为了谁的幸福"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%88%90%E4%B8%BA%E4%BA%86%E8%B0%81%E7%9A%84%E5%B9%B8%E7%A6%8F",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%88%90%E4%B8%BA%E4%BA%86%E8%B0%81%E7%9A%84%E5%B9%B8%E7%A6%8F",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E6%88%90%E4%B8%BA%E4%BA%86%E8%B0%81%E7%9A%84%E5%B9%B8%E7%A6%8F"
+      }
+    },
+    {
+      "id": "song-051",
+      "title": "不想回家",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "14",
+          "raw": "不想回家"
+        },
+        {
+          "source": "image3",
+          "position": "34",
+          "raw": "不想回家"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%8D%E6%83%B3%E5%9B%9E%E5%AE%B6",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%8D%E6%83%B3%E5%9B%9E%E5%AE%B6",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%8D%E6%83%B3%E5%9B%9E%E5%AE%B6"
+      }
+    },
+    {
+      "id": "song-052",
+      "title": "两个你",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "16",
+          "raw": "两个你"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%A4%E4%B8%AA%E4%BD%A0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%A4%E4%B8%AA%E4%BD%A0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%B8%A4%E4%B8%AA%E4%BD%A0"
+      }
+    },
+    {
+      "id": "song-053",
+      "title": "Can't Help Falling in Love",
+      "aliases": [
+        "Can't Help Falling in Love（情不自禁爱上你）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "17",
+          "raw": "Can't Help Falling in Love（情不自禁爱上你）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Can%27t%20Help%20Falling%20in%20Love",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Can%27t%20Help%20Falling%20in%20Love",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Can%27t%20Help%20Falling%20in%20Love"
+      }
+    },
+    {
+      "id": "song-054",
+      "title": "奇迹",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "18",
+          "raw": "奇迹"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%87%E8%BF%B9",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%87%E8%BF%B9",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%87%E8%BF%B9"
+      }
+    },
+    {
+      "id": "song-055",
+      "title": "Still Breathing",
+      "aliases": [
+        "Still Breathing（还活着）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "19",
+          "raw": "Still Breathing（还活着）"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Still%20Breathing",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Still%20Breathing",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Still%20Breathing"
+      }
+    },
+    {
+      "id": "song-056",
+      "title": "Mascara",
+      "aliases": [
+        "Mascara（烟熏妆）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "20",
+          "raw": "Mascara（烟熏妆）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Mascara",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Mascara",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Mascara"
+      }
+    },
+    {
+      "id": "song-057",
+      "title": "自由的你",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "21",
+          "raw": "自由的你"
+        }
+      ],
+      "tags": [
+        "2026报批新增",
+        "未发行待核实"
+      ],
+      "note": "2026 深圳站报批更新中出现；截至 2026-08-30 尚未确认正式发行，也未找到可核验的官方歌词。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%87%AA%E7%94%B1%E7%9A%84%E4%BD%A0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%87%AA%E7%94%B1%E7%9A%84%E4%BD%A0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%87%AA%E7%94%B1%E7%9A%84%E4%BD%A0"
+      }
+    },
+    {
+      "id": "song-058",
+      "title": "11",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "23",
+          "raw": "11"
+        },
+        {
+          "source": "image3",
+          "position": "35",
+          "raw": "11"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%2011",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%2011",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%2011"
+      }
+    },
+    {
+      "id": "song-059",
+      "title": "WHAT HAVE U DONE",
+      "aliases": [
+        "What Have You Done（你做了什么）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "25",
+          "raw": "What Have You Done（你做了什么）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20WHAT%20HAVE%20U%20DONE",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20WHAT%20HAVE%20U%20DONE",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20WHAT%20HAVE%20U%20DONE"
+      }
+    },
+    {
+      "id": "song-060",
+      "title": "18",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "26",
+          "raw": "18"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%2018",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%2018",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%2018"
+      }
+    },
+    {
+      "id": "song-061",
+      "title": "灰狼",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "29",
+          "raw": "灰狼"
+        },
+        {
+          "source": "image3",
+          "position": "2",
+          "raw": "灰狼"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%81%B0%E7%8B%BC",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%81%B0%E7%8B%BC",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%81%B0%E7%8B%BC"
+      }
+    },
+    {
+      "id": "song-062",
+      "title": "其他",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "31",
+          "raw": "其他"
+        }
+      ],
+      "tags": [
+        "非歌曲报批项"
+      ],
+      "note": "截图中的报批笼统项，原样保留用于核对；不作为独立歌曲计数。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%B6%E4%BB%96",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%B6%E4%BB%96",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%B6%E4%BB%96"
+      }
+    },
+    {
+      "id": "song-063",
+      "title": "岩石里的花",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "33",
+          "raw": "岩石里的花"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B2%A9%E7%9F%B3%E9%87%8C%E7%9A%84%E8%8A%B1",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B2%A9%E7%9F%B3%E9%87%8C%E7%9A%84%E8%8A%B1",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B2%A9%E7%9F%B3%E9%87%8C%E7%9A%84%E8%8A%B1"
+      }
+    },
+    {
+      "id": "song-064",
+      "title": "老人与海",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "34",
+          "raw": "老人与海"
+        },
+        {
+          "source": "image3",
+          "position": "24",
+          "raw": "老人与海"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7"
+      }
+    },
+    {
+      "id": "song-065",
+      "title": "瞬间",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "40",
+          "raw": "瞬间"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9E%AC%E9%97%B4",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9E%AC%E9%97%B4",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9E%AC%E9%97%B4"
+      }
+    },
+    {
+      "id": "song-066",
+      "title": "失真",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "45",
+          "raw": "失真"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%B1%E7%9C%9F",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%B1%E7%9C%9F",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%B1%E7%9C%9F"
+      }
+    },
+    {
+      "id": "song-067",
+      "title": "Good to Be Bad",
+      "aliases": [
+        "Good to Be Bad（变坏是好事）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "47",
+          "raw": "Good to Be Bad（变坏是好事）"
+        }
+      ],
+      "tags": [
+        "2026特别串烧"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Good%20to%20Be%20Bad",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Good%20to%20Be%20Bad",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Good%20to%20Be%20Bad"
+      }
+    },
+    {
+      "id": "song-068",
+      "title": "盲点",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "51",
+          "raw": "盲点"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9B%B2%E7%82%B9",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9B%B2%E7%82%B9",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9B%B2%E7%82%B9"
+      }
+    },
+    {
+      "id": "song-069",
+      "title": "偶尔",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "53",
+          "raw": "偶尔"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%81%B6%E5%B0%94",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%81%B6%E5%B0%94",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%81%B6%E5%B0%94"
+      }
+    },
+    {
+      "id": "song-070",
+      "title": "Walk On Water",
+      "aliases": [
+        "Walk on Water（漫步于水面）",
+        "Walk on Water"
+      ],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "56",
+          "raw": "Walk on Water（漫步于水面）"
+        },
+        {
+          "source": "image3",
+          "position": "31",
+          "raw": "Walk on Water"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Walk%20On%20Water",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Walk%20On%20Water",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Walk%20On%20Water"
+      }
+    },
+    {
+      "id": "song-071",
+      "title": "有心人",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "58",
+          "raw": "有心人"
+        }
+      ],
+      "tags": [
+        "2026返场"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9C%89%E5%BF%83%E4%BA%BA",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9C%89%E5%BF%83%E4%BA%BA",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9C%89%E5%BF%83%E4%BA%BA"
+      }
+    },
+    {
+      "id": "song-072",
+      "title": "睡公主",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "62",
+          "raw": "睡公主"
+        },
+        {
+          "source": "image3",
+          "position": "12",
+          "raw": "睡公主"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9D%A1%E5%85%AC%E4%B8%BB",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9D%A1%E5%85%AC%E4%B8%BB",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%9D%A1%E5%85%AC%E4%B8%BB"
+      }
+    },
+    {
+      "id": "song-073",
+      "title": "Get Over You",
+      "aliases": [
+        "Get Over You（忘记你）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "63",
+          "raw": "Get Over You（忘记你）"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Get%20Over%20You",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Get%20Over%20You",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Get%20Over%20You"
+      }
+    },
+    {
+      "id": "song-074",
+      "title": "Sacrifice（争）",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "67",
+          "raw": "Sacrifice（争）"
+        }
+      ],
+      "tags": [
+        "2025主题曲"
+      ],
+      "note": "2025 英雄联盟全球总决赛主题曲。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Sacrifice%EF%BC%88%E4%BA%89%EF%BC%89",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Sacrifice%EF%BC%88%E4%BA%89%EF%BC%89",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Sacrifice%EF%BC%88%E4%BA%89%EF%BC%89"
+      }
+    },
+    {
+      "id": "song-075",
+      "title": "查克靠近",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "70",
+          "raw": "查克靠近"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9F%A5%E5%85%8B%E9%9D%A0%E8%BF%91",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9F%A5%E5%85%8B%E9%9D%A0%E8%BF%91",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9F%A5%E5%85%8B%E9%9D%A0%E8%BF%91"
+      }
+    },
+    {
+      "id": "song-076",
+      "title": "好想好想你",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "71",
+          "raw": "好想好想你"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%BD%E6%83%B3%E5%A5%BD%E6%83%B3%E4%BD%A0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%BD%E6%83%B3%E5%A5%BD%E6%83%B3%E4%BD%A0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A5%BD%E6%83%B3%E5%A5%BD%E6%83%B3%E4%BD%A0"
+      }
+    },
+    {
+      "id": "song-077",
+      "title": "GLORIA",
+      "aliases": [
+        "GLORIA（歌莉雅）"
+      ],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "73",
+          "raw": "GLORIA（歌莉雅）"
+        },
+        {
+          "source": "image3",
+          "position": "21",
+          "raw": "GLORIA"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20GLORIA",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20GLORIA",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20GLORIA"
+      }
+    },
+    {
+      "id": "song-078",
+      "title": "寂寞星球的玫瑰",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "74",
+          "raw": "寂寞星球的玫瑰"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AF%82%E5%AF%9E%E6%98%9F%E7%90%83%E7%9A%84%E7%8E%AB%E7%91%B0",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AF%82%E5%AF%9E%E6%98%9F%E7%90%83%E7%9A%84%E7%8E%AB%E7%91%B0",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%AF%82%E5%AF%9E%E6%98%9F%E7%90%83%E7%9A%84%E7%8E%AB%E7%91%B0"
+      }
+    },
+    {
+      "id": "song-079",
+      "title": "很久以后",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "75",
+          "raw": "很久以后"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%BE%88%E4%B9%85%E4%BB%A5%E5%90%8E",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%BE%88%E4%B9%85%E4%BB%A5%E5%90%8E",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%BE%88%E4%B9%85%E4%BB%A5%E5%90%8E"
+      }
+    },
+    {
+      "id": "song-080",
+      "title": "手心的蔷薇",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "76",
+          "raw": "手心的蔷薇"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%89%8B%E5%BF%83%E7%9A%84%E8%94%B7%E8%96%87",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%89%8B%E5%BF%83%E7%9A%84%E8%94%B7%E8%96%87",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%89%8B%E5%BF%83%E7%9A%84%E8%94%B7%E8%96%87"
+      }
+    },
+    {
+      "id": "song-081",
+      "title": "离心力",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "77",
+          "raw": "离心力"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%A6%BB%E5%BF%83%E5%8A%9B",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%A6%BB%E5%BF%83%E5%8A%9B",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E7%A6%BB%E5%BF%83%E5%8A%9B"
+      }
+    },
+    {
+      "id": "song-082",
+      "title": "平行世界",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "80",
+          "raw": "平行世界"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E8%A1%8C%E4%B8%96%E7%95%8C",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E8%A1%8C%E4%B8%96%E7%95%8C",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%B9%B3%E8%A1%8C%E4%B8%96%E7%95%8C"
+      }
+    },
+    {
+      "id": "song-083",
+      "title": "倒流时间",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "81",
+          "raw": "倒流时间"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%B5%81%E6%97%B6%E9%97%B4",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%B5%81%E6%97%B6%E9%97%B4",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%B5%81%E6%97%B6%E9%97%B4"
+      }
+    },
+    {
+      "id": "song-084",
+      "title": "Kingdom Come",
+      "aliases": [
+        "Kingdom Come（王国降临）"
+      ],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "83",
+          "raw": "Kingdom Come（王国降临）"
+        }
+      ],
+      "tags": [
+        "2026主歌单",
+        "器乐/鼓Solo"
+      ],
+      "note": "2026 巡演中作为鼓独奏/器乐段落出现；通常没有可打印的演唱歌词。",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20Kingdom%20Come",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20Kingdom%20Come",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20Kingdom%20Come"
+      }
+    },
+    {
+      "id": "song-085",
+      "title": "只有我和你的地方",
+      "aliases": [],
+      "sources": [
+        "image2"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "84",
+          "raw": "只有我和你的地方"
+        }
+      ],
+      "tags": [],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%AA%E6%9C%89%E6%88%91%E5%92%8C%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%AA%E6%9C%89%E6%88%91%E5%92%8C%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%AA%E6%9C%89%E6%88%91%E5%92%8C%E4%BD%A0%E7%9A%84%E5%9C%B0%E6%96%B9"
+      }
+    },
+    {
+      "id": "song-086",
+      "title": "你不是真正的快乐",
+      "aliases": [],
+      "sources": [
+        "image2",
+        "image3"
+      ],
+      "source_entries": [
+        {
+          "source": "image2",
+          "position": "85",
+          "raw": "你不是真正的快乐"
+        },
+        {
+          "source": "image3",
+          "position": "16",
+          "raw": "你不是真正的快乐"
+        }
+      ],
+      "tags": [
+        "2026主歌单"
+      ],
+      "note": "",
+      "lyrics": "",
+      "copyright": "user-import-required",
+      "links": {
+        "apple_music_search": "https://music.apple.com/cn/search?term=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90",
+        "youtube_search": "https://www.youtube.com/results?search_query=%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90",
+        "official_video_search": "https://www.google.com/search?q=site%253Ayoutube.com%252F%2540GEMblog%20%E9%82%93%E7%B4%AB%E6%A3%8B%20%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90"
+      }
+    }
+  ],
+  "coverage": {
+    "image1": [
+      {
+        "position": "1",
+        "raw": "喜欢你",
+        "canonical": "喜欢你",
+        "song_id": "song-001"
+      },
+      {
+        "position": "2",
+        "raw": "HELL 坠落天堂",
+        "canonical": "HELL",
+        "song_id": "song-002"
+      },
+      {
+        "position": "3",
+        "raw": "龙卷风",
+        "canonical": "龙卷风",
+        "song_id": "song-003"
+      },
+      {
+        "position": "4",
+        "raw": "存在",
+        "canonical": "存在",
+        "song_id": "song-004"
+      },
+      {
+        "position": "5",
+        "raw": "受难曲",
+        "canonical": "受难曲",
+        "song_id": "song-005"
+      },
+      {
+        "position": "6",
+        "raw": "A.I.N.Y. 爱你",
+        "canonical": "A.I.N.Y.",
+        "song_id": "song-006"
+      },
+      {
+        "position": "7",
+        "raw": "夜的尽头",
+        "canonical": "夜的尽头",
+        "song_id": "song-007"
+      },
+      {
+        "position": "8",
+        "raw": "孤独",
+        "canonical": "孤独",
+        "song_id": "song-008"
+      },
+      {
+        "position": "9",
+        "raw": "Where Did U Go",
+        "canonical": "Where Did U Go",
+        "song_id": "song-009"
+      },
+      {
+        "position": "10",
+        "raw": "你不是第一个离开的人",
+        "canonical": "你不是第一个离开的人",
+        "song_id": "song-010"
+      },
+      {
+        "position": "11",
+        "raw": "后会无期",
+        "canonical": "后会无期",
+        "song_id": "song-011"
+      },
+      {
+        "position": "13",
+        "raw": "红蔷薇白玫瑰",
+        "canonical": "红蔷薇白玫瑰",
+        "song_id": "song-012"
+      },
+      {
+        "position": "14",
+        "raw": "泡沫",
+        "canonical": "泡沫",
+        "song_id": "song-013"
+      },
+      {
+        "position": "15",
+        "raw": "我的秘密",
+        "canonical": "我的秘密",
+        "song_id": "song-014"
+      },
+      {
+        "position": "16",
+        "raw": "光年之外",
+        "canonical": "光年之外",
+        "song_id": "song-015"
+      },
+      {
+        "position": "17",
+        "raw": "All About You",
+        "canonical": "All About U",
+        "song_id": "song-016"
+      },
+      {
+        "position": "18",
+        "raw": "新的心跳",
+        "canonical": "新的心跳",
+        "song_id": "song-017"
+      },
+      {
+        "position": "19",
+        "raw": "差不多姑娘",
+        "canonical": "差不多姑娘",
+        "song_id": "song-018"
+      },
+      {
+        "position": "20",
+        "raw": "G.E.M. (Get Everybody Moving)",
+        "canonical": "G.E.M. (Get Everybody Moving)",
+        "song_id": "song-019"
+      },
+      {
+        "position": "21",
+        "raw": "回忆的沙漏",
+        "canonical": "回忆的沙漏",
+        "song_id": "song-020"
+      },
+      {
+        "position": "22",
+        "raw": "海阔天空",
+        "canonical": "海阔天空",
+        "song_id": "song-021"
+      },
+      {
+        "position": "23",
+        "raw": "你把我灌醉",
+        "canonical": "你把我灌醉",
+        "song_id": "song-022"
+      },
+      {
+        "position": "24",
+        "raw": "来自天堂的魔鬼",
+        "canonical": "来自天堂的魔鬼",
+        "song_id": "song-023"
+      },
+      {
+        "position": "25",
+        "raw": "摩天动物园",
+        "canonical": "摩天动物园",
+        "song_id": "song-024"
+      },
+      {
+        "position": "26",
+        "raw": "句号",
+        "canonical": "句号",
+        "song_id": "song-025"
+      },
+      {
+        "position": "27",
+        "raw": "李香兰",
+        "canonical": "李香兰",
+        "song_id": "song-026"
+      },
+      {
+        "position": "28",
+        "raw": "平凡天使",
+        "canonical": "平凡天使",
+        "song_id": "song-027"
+      },
+      {
+        "position": "29",
+        "raw": "冰河时代",
+        "canonical": "冰河时代",
+        "song_id": "song-028"
+      },
+      {
+        "position": "30",
+        "raw": "情人",
+        "canonical": "情人",
+        "song_id": "song-029"
+      },
+      {
+        "position": "31",
+        "raw": "再见",
+        "canonical": "再见",
+        "song_id": "song-030"
+      },
+      {
+        "position": "32",
+        "raw": "天空没有极限",
+        "canonical": "天空没有极限",
+        "song_id": "song-031"
+      },
+      {
+        "position": "33",
+        "raw": "倒数",
+        "canonical": "倒数",
+        "song_id": "song-032"
+      },
+      {
+        "position": "34",
+        "raw": "You Raise Me Up",
+        "canonical": "You Raise Me Up",
+        "song_id": "song-033"
+      },
+      {
+        "position": "35",
+        "raw": "唯一",
+        "canonical": "唯一",
+        "song_id": "song-034"
+      },
+      {
+        "position": "36",
+        "raw": "让世界暂停一分钟",
+        "canonical": "让世界暂停一分钟",
+        "song_id": "song-035"
+      },
+      {
+        "position": "37",
+        "raw": "Someday I'll Fly",
+        "canonical": "Someday I'll Fly",
+        "song_id": "song-036"
+      },
+      {
+        "position": "38",
+        "raw": "Fly Away",
+        "canonical": "Fly Away",
+        "song_id": "song-037"
+      },
+      {
+        "position": "39",
+        "raw": "透明",
+        "canonical": "透明",
+        "song_id": "song-038"
+      },
+      {
+        "position": "40",
+        "raw": "FIND YOU",
+        "canonical": "FIND YOU",
+        "song_id": "song-039"
+      },
+      {
+        "position": "41",
+        "raw": "少年与海",
+        "canonical": "少年与海",
+        "song_id": "song-040"
+      },
+      {
+        "position": "42",
+        "raw": "多远都要在一起",
+        "canonical": "多远都要在一起",
+        "song_id": "song-041"
+      },
+      {
+        "position": "43",
+        "raw": "画",
+        "canonical": "画",
+        "song_id": "song-042"
+      },
+      {
+        "position": "44",
+        "raw": "Amazing Grace",
+        "canonical": "Amazing Grace",
+        "song_id": "song-043"
+      }
+    ],
+    "image2": [
+      {
+        "position": "1",
+        "raw": "后会无期",
+        "canonical": "后会无期",
+        "song_id": "song-011"
+      },
+      {
+        "position": "2",
+        "raw": "于是",
+        "canonical": "于是",
+        "song_id": "song-044"
+      },
+      {
+        "position": "3",
+        "raw": "Fly Away（远走高飞）",
+        "canonical": "Fly Away",
+        "song_id": "song-037"
+      },
+      {
+        "position": "4",
+        "raw": "新的心跳",
+        "canonical": "新的心跳",
+        "song_id": "song-017"
+      },
+      {
+        "position": "5",
+        "raw": "让你知道",
+        "canonical": "让你知道",
+        "song_id": "song-045"
+      },
+      {
+        "position": "6",
+        "raw": "生日快乐歌",
+        "canonical": "生日快乐歌",
+        "song_id": "song-046"
+      },
+      {
+        "position": "7",
+        "raw": "想讲你知",
+        "canonical": "想讲你知",
+        "song_id": "song-047"
+      },
+      {
+        "position": "8",
+        "raw": "海阔天空",
+        "canonical": "海阔天空",
+        "song_id": "song-021"
+      },
+      {
+        "position": "9",
+        "raw": "回忆的沙漏",
+        "canonical": "回忆的沙漏",
+        "song_id": "song-020"
+      },
+      {
+        "position": "10",
+        "raw": "依然睡公主",
+        "canonical": "依然睡公主",
+        "song_id": "song-048"
+      },
+      {
+        "position": "11",
+        "raw": "等一个他",
+        "canonical": "等一个他",
+        "song_id": "song-049"
+      },
+      {
+        "position": "12",
+        "raw": "你成为了谁的幸福",
+        "canonical": "你成为了谁的幸福",
+        "song_id": "song-050"
+      },
+      {
+        "position": "13",
+        "raw": "多远都要在一起",
+        "canonical": "多远都要在一起",
+        "song_id": "song-041"
+      },
+      {
+        "position": "14",
+        "raw": "不想回家",
+        "canonical": "不想回家",
+        "song_id": "song-051"
+      },
+      {
+        "position": "15",
+        "raw": "You Raise Me Up（你的鼓舞）",
+        "canonical": "You Raise Me Up",
+        "song_id": "song-033"
+      },
+      {
+        "position": "16",
+        "raw": "两个你",
+        "canonical": "两个你",
+        "song_id": "song-052"
+      },
+      {
+        "position": "17",
+        "raw": "Can't Help Falling in Love（情不自禁爱上你）",
+        "canonical": "Can't Help Falling in Love",
+        "song_id": "song-053"
+      },
+      {
+        "position": "18",
+        "raw": "奇迹",
+        "canonical": "奇迹",
+        "song_id": "song-054"
+      },
+      {
+        "position": "19",
+        "raw": "Still Breathing（还活着）",
+        "canonical": "Still Breathing",
+        "song_id": "song-055"
+      },
+      {
+        "position": "20",
+        "raw": "Mascara（烟熏妆）",
+        "canonical": "Mascara",
+        "song_id": "song-056"
+      },
+      {
+        "position": "21",
+        "raw": "自由的你",
+        "canonical": "自由的你",
+        "song_id": "song-057"
+      },
+      {
+        "position": "22",
+        "raw": "你把我灌醉",
+        "canonical": "你把我灌醉",
+        "song_id": "song-022"
+      },
+      {
+        "position": "23",
+        "raw": "11",
+        "canonical": "11",
+        "song_id": "song-058"
+      },
+      {
+        "position": "24",
+        "raw": "来自天堂的魔鬼",
+        "canonical": "来自天堂的魔鬼",
+        "song_id": "song-023"
+      },
+      {
+        "position": "25",
+        "raw": "What Have You Done（你做了什么）",
+        "canonical": "WHAT HAVE U DONE",
+        "song_id": "song-059"
+      },
+      {
+        "position": "26",
+        "raw": "18",
+        "canonical": "18",
+        "song_id": "song-060"
+      },
+      {
+        "position": "27",
+        "raw": "All About You（关于你）",
+        "canonical": "All About U",
+        "song_id": "song-016"
+      },
+      {
+        "position": "28",
+        "raw": "透明",
+        "canonical": "透明",
+        "song_id": "song-038"
+      },
+      {
+        "position": "29",
+        "raw": "灰狼",
+        "canonical": "灰狼",
+        "song_id": "song-061"
+      },
+      {
+        "position": "30",
+        "raw": "存在",
+        "canonical": "存在",
+        "song_id": "song-004"
+      },
+      {
+        "position": "31",
+        "raw": "其他",
+        "canonical": "其他",
+        "song_id": "song-062"
+      },
+      {
+        "position": "32",
+        "raw": "让世界暂停一分钟",
+        "canonical": "让世界暂停一分钟",
+        "song_id": "song-035"
+      },
+      {
+        "position": "33",
+        "raw": "岩石里的花",
+        "canonical": "岩石里的花",
+        "song_id": "song-063"
+      },
+      {
+        "position": "34",
+        "raw": "老人与海",
+        "canonical": "老人与海",
+        "song_id": "song-064"
+      },
+      {
+        "position": "35",
+        "raw": "你不是第一个离开的人",
+        "canonical": "你不是第一个离开的人",
+        "song_id": "song-010"
+      },
+      {
+        "position": "36",
+        "raw": "唯一",
+        "canonical": "唯一",
+        "song_id": "song-034"
+      },
+      {
+        "position": "37",
+        "raw": "冰河时代",
+        "canonical": "冰河时代",
+        "song_id": "song-028"
+      },
+      {
+        "position": "38",
+        "raw": "光年之外",
+        "canonical": "光年之外",
+        "song_id": "song-015"
+      },
+      {
+        "position": "39",
+        "raw": "夜的尽头",
+        "canonical": "夜的尽头",
+        "song_id": "song-007"
+      },
+      {
+        "position": "40",
+        "raw": "瞬间",
+        "canonical": "瞬间",
+        "song_id": "song-065"
+      },
+      {
+        "position": "41",
+        "raw": "天空没有极限（国语版）",
+        "canonical": "天空没有极限",
+        "song_id": "song-031"
+      },
+      {
+        "position": "42",
+        "raw": "句号",
+        "canonical": "句号",
+        "song_id": "song-025"
+      },
+      {
+        "position": "43",
+        "raw": "天空没有极限（粤语版）",
+        "canonical": "天空没有极限",
+        "song_id": "song-031"
+      },
+      {
+        "position": "44",
+        "raw": "再见",
+        "canonical": "再见",
+        "song_id": "song-030"
+      },
+      {
+        "position": "45",
+        "raw": "失真",
+        "canonical": "失真",
+        "song_id": "song-066"
+      },
+      {
+        "position": "46",
+        "raw": "G.E.M. (Get Everybody Moving 所有人动起来)",
+        "canonical": "G.E.M. (Get Everybody Moving)",
+        "song_id": "song-019"
+      },
+      {
+        "position": "47",
+        "raw": "Good to Be Bad（变坏是好事）",
+        "canonical": "Good to Be Bad",
+        "song_id": "song-067"
+      },
+      {
+        "position": "48",
+        "raw": "平凡天使",
+        "canonical": "平凡天使",
+        "song_id": "song-027"
+      },
+      {
+        "position": "49",
+        "raw": "Where Did U Go（你去哪）",
+        "canonical": "Where Did U Go",
+        "song_id": "song-009"
+      },
+      {
+        "position": "50",
+        "raw": "情人",
+        "canonical": "情人",
+        "song_id": "song-029"
+      },
+      {
+        "position": "51",
+        "raw": "盲点",
+        "canonical": "盲点",
+        "song_id": "song-068"
+      },
+      {
+        "position": "52",
+        "raw": "喜欢你",
+        "canonical": "喜欢你",
+        "song_id": "song-001"
+      },
+      {
+        "position": "53",
+        "raw": "偶尔",
+        "canonical": "偶尔",
+        "song_id": "song-069"
+      },
+      {
+        "position": "54",
+        "raw": "A.I.N.Y.",
+        "canonical": "A.I.N.Y.",
+        "song_id": "song-006"
+      },
+      {
+        "position": "55",
+        "raw": "泡沫",
+        "canonical": "泡沫",
+        "song_id": "song-013"
+      },
+      {
+        "position": "56",
+        "raw": "Walk on Water（漫步于水面）",
+        "canonical": "Walk On Water",
+        "song_id": "song-070"
+      },
+      {
+        "position": "57",
+        "raw": "Find You（找到你）",
+        "canonical": "FIND YOU",
+        "song_id": "song-039"
+      },
+      {
+        "position": "58",
+        "raw": "有心人",
+        "canonical": "有心人",
+        "song_id": "song-071"
+      },
+      {
+        "position": "59",
+        "raw": "差不多姑娘",
+        "canonical": "差不多姑娘",
+        "song_id": "song-018"
+      },
+      {
+        "position": "60",
+        "raw": "倒数",
+        "canonical": "倒数",
+        "song_id": "song-032"
+      },
+      {
+        "position": "61",
+        "raw": "摩天动物园",
+        "canonical": "摩天动物园",
+        "song_id": "song-024"
+      },
+      {
+        "position": "62",
+        "raw": "睡公主",
+        "canonical": "睡公主",
+        "song_id": "song-072"
+      },
+      {
+        "position": "63",
+        "raw": "Get Over You（忘记你）",
+        "canonical": "Get Over You",
+        "song_id": "song-073"
+      },
+      {
+        "position": "64",
+        "raw": "画",
+        "canonical": "画",
+        "song_id": "song-042"
+      },
+      {
+        "position": "65",
+        "raw": "红蔷薇白玫瑰",
+        "canonical": "红蔷薇白玫瑰",
+        "song_id": "song-012"
+      },
+      {
+        "position": "66",
+        "raw": "孤独",
+        "canonical": "孤独",
+        "song_id": "song-008"
+      },
+      {
+        "position": "67",
+        "raw": "Sacrifice（争）",
+        "canonical": "Sacrifice（争）",
+        "song_id": "song-074"
+      },
+      {
+        "position": "68",
+        "raw": "我的秘密",
+        "canonical": "我的秘密",
+        "song_id": "song-014"
+      },
+      {
+        "position": "69",
+        "raw": "龙卷风",
+        "canonical": "龙卷风",
+        "song_id": "song-003"
+      },
+      {
+        "position": "70",
+        "raw": "查克靠近",
+        "canonical": "查克靠近",
+        "song_id": "song-075"
+      },
+      {
+        "position": "71",
+        "raw": "好想好想你",
+        "canonical": "好想好想你",
+        "song_id": "song-076"
+      },
+      {
+        "position": "72",
+        "raw": "HELL（坠落天堂）",
+        "canonical": "HELL",
+        "song_id": "song-002"
+      },
+      {
+        "position": "73",
+        "raw": "GLORIA（歌莉雅）",
+        "canonical": "GLORIA",
+        "song_id": "song-077"
+      },
+      {
+        "position": "74",
+        "raw": "寂寞星球的玫瑰",
+        "canonical": "寂寞星球的玫瑰",
+        "song_id": "song-078"
+      },
+      {
+        "position": "75",
+        "raw": "很久以后",
+        "canonical": "很久以后",
+        "song_id": "song-079"
+      },
+      {
+        "position": "76",
+        "raw": "手心的蔷薇",
+        "canonical": "手心的蔷薇",
+        "song_id": "song-080"
+      },
+      {
+        "position": "77",
+        "raw": "离心力",
+        "canonical": "离心力",
+        "song_id": "song-081"
+      },
+      {
+        "position": "78",
+        "raw": "李香兰",
+        "canonical": "李香兰",
+        "song_id": "song-026"
+      },
+      {
+        "position": "79",
+        "raw": "少年与海",
+        "canonical": "少年与海",
+        "song_id": "song-040"
+      },
+      {
+        "position": "80",
+        "raw": "平行世界",
+        "canonical": "平行世界",
+        "song_id": "song-082"
+      },
+      {
+        "position": "81",
+        "raw": "倒流时间",
+        "canonical": "倒流时间",
+        "song_id": "song-083"
+      },
+      {
+        "position": "82",
+        "raw": "Someday I'll Fly（有一天我会飞翔）",
+        "canonical": "Someday I'll Fly",
+        "song_id": "song-036"
+      },
+      {
+        "position": "83",
+        "raw": "Kingdom Come（王国降临）",
+        "canonical": "Kingdom Come",
+        "song_id": "song-084"
+      },
+      {
+        "position": "84",
+        "raw": "只有我和你的地方",
+        "canonical": "只有我和你的地方",
+        "song_id": "song-085"
+      },
+      {
+        "position": "85",
+        "raw": "你不是真正的快乐",
+        "canonical": "你不是真正的快乐",
+        "song_id": "song-086"
+      }
+    ],
+    "image3": [
+      {
+        "position": "1",
+        "raw": "摩天动物园",
+        "canonical": "摩天动物园",
+        "song_id": "song-024"
+      },
+      {
+        "position": "2",
+        "raw": "灰狼",
+        "canonical": "灰狼",
+        "song_id": "song-061"
+      },
+      {
+        "position": "3",
+        "raw": "来自天堂的魔鬼",
+        "canonical": "来自天堂的魔鬼",
+        "song_id": "song-023"
+      },
+      {
+        "position": "4",
+        "raw": "光年之外",
+        "canonical": "光年之外",
+        "song_id": "song-015"
+      },
+      {
+        "position": "5",
+        "raw": "差不多姑娘",
+        "canonical": "差不多姑娘",
+        "song_id": "song-018"
+      },
+      {
+        "position": "6",
+        "raw": "透明",
+        "canonical": "透明",
+        "song_id": "song-038"
+      },
+      {
+        "position": "7",
+        "raw": "孤独",
+        "canonical": "孤独",
+        "song_id": "song-008"
+      },
+      {
+        "position": "8",
+        "raw": "冰河时代",
+        "canonical": "冰河时代",
+        "song_id": "song-028"
+      },
+      {
+        "position": "9",
+        "raw": "于是",
+        "canonical": "于是",
+        "song_id": "song-044"
+      },
+      {
+        "position": "10",
+        "raw": "再见",
+        "canonical": "再见",
+        "song_id": "song-030"
+      },
+      {
+        "position": "11",
+        "raw": "你不是第一个离开的人",
+        "canonical": "你不是第一个离开的人",
+        "song_id": "song-010"
+      },
+      {
+        "position": "12",
+        "raw": "睡公主",
+        "canonical": "睡公主",
+        "song_id": "song-072"
+      },
+      {
+        "position": "13",
+        "raw": "A.I.N.Y.",
+        "canonical": "A.I.N.Y.",
+        "song_id": "song-006"
+      },
+      {
+        "position": "14",
+        "raw": "Where Did U Go",
+        "canonical": "Where Did U Go",
+        "song_id": "song-009"
+      },
+      {
+        "position": "15",
+        "raw": "你把我灌醉",
+        "canonical": "你把我灌醉",
+        "song_id": "song-022"
+      },
+      {
+        "position": "16",
+        "raw": "你不是真正的快乐",
+        "canonical": "你不是真正的快乐",
+        "song_id": "song-086"
+      },
+      {
+        "position": "17",
+        "raw": "龙卷风",
+        "canonical": "龙卷风",
+        "song_id": "song-003"
+      },
+      {
+        "position": "18",
+        "raw": "红蔷薇白玫瑰",
+        "canonical": "红蔷薇白玫瑰",
+        "song_id": "song-012"
+      },
+      {
+        "position": "19",
+        "raw": "唯一",
+        "canonical": "唯一",
+        "song_id": "song-034"
+      },
+      {
+        "position": "20",
+        "raw": "句号",
+        "canonical": "句号",
+        "song_id": "song-025"
+      },
+      {
+        "position": "21",
+        "raw": "GLORIA",
+        "canonical": "GLORIA",
+        "song_id": "song-077"
+      },
+      {
+        "position": "22",
+        "raw": "You Raise Me Up",
+        "canonical": "You Raise Me Up",
+        "song_id": "song-033"
+      },
+      {
+        "position": "23",
+        "raw": "让世界暂停一分钟",
+        "canonical": "让世界暂停一分钟",
+        "song_id": "song-035"
+      },
+      {
+        "position": "24",
+        "raw": "老人与海",
+        "canonical": "老人与海",
+        "song_id": "song-064"
+      },
+      {
+        "position": "25",
+        "raw": "多远都要在一起",
+        "canonical": "多远都要在一起",
+        "song_id": "song-041"
+      },
+      {
+        "position": "26",
+        "raw": "FIND YOU",
+        "canonical": "FIND YOU",
+        "song_id": "song-039"
+      },
+      {
+        "position": "27",
+        "raw": "喜欢你",
+        "canonical": "喜欢你",
+        "song_id": "song-001"
+      },
+      {
+        "position": "28",
+        "raw": "夜的尽头",
+        "canonical": "夜的尽头",
+        "song_id": "song-007"
+      },
+      {
+        "position": "29",
+        "raw": "倒数",
+        "canonical": "倒数",
+        "song_id": "song-032"
+      },
+      {
+        "position": "30",
+        "raw": "新的心跳",
+        "canonical": "新的心跳",
+        "song_id": "song-017"
+      },
+      {
+        "position": "31",
+        "raw": "Walk on Water",
+        "canonical": "Walk On Water",
+        "song_id": "song-070"
+      },
+      {
+        "position": "32",
+        "raw": "泡沫",
+        "canonical": "泡沫",
+        "song_id": "song-013"
+      },
+      {
+        "position": "33",
+        "raw": "后会无期",
+        "canonical": "后会无期",
+        "song_id": "song-011"
+      },
+      {
+        "position": "34",
+        "raw": "不想回家",
+        "canonical": "不想回家",
+        "song_id": "song-051"
+      },
+      {
+        "position": "35",
+        "raw": "11",
+        "canonical": "11",
+        "song_id": "song-058"
+      },
+      {
+        "position": "36",
+        "raw": "海阔天空",
+        "canonical": "海阔天空",
+        "song_id": "song-021"
+      },
+      {
+        "position": "37",
+        "raw": "天空没有极限",
+        "canonical": "天空没有极限",
+        "song_id": "song-031"
+      }
+    ]
+  }
+}

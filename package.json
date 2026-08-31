@@ -1,6 +1,6 @@
 {
   "name": "gem-iam-gloria-lyricbook",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "private": true,
   "description": "G.E.M. I AM GLORIA 多版本双语私人歌词本与自适应打印排版工具",
   "author": "iocky.com",
@@ -13,7 +13,7 @@
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs dist 4173",
-    "lint": "node --check src/main.js && node --check src/app.js && node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/verify-project.mjs",
+    "lint": "node --check src/main.js && node --check src/app.js && node --check src/print/toc-layout.js && node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/verify-project.mjs",
     "test": "node --test tests/*.test.mjs",
     "verify": "node scripts/verify-project.mjs",
     "check": "npm run lint && npm run test && npm run verify && npm run build"

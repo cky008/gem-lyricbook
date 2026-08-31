@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 const app = await readFile(new URL('../src/app.js', import.meta.url), 'utf8');
 const css = await readFile(new URL('../src/styles/app.css', import.meta.url), 'utf8');
+const tocLayout = await readFile(new URL('../src/print/toc-layout.js', import.meta.url), 'utf8');
 
 test('打印界面默认提供页数上限策略与仅歌单范围', () => {
   assert.match(html, /id="printPagePolicy"/);
@@ -18,9 +19,12 @@ test('打印界面默认提供页数上限策略与仅歌单范围', () => {
 test('打印目录支持歌单分节与 PDF 内部链接', () => {
   assert.match(app, /tocGroupsForSongs/);
   assert.match(app, /paginateTocGroups/);
+  assert.match(tocLayout, /chooseTocLayout/);
+  assert.match(tocLayout, /columns:\s*1,\s*capacity:\s*50/);
   assert.match(app, /href="#print-song-/);
   assert.match(css, /\.print-toc-flow/);
-  assert.match(css, /column-count:\s*3/);
+  assert.match(css, /print-toc-columns-1/);
+  assert.match(css, /print-toc-density-roomy/);
 });
 
 test('单版本隐藏默认版标题，多版本仍可显示版本名', () => {

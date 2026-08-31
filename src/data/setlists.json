@@ -1,0 +1,847 @@
+{
+  "schemaVersion": "1.1.0",
+  "generatedOn": "2026-08-31",
+  "notice": "预测歌单不是官方确认。可选章节代表点歌、轮换或低置信度候选。",
+  "presets": [
+    {
+      "id": "builtin-shenzhen-composite-prediction-2026",
+      "name": "深圳 2026 综合预测（推荐）",
+      "status": "predicted",
+      "builtin": true,
+      "recommended": true,
+      "description": "根据跨站歌单对照、深圳12天预测图、逐日返场图与已发生场次线索综合整理。固定骨架与可选候选分开保存；可在打印时关闭候选，只导出高置信度主流程。",
+      "predictionBasis": [
+        "紫色固定区：跨站对照图中重复出现的主流程与固定 Encore。",
+        "黄色候选区：点歌或临场变动候选，不代表每场全部演唱。",
+        "整首轮换：情人、11、海阔天空、李香兰等按场次变化。",
+        "待官宣项目：仅作占位，不视作正式演出确认。"
+      ],
+      "sections": [
+        {
+          "name": "Part 1 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "多张跨站歌单均一致的开场段。",
+          "items": [
+            {
+              "songId": "song-024",
+              "raw": "摩天动物园"
+            },
+            {
+              "songId": "song-061",
+              "raw": "灰狼"
+            },
+            {
+              "songId": "song-023",
+              "raw": "来自天堂的魔鬼"
+            },
+            {
+              "songId": "song-015",
+              "raw": "光年之外"
+            }
+          ]
+        },
+        {
+          "name": "Part 2 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的第二段。",
+          "items": [
+            {
+              "songId": "song-018",
+              "raw": "差不多姑娘"
+            },
+            {
+              "songId": "song-038",
+              "raw": "透明"
+            },
+            {
+              "songId": "song-008",
+              "raw": "孤独"
+            },
+            {
+              "songId": "song-028",
+              "raw": "冰河时代"
+            },
+            {
+              "songId": "song-044",
+              "raw": "于是"
+            },
+            {
+              "songId": "song-030",
+              "raw": "再见"
+            }
+          ]
+        },
+        {
+          "name": "Part 3 · 前段固定",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "Part 3 的稳定前段。",
+          "items": [
+            {
+              "songId": "song-010",
+              "raw": "你不是第一个离开的人"
+            },
+            {
+              "songId": "song-072",
+              "raw": "睡公主"
+            },
+            {
+              "songId": "song-006",
+              "raw": "A.I.N.Y."
+            },
+            {
+              "songId": "song-009",
+              "raw": "Where Did U Go"
+            }
+          ]
+        },
+        {
+          "name": "Part 3 · 串烧扩展候选",
+          "kind": "medley",
+          "optional": true,
+          "confidence": "medium",
+          "description": "来自深圳12天预测图与其他场次的扩展串烧；实际场次可能删减。",
+          "items": [
+            {
+              "songId": "song-049",
+              "raw": "等一个他"
+            },
+            {
+              "songId": "song-016",
+              "raw": "All About U"
+            },
+            {
+              "songId": "song-067",
+              "raw": "Good to Be Bad"
+            },
+            {
+              "songId": "song-036",
+              "raw": "Someday I'll Fly"
+            },
+            {
+              "songId": "song-059",
+              "raw": "WHAT HAVE U DONE"
+            },
+            {
+              "songId": "song-047",
+              "raw": "想讲你知"
+            }
+          ]
+        },
+        {
+          "name": "Part 3 · 后段固定",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的 Part 3 后段。",
+          "items": [
+            {
+              "songId": "song-022",
+              "raw": "你把我灌醉"
+            },
+            {
+              "songId": "song-086",
+              "raw": "你不是真正的快乐"
+            },
+            {
+              "songId": "song-003",
+              "raw": "龙卷风"
+            },
+            {
+              "songId": "song-012",
+              "raw": "红蔷薇白玫瑰"
+            },
+            {
+              "songId": "song-034",
+              "raw": "唯一"
+            },
+            {
+              "songId": "song-025",
+              "raw": "句号"
+            }
+          ]
+        },
+        {
+          "name": "Part 4 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的抒情段。",
+          "items": [
+            {
+              "songId": "song-077",
+              "raw": "GLORIA"
+            },
+            {
+              "songId": "song-033",
+              "raw": "You Raise Me Up"
+            },
+            {
+              "songId": "song-035",
+              "raw": "让世界暂停一分钟"
+            },
+            {
+              "songId": "song-064",
+              "raw": "老人与海"
+            },
+            {
+              "songId": "song-041",
+              "raw": "多远都要在一起"
+            },
+            {
+              "songId": "song-039",
+              "raw": "FIND YOU"
+            },
+            {
+              "songId": "song-001",
+              "raw": "喜欢你"
+            }
+          ]
+        },
+        {
+          "name": "Part 5 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "含 Kingdom Come / Drum Solo 与 G.E.M. + Walk On Water。",
+          "items": [
+            {
+              "songId": "song-084",
+              "raw": "Kingdom Come"
+            },
+            {
+              "songId": "song-007",
+              "raw": "夜的尽头"
+            },
+            {
+              "songId": "song-032",
+              "raw": "倒数"
+            },
+            {
+              "songId": "song-017",
+              "raw": "新的心跳"
+            },
+            {
+              "songId": "song-019",
+              "raw": "G.E.M. (Get Everybody Moving)"
+            },
+            {
+              "songId": "song-070",
+              "raw": "Walk On Water"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 固定开场",
+          "kind": "encore-fixed",
+          "optional": false,
+          "confidence": "high",
+          "description": "多场 Encore 均以《泡沫》进入。",
+          "items": [
+            {
+              "songId": "song-013",
+              "raw": "泡沫"
+            }
+          ]
+        },
+        {
+          "name": "点歌候选池 · 黄色区",
+          "kind": "request",
+          "optional": true,
+          "confidence": "medium",
+          "description": "依据对照表黄色区域与深圳预测图归纳；不是每场全部演唱。",
+          "items": [
+            {
+              "songId": "song-081",
+              "raw": "离心力"
+            },
+            {
+              "songId": "song-042",
+              "raw": "画"
+            },
+            {
+              "songId": "song-014",
+              "raw": "我的秘密"
+            },
+            {
+              "songId": "song-065",
+              "raw": "瞬间"
+            },
+            {
+              "songId": "song-066",
+              "raw": "失真"
+            },
+            {
+              "songId": "song-069",
+              "raw": "偶尔"
+            },
+            {
+              "songId": "song-054",
+              "raw": "奇迹"
+            },
+            {
+              "songId": "song-020",
+              "raw": "回忆的沙漏"
+            },
+            {
+              "songId": "song-088",
+              "raw": "写不完的温柔"
+            },
+            {
+              "songId": "song-068",
+              "raw": "盲点"
+            },
+            {
+              "songId": "song-071",
+              "raw": "有心人"
+            },
+            {
+              "songId": "song-060",
+              "raw": "18"
+            },
+            {
+              "songId": "song-083",
+              "raw": "倒流时间"
+            },
+            {
+              "songId": "song-045",
+              "raw": "让你知道"
+            },
+            {
+              "songId": "song-056",
+              "raw": "Mascara"
+            },
+            {
+              "songId": "song-063",
+              "raw": "岩石里的花"
+            },
+            {
+              "songId": "song-080",
+              "raw": "手心的蔷薇"
+            },
+            {
+              "songId": "song-079",
+              "raw": "很久以后"
+            },
+            {
+              "songId": "song-075",
+              "raw": "查克靠近"
+            },
+            {
+              "songId": "song-011",
+              "raw": "后会无期"
+            },
+            {
+              "songId": "song-051",
+              "raw": "不想回家"
+            },
+            {
+              "songId": "song-078",
+              "raw": "寂寞星球的玫瑰"
+            },
+            {
+              "songId": "song-052",
+              "raw": "两个你"
+            },
+            {
+              "songId": "song-087",
+              "raw": "我只在乎你"
+            },
+            {
+              "songId": "song-089",
+              "raw": "夜空中最亮的星"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 整首轮换候选",
+          "kind": "encore-rotation",
+          "optional": true,
+          "confidence": "medium",
+          "description": "跨站表格第40行反复出现的整首轮换；深圳具体日期仍待现场确认。",
+          "items": [
+            {
+              "songId": "song-029",
+              "raw": "情人"
+            },
+            {
+              "songId": "song-058",
+              "raw": "11"
+            },
+            {
+              "songId": "song-021",
+              "raw": "海阔天空"
+            },
+            {
+              "songId": "song-026",
+              "raw": "李香兰"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 固定收尾",
+          "kind": "closing",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照表中固定收尾。",
+          "items": [
+            {
+              "songId": "song-031",
+              "raw": "天空没有极限"
+            }
+          ]
+        },
+        {
+          "name": "惊喜 / 未官宣候选",
+          "kind": "surprise",
+          "optional": true,
+          "confidence": "low",
+          "description": "报批或粉丝图中的待官宣项目，不等同于已确认现场演唱。",
+          "items": [
+            {
+              "songId": "song-057",
+              "raw": "自由的你"
+            },
+            {
+              "songId": "song-090",
+              "raw": "新歌彩蛋（曲名待公布）"
+            }
+          ]
+        }
+      ],
+      "unmatched": []
+    },
+    {
+      "id": "builtin-iam-gloria-2-fixed-skeleton",
+      "name": "I AM GLORIA 2.0 固定骨架（低风险）",
+      "status": "predicted",
+      "builtin": true,
+      "recommended": false,
+      "description": "只保留综合预测中高置信度、跨站稳定出现的主流程与固定 Encore；不含点歌、轮换和待官宣项目。",
+      "predictionBasis": [
+        "用于只想打印大概率固定演出曲目的场景。"
+      ],
+      "sections": [
+        {
+          "name": "Part 1 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "多张跨站歌单均一致的开场段。",
+          "items": [
+            {
+              "songId": "song-024",
+              "raw": "摩天动物园"
+            },
+            {
+              "songId": "song-061",
+              "raw": "灰狼"
+            },
+            {
+              "songId": "song-023",
+              "raw": "来自天堂的魔鬼"
+            },
+            {
+              "songId": "song-015",
+              "raw": "光年之外"
+            }
+          ]
+        },
+        {
+          "name": "Part 2 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的第二段。",
+          "items": [
+            {
+              "songId": "song-018",
+              "raw": "差不多姑娘"
+            },
+            {
+              "songId": "song-038",
+              "raw": "透明"
+            },
+            {
+              "songId": "song-008",
+              "raw": "孤独"
+            },
+            {
+              "songId": "song-028",
+              "raw": "冰河时代"
+            },
+            {
+              "songId": "song-044",
+              "raw": "于是"
+            },
+            {
+              "songId": "song-030",
+              "raw": "再见"
+            }
+          ]
+        },
+        {
+          "name": "Part 3 · 前段固定",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "Part 3 的稳定前段。",
+          "items": [
+            {
+              "songId": "song-010",
+              "raw": "你不是第一个离开的人"
+            },
+            {
+              "songId": "song-072",
+              "raw": "睡公主"
+            },
+            {
+              "songId": "song-006",
+              "raw": "A.I.N.Y."
+            },
+            {
+              "songId": "song-009",
+              "raw": "Where Did U Go"
+            }
+          ]
+        },
+        {
+          "name": "Part 3 · 后段固定",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的 Part 3 后段。",
+          "items": [
+            {
+              "songId": "song-022",
+              "raw": "你把我灌醉"
+            },
+            {
+              "songId": "song-086",
+              "raw": "你不是真正的快乐"
+            },
+            {
+              "songId": "song-003",
+              "raw": "龙卷风"
+            },
+            {
+              "songId": "song-012",
+              "raw": "红蔷薇白玫瑰"
+            },
+            {
+              "songId": "song-034",
+              "raw": "唯一"
+            },
+            {
+              "songId": "song-025",
+              "raw": "句号"
+            }
+          ]
+        },
+        {
+          "name": "Part 4 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照图中稳定出现的抒情段。",
+          "items": [
+            {
+              "songId": "song-077",
+              "raw": "GLORIA"
+            },
+            {
+              "songId": "song-033",
+              "raw": "You Raise Me Up"
+            },
+            {
+              "songId": "song-035",
+              "raw": "让世界暂停一分钟"
+            },
+            {
+              "songId": "song-064",
+              "raw": "老人与海"
+            },
+            {
+              "songId": "song-041",
+              "raw": "多远都要在一起"
+            },
+            {
+              "songId": "song-039",
+              "raw": "FIND YOU"
+            },
+            {
+              "songId": "song-001",
+              "raw": "喜欢你"
+            }
+          ]
+        },
+        {
+          "name": "Part 5 · 固定骨架",
+          "kind": "main",
+          "optional": false,
+          "confidence": "high",
+          "description": "含 Kingdom Come / Drum Solo 与 G.E.M. + Walk On Water。",
+          "items": [
+            {
+              "songId": "song-084",
+              "raw": "Kingdom Come"
+            },
+            {
+              "songId": "song-007",
+              "raw": "夜的尽头"
+            },
+            {
+              "songId": "song-032",
+              "raw": "倒数"
+            },
+            {
+              "songId": "song-017",
+              "raw": "新的心跳"
+            },
+            {
+              "songId": "song-019",
+              "raw": "G.E.M. (Get Everybody Moving)"
+            },
+            {
+              "songId": "song-070",
+              "raw": "Walk On Water"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 固定开场",
+          "kind": "encore-fixed",
+          "optional": false,
+          "confidence": "high",
+          "description": "多场 Encore 均以《泡沫》进入。",
+          "items": [
+            {
+              "songId": "song-013",
+              "raw": "泡沫"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 固定收尾",
+          "kind": "closing",
+          "optional": false,
+          "confidence": "high",
+          "description": "跨站对照表中固定收尾。",
+          "items": [
+            {
+              "songId": "song-031",
+              "raw": "天空没有极限"
+            }
+          ]
+        }
+      ],
+      "unmatched": []
+    },
+    {
+      "id": "builtin-shenzhen-request-rotation-pool-2026",
+      "name": "深圳 2026 点歌与轮换候选池",
+      "status": "predicted",
+      "builtin": true,
+      "recommended": false,
+      "description": "仅包含黄色点歌区、整首轮换、串烧扩展及待官宣候选；用于额外备歌，不代表单场会全部演唱。",
+      "predictionBasis": [
+        "紫色固定区：跨站对照图中重复出现的主流程与固定 Encore。",
+        "黄色候选区：点歌或临场变动候选，不代表每场全部演唱。",
+        "整首轮换：情人、11、海阔天空、李香兰等按场次变化。",
+        "待官宣项目：仅作占位，不视作正式演出确认。"
+      ],
+      "sections": [
+        {
+          "name": "Part 3 · 串烧扩展候选",
+          "kind": "medley",
+          "optional": true,
+          "confidence": "medium",
+          "description": "来自深圳12天预测图与其他场次的扩展串烧；实际场次可能删减。",
+          "items": [
+            {
+              "songId": "song-049",
+              "raw": "等一个他"
+            },
+            {
+              "songId": "song-016",
+              "raw": "All About U"
+            },
+            {
+              "songId": "song-067",
+              "raw": "Good to Be Bad"
+            },
+            {
+              "songId": "song-036",
+              "raw": "Someday I'll Fly"
+            },
+            {
+              "songId": "song-059",
+              "raw": "WHAT HAVE U DONE"
+            },
+            {
+              "songId": "song-047",
+              "raw": "想讲你知"
+            }
+          ]
+        },
+        {
+          "name": "点歌候选池 · 黄色区",
+          "kind": "request",
+          "optional": true,
+          "confidence": "medium",
+          "description": "依据对照表黄色区域与深圳预测图归纳；不是每场全部演唱。",
+          "items": [
+            {
+              "songId": "song-081",
+              "raw": "离心力"
+            },
+            {
+              "songId": "song-042",
+              "raw": "画"
+            },
+            {
+              "songId": "song-014",
+              "raw": "我的秘密"
+            },
+            {
+              "songId": "song-065",
+              "raw": "瞬间"
+            },
+            {
+              "songId": "song-066",
+              "raw": "失真"
+            },
+            {
+              "songId": "song-069",
+              "raw": "偶尔"
+            },
+            {
+              "songId": "song-054",
+              "raw": "奇迹"
+            },
+            {
+              "songId": "song-020",
+              "raw": "回忆的沙漏"
+            },
+            {
+              "songId": "song-088",
+              "raw": "写不完的温柔"
+            },
+            {
+              "songId": "song-068",
+              "raw": "盲点"
+            },
+            {
+              "songId": "song-071",
+              "raw": "有心人"
+            },
+            {
+              "songId": "song-060",
+              "raw": "18"
+            },
+            {
+              "songId": "song-083",
+              "raw": "倒流时间"
+            },
+            {
+              "songId": "song-045",
+              "raw": "让你知道"
+            },
+            {
+              "songId": "song-056",
+              "raw": "Mascara"
+            },
+            {
+              "songId": "song-063",
+              "raw": "岩石里的花"
+            },
+            {
+              "songId": "song-080",
+              "raw": "手心的蔷薇"
+            },
+            {
+              "songId": "song-079",
+              "raw": "很久以后"
+            },
+            {
+              "songId": "song-075",
+              "raw": "查克靠近"
+            },
+            {
+              "songId": "song-011",
+              "raw": "后会无期"
+            },
+            {
+              "songId": "song-051",
+              "raw": "不想回家"
+            },
+            {
+              "songId": "song-078",
+              "raw": "寂寞星球的玫瑰"
+            },
+            {
+              "songId": "song-052",
+              "raw": "两个你"
+            },
+            {
+              "songId": "song-087",
+              "raw": "我只在乎你"
+            },
+            {
+              "songId": "song-089",
+              "raw": "夜空中最亮的星"
+            }
+          ]
+        },
+        {
+          "name": "Encore · 整首轮换候选",
+          "kind": "encore-rotation",
+          "optional": true,
+          "confidence": "medium",
+          "description": "跨站表格第40行反复出现的整首轮换；深圳具体日期仍待现场确认。",
+          "items": [
+            {
+              "songId": "song-029",
+              "raw": "情人"
+            },
+            {
+              "songId": "song-058",
+              "raw": "11"
+            },
+            {
+              "songId": "song-021",
+              "raw": "海阔天空"
+            },
+            {
+              "songId": "song-026",
+              "raw": "李香兰"
+            }
+          ]
+        },
+        {
+          "name": "惊喜 / 未官宣候选",
+          "kind": "surprise",
+          "optional": true,
+          "confidence": "low",
+          "description": "报批或粉丝图中的待官宣项目，不等同于已确认现场演唱。",
+          "items": [
+            {
+              "songId": "song-057",
+              "raw": "自由的你"
+            },
+            {
+              "songId": "song-090",
+              "raw": "新歌彩蛋（曲名待公布）"
+            }
+          ]
+        }
+      ],
+      "unmatched": []
+    }
+  ]
+}

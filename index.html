@@ -27,7 +27,7 @@
 </button>
 <a aria-label="回到歌词本首页" class="brand" href="#">
 <span class="brand-mark">G</span>
-<span class="brand-copy"><b>I AM GLORIA</b><small>2026 多版本双语 · 自适应单页版</small></span>
+<span class="brand-copy"><b>I AM GLORIA</b><small>2026 多版本双语 · v5.1.1</small></span>
 </a>
 <div class="topbar-actions">
 <button aria-label="沉浸阅读" class="icon-button" id="focusButton" title="沉浸阅读" type="button">
@@ -47,7 +47,7 @@
 <main class="container-fluid app-main">
 <section aria-labelledby="heroTitle" class="hero-card">
 <div class="hero-content">
-<div class="eyebrow">G.E.M. · I AM GLORIA · 2026 多版本双语 · 自适应单页版</div>
+<div class="eyebrow">G.E.M. · I AM GLORIA · 2026 多版本双语 · v5.1.1</div>
 <h1 id="heroTitle">把演唱会记忆，做成一本真正好读的歌词本。</h1>
 <p>四张截图逐项归一，并补入 2026 已发生现场的遗漏曲目；每首歌可保存多个版本，每个版本可同时保存外语原文与中文翻译。打印时会实测页面高度，自动放大短歌、合并超短歌词行，并在需要时启用左右双栏；默认让单版本歌曲控制在 1 页，多版本歌曲控制在最多 2 页。</p>
 <div class="hero-actions">
@@ -78,19 +78,29 @@
 </label>
 <select aria-label="筛选曲目" class="form-select form-select-sm" id="filterSelect">
 <option value="all">全部曲目</option>
-<option value="2026-main">2026 主歌单</option>
-<option value="2026-encore">2026 返场</option>
-<option value="2026-medley">2026 特别串烧</option>
-<option value="pending">报批新增 / 待官宣</option>
-<option value="live-extra">2026 现场补充</option>
+<optgroup label="当前演出歌单">
+<option value="setlist-core">当前歌单 · 固定章节</option>
+<option value="setlist-all">当前歌单 · 含可选章节</option>
+<option value="setlist-request">点歌 / 串烧 / 惊喜候选</option>
+<option value="setlist-rotation">Encore 整首轮换候选</option>
+</optgroup>
+<optgroup label="曲目状态与个人进度">
+<option value="2026-main">2026 主歌单标签</option>
+<option value="2026-encore">2026 返场标签</option>
+<option value="2026-medley">2026 特别串烧标签</option>
+<option value="pending">报备新增 / 待官宣</option>
+<option value="live-extra">2026 已发生现场补充</option>
 <option value="filled">已导入歌词</option>
 <option value="empty">尚未导入</option>
 <option value="favorite">我的收藏</option>
 <option value="learned">已熟悉</option>
-<option value="image1">来自截图 1</option>
-<option value="image2">来自截图 2</option>
-<option value="image3">来自截图 3</option>
-<option value="image4">来自截图 4（深圳预测图）</option>
+</optgroup>
+<optgroup label="原始资料来源">
+<option value="image1">44 首目录截图（43 首可见）</option>
+<option value="image2">深圳演出报备曲库（85 项）</option>
+<option value="image3">37 首巡演目录截图</option>
+<option value="image4">深圳站返场预测图</option>
+</optgroup>
 </select>
 <select aria-label="曲目排序" class="form-select form-select-sm" id="sortSelect">
 <option value="setlist">按选定演出歌单</option>
@@ -295,8 +305,9 @@
 <fieldset class="option-card">
 <legend>范围</legend>
 <label class="radio-tile"><input name="printScope" type="radio" value="current"/><span><b>当前歌曲</b><small>只输出正在阅读的一首</small></span></label>
-<label class="radio-tile"><input checked="" name="printScope" type="radio" value="filtered"/><span><b>当前筛选结果</b><small>按左侧目录中的顺序</small></span></label>
-<label class="radio-tile"><input name="printScope" type="radio" value="all"/><span><b>全部曲目</b><small>89 个曲目条目（含 1 个待定占位）</small></span></label>
+<label class="radio-tile"><input checked="" name="printScope" type="radio" value="setlist"/><span><b>仅当前演出歌单</b><small>忽略筛选，严格按 Part / Encore 顺序</small></span></label>
+<label class="radio-tile"><input name="printScope" type="radio" value="filtered"/><span><b>当前目录筛选结果</b><small>输出左侧当前可见的歌曲</small></span></label>
+<label class="radio-tile"><input name="printScope" type="radio" value="all"/><span><b>全部曲目库</b><small>89 个曲目条目（含 1 个待定占位）</small></span></label>
 </fieldset>
 </div>
 <div class="print-advanced-grid mt-3">
@@ -308,13 +319,16 @@
 </div>
 <div class="print-switches mt-3">
 <label class="form-check form-switch"><input checked="" class="form-check-input" id="printCover" type="checkbox"/><span class="form-check-label">加入全彩封面</span></label>
-<label class="form-check form-switch"><input checked="" class="form-check-input" id="printToc" type="checkbox"/><span class="form-check-label">加入曲目目录</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printToc" type="checkbox"/><span class="form-check-label">加入可点击曲目目录</span></label>
+<label class="form-check form-switch"><input checked="" class="form-check-input" id="printSetlistOptional" type="checkbox"/><span class="form-check-label">包含歌单中的可选章节（点歌 / 轮换 / 惊喜）</span></label>
 <label class="form-check form-switch"><input checked="" class="form-check-input" id="printEmpty" type="checkbox"/><span class="form-check-label">包含尚未导入歌词的曲目</span></label>
 <label class="form-check form-switch"><input checked="" class="form-check-input" id="printNotes" type="checkbox"/><span class="form-check-label">显示版本与核实说明</span></label>
 <label class="form-check form-switch"><input checked="" class="form-check-input" id="printCompact" type="checkbox"/><span class="form-check-label">清理网页复制产生的多余空行</span></label>
 </div>
-<div class="booklet-tip mt-3"><b>自适应单页排版：</b>原始歌词不会被修改。系统会为每首歌实测一栏、双栏、短句合并、双语左右对照等方案，并寻找能放进目标页数的最大字号。短歌会自动放大；只有在选择“可读性优先”时才允许普通续页。</div>
-<div class="booklet-tip mt-2"><b>A4 对折：</b>打印对话框请选择双面打印，通常使用“短边翻转”，缩放保持 100%。不同打印机方向定义可能不同，正式打印前建议先用 4 页测试。</div>
+<div class="print-logic-tip mt-3"><b>三个概念：</b>“筛选”只改变网页左侧显示；“歌单”定义演出歌曲与顺序；“打印范围”决定本次 PDF 实际输出什么。选择“仅当前演出歌单”时不会受网页筛选影响。</div>
+<div class="booklet-tip mt-2"><b>自适应单页排版：</b>原始歌词不会被修改。系统会为每首歌实测一栏、双栏、短句合并、双语左右对照等方案，并寻找能放进目标页数的最大字号。短歌会自动放大；若实测会碰到页码安全区，将自动回退字号。</div>
+<div class="booklet-tip mt-2"><b>A4 对折：</b>生成的是已经拼好页序的横向 A4 印刷面。系统打印请选择 A4 横向、双面、短边翻转、每张 1 页、100% 实际尺寸；不要再次选择“小册子”或“每张 2 页”。</div>
+<div class="booklet-preview mt-2" id="bookletPreview" hidden></div>
 <div class="print-estimate mt-3" id="printEstimate"></div>
 </div>
 <div class="modal-footer">
@@ -333,7 +347,7 @@
 <button aria-label="关闭" class="btn-close" data-bs-dismiss="modal" type="button"></button>
 </div>
 <div class="modal-body">
-<div class="privacy-callout"><b>排序逻辑：</b>选定歌单中的歌曲按 Part / Encore 等真实顺序输出；未列入歌单的曲目会自动接在后面，先放“返场候选”，再放“额外歌曲”。歌单会写入 JSON 和含歌词离线 HTML。</div>
+<div class="privacy-callout"><b>歌单与筛选互不冲突：</b>歌单用于定义 Part / Encore 等演出顺序；网页筛选只用于临时找歌。打印时选择“仅当前演出歌单”即可只导出歌单歌曲；选择“全部曲目库”时，歌单内歌曲排在前面，其他歌曲随后。</div>
 <div class="setlist-grid mt-3">
 <div class="action-card">
 <h3>当前歌单</h3>
@@ -355,7 +369,7 @@
 </div>
 <div class="bulk-paste mt-3">
 <label class="form-label" for="setlistEditor"><b>按演出顺序粘贴</b></label>
-<p class="small text-secondary">用 <code>## Part 1</code>、<code>## Encore</code> 等标题分段，每行一首。别名会自动匹配；无法匹配的行会提示但不会丢失。</p>
+<p class="small text-secondary">用 <code>## Part 1</code>、<code>## Encore</code> 等标题分段，每行一首。可选章节可写成 <code>## [可选] 点歌候选</code>；别名会自动匹配，无法匹配的行会提示但不会丢失。</p>
 <textarea class="form-control setlist-editor" id="setlistEditor" placeholder="## Part 1
 摩天动物园
 灰狼

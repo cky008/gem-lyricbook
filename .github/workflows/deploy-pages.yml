@@ -16,6 +16,9 @@ jobs:
   build:
     name: 构建站点
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
     steps:
       - name: 检出仓库
         uses: actions/checkout@v5
@@ -34,6 +37,8 @@ jobs:
 
       - name: 配置 GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: 上传 Pages 构建产物
         uses: actions/upload-pages-artifact@v4

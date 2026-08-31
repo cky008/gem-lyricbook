@@ -340,4 +340,4 @@ git push origin vX.Y.Z
 
 提交代码即表示你有权提交该内容，并同意项目维护者按照仓库 `LICENSE` 管理该贡献。
 
-Copyright © 2026 iocky.com.
+Copyright © 2026 iocky.com

@@ -1013,7 +1013,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
   .site-footer { display: none !important; }
 }
 
-/* ===== v5.1.1 setlist-aware TOC, booklet preview and mobile modal safety ===== */
+/* ===== v5.1.2 adaptive TOC, booklet preview and mobile modal safety ===== */
 .print-logic-tip {
   padding: .9rem 1rem;
   border: 1px solid color-mix(in srgb, var(--brand) 22%, var(--line));
@@ -1044,10 +1044,24 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 .print-root .print-toc-title { margin-bottom: 1.2mm; }
 .print-root .print-toc-note { margin: 0 0 4mm; color: #8d8493; font-size: 2.15mm; line-height: 1.35; }
 .print-root .print-toc-flow {
-  column-count: 3;
+  column-count: 1;
   column-gap: 7mm;
-  column-rule: .18mm solid #e3dce7;
   column-fill: balance;
+}
+.print-root .print-toc-page.print-toc-columns-1 .print-toc-flow {
+  column-count: 1;
+  column-rule: 0;
+  column-fill: auto;
+  max-width: 164mm;
+  margin-inline: auto;
+}
+.print-root .print-toc-page.print-toc-columns-2 .print-toc-flow {
+  column-count: 2;
+  column-rule: .18mm solid #e3dce7;
+}
+.print-root .print-toc-page.print-toc-columns-3 .print-toc-flow {
+  column-count: 3;
+  column-rule: .18mm solid #e3dce7;
 }
 .print-root .print-toc-section { break-inside: auto; margin: 0 0 3.2mm; }
 .print-root .print-toc-section h3 {
@@ -1088,10 +1102,32 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 }
 .print-root .print-toc-entry a:hover { color: #5b21b6; }
 
+/* 少于约 40 首时优先使用单栏、较大字号，把整页高度真正利用起来。 */
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-title { margin-top: 4mm; font-size: 9.4mm; }
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-note { margin-bottom: 4.8mm; font-size: 2.35mm; }
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-section { margin-bottom: 3.7mm; }
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-section h3 { margin-bottom: 1.35mm; padding-bottom: .85mm; font-size: 3.55mm; }
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-list { gap: .62mm; }
+.print-root .print-toc-page.print-toc-density-roomy .print-toc-entry {
+  grid-template-columns: 6.3mm minmax(0, 1fr) auto;
+  gap: 1.8mm;
+  padding-bottom: .62mm;
+  font-size: 3.22mm;
+  line-height: 1.22;
+}
+
+.print-root .print-toc-page.print-toc-density-standard .print-toc-entry { font-size: 2.78mm; line-height: 1.18; }
+.print-root .print-toc-page.print-toc-density-compact .print-toc-section { margin-bottom: 2.7mm; }
+.print-root .print-toc-page.print-toc-density-compact .print-toc-section h3 { margin-bottom: .9mm; font-size: 2.9mm; }
+.print-root .print-toc-page.print-toc-density-compact .print-toc-list { gap: .35mm; }
+.print-root .print-toc-page.print-toc-density-compact .print-toc-entry { padding-bottom: .32mm; font-size: 2.45mm; line-height: 1.14; }
+
 .print-root.print-size-a5 .print-toc-note,
 .print-root.print-size-booklet .booklet-half .print-toc-note { margin-bottom: 2.3mm; font-size: 1.45mm; }
-.print-root.print-size-a5 .print-toc-flow,
-.print-root.print-size-booklet .booklet-half .print-toc-flow { column-count: 1; column-rule: 0; }
+.print-root.print-size-a5 .print-toc-page.print-toc-columns-1 .print-toc-flow,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-columns-1 .print-toc-flow { max-width: none; }
+.print-root.print-size-a5 .print-toc-page.print-toc-columns-2 .print-toc-flow,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-columns-2 .print-toc-flow { column-gap: 4mm; column-rule-width: .14mm; }
 .print-root.print-size-a5 .print-toc-section,
 .print-root.print-size-booklet .booklet-half .print-toc-section { margin-bottom: 2mm; }
 .print-root.print-size-a5 .print-toc-section h3,
@@ -1102,6 +1138,27 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 .print-root.print-size-booklet .booklet-half .print-toc-list { gap: .35mm; }
 .print-root.print-size-a5 .print-toc-entry,
 .print-root.print-size-booklet .booklet-half .print-toc-entry { grid-template-columns: 5mm minmax(0, 1fr) auto; gap: 1.1mm; padding-bottom: .35mm; font-size: 1.95mm; line-height: 1.16; }
+
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-title,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-title { margin-top: 2.7mm; margin-bottom: 1mm; font-size: 6.6mm; }
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-note,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-note { margin-bottom: 2.7mm; font-size: 1.55mm; }
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-section,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-section { margin-bottom: 2.2mm; }
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-section h3,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-section h3 { margin-bottom: .8mm; padding-bottom: .55mm; font-size: 2.55mm; }
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-list,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-list { gap: .42mm; }
+.print-root.print-size-a5 .print-toc-page.print-toc-density-roomy .print-toc-entry,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-roomy .print-toc-entry {
+  grid-template-columns: 5.3mm minmax(0, 1fr) auto;
+  gap: 1.15mm;
+  padding-bottom: .42mm;
+  font-size: 2.32mm;
+  line-height: 1.19;
+}
+.print-root.print-size-a5 .print-toc-page.print-toc-density-compact .print-toc-entry,
+.print-root.print-size-booklet .booklet-half .print-toc-page.print-toc-density-compact .print-toc-entry { font-size: 1.82mm; line-height: 1.12; padding-bottom: .25mm; }
 
 @media (max-width: 575.98px) {
   .booklet-preview-sides { grid-template-columns: 1fr; }

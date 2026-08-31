@@ -7,13 +7,19 @@
     return;
   }
 
-  const APP_VERSION = '5.1.1';
+  const APP_VERSION = '5.1.2';
   const COPYRIGHT_NOTICE = 'Copyright © 2026 iocky.com';
   const BASE_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v2';
   const LEGACY_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v1';
   const STORAGE_KEY = window.GEM_EMBEDDED_ID ? `${BASE_STORAGE_KEY}:${window.GEM_EMBEDDED_ID}` : BASE_STORAGE_KEY;
   const fontScales = [0.84, 0.92, 1, 1.12, 1.26];
   const SETLIST_DATA = window.GEM_LYRICBOOK_SETLISTS || {};
+  const TOC_LAYOUT = window.GEM_TOC_LAYOUT;
+  if (!TOC_LAYOUT?.paginateTocGroups) {
+    document.body.innerHTML = '<main style="padding:2rem;font-family:sans-serif">目录排版模块加载失败。</main>';
+    return;
+  }
+  const { paginateTocGroups } = TOC_LAYOUT;
   const sourceShort = {
     image1: '44 首目录截图（43 首可见）',
     image2: '深圳演出报备曲库（85 项）',
@@ -1888,7 +1894,7 @@
 
       if (sections.length) {
         groups.push({
-          title: settings.scope === 'setlist' ? setlist.name : `当前演出歌单 · ${setlist.name}`,
+          title: setlist.name, // Kicker 已区分“仅歌单”与“全部曲库”，避免长前缀挤占目录高度。
           kicker: settings.scope === 'setlist' ? 'SETLIST CONTENTS' : 'SETLIST FIRST',
           type: 'setlist',
           sections,
@@ -1919,54 +1925,6 @@
     return groups;
   }
 
-  function paginateTocGroups(groups, targetSize) {
-    const capacity = targetSize === 'a4' ? 104 : 24;
-    const headingWeight = targetSize === 'a4' ? 2.35 : 1.8;
-    const batches = [];
-
-    groups.forEach((group) => {
-      let pageIndex = 0;
-      let current = null;
-      const startPage = () => ({
-        title: pageIndex ? `${group.title}（续）` : group.title,
-        kicker: group.kicker,
-        type: group.type,
-        sections: [],
-        weight: 0,
-      });
-      const flush = () => {
-        if (!current || !current.sections.length) return;
-        batches.push(current);
-        pageIndex += 1;
-        current = null;
-      };
-
-      group.sections.forEach((section) => {
-        let offset = 0;
-        while (offset < section.songs.length) {
-          if (!current) current = startPage();
-          const headingNeeded = headingWeight;
-          let room = Math.floor(capacity - current.weight - headingNeeded);
-          if (room < 1) {
-            flush();
-            current = startPage();
-            room = Math.floor(capacity - headingWeight);
-          }
-          const take = Math.max(1, Math.min(room, section.songs.length - offset));
-          current.sections.push({
-            ...section,
-            name: offset ? `${section.name}（续）` : section.name,
-            songs: section.songs.slice(offset, offset + take),
-          });
-          current.weight += headingWeight + take;
-          offset += take;
-          if (offset < section.songs.length) flush();
-        }
-      });
-      flush();
-    });
-    return batches;
-  }
 
   function estimateTocPageCount(songList, settings, targetSize) {
     if (!settings.toc || !songList.length) return 0;
@@ -2729,12 +2687,17 @@
         return `<section class="print-toc-section"><h3>${escapeHTML(section.name)}${optional}</h3><div class="print-toc-list">${entries}</div></section>`;
       }).join('');
       const pageNo = pages.length + 1;
+      const tocClasses = [
+        'print-toc-page',
+        `print-toc-columns-${batch.columns || 1}`,
+        `print-toc-density-${batch.density || 'compact'}`,
+      ].join(' ');
       pages.push(pageShell(`
         <div class="print-running-head"><span>G.E.M. · I AM GLORIA</span><span>${escapeHTML(batch.kicker)}</span></div>
         <h2 class="print-toc-title">${escapeHTML(batch.title)}</h2>
         <p class="print-toc-note">点击电子 PDF 中的歌名，可跳转到对应歌词页。</p>
-        <div class="print-toc-flow print-toc-${escapeHTML(batch.type)}">${sections}</div>
-      `, 'print-toc-page', pageNo));
+        <div class="print-toc-flow print-toc-${escapeHTML(batch.type)}" data-toc-columns="${batch.columns || 1}" data-toc-density="${escapeHTML(batch.density || 'compact')}">${sections}</div>
+      `, tocClasses, pageNo));
     });
 
     songPlans.forEach(({ song, pages: songPages }) => {
@@ -3021,7 +2984,12 @@
         versionsWithContent: songs.reduce((sum, song) => sum + versionsFor(song, false).filter(versionHasContent).length, 0),
       };
     },
-    async buildPrint({ size = 'a4', scope = 'all', pagePolicy = 'limit', versionMode = 'default', songIds = [], includeEmpty = false, includeOptionalSetlistSections = true, lineFlow = 'auto', columns = 'auto', bilingual = 'auto', cover = false, toc = true } = {}) {
+    async buildPrint({ size = 'a4', scope = 'all', pagePolicy = 'limit', versionMode = 'default', songIds = [], includeEmpty = false, includeOptionalSetlistSections = true, lineFlow = 'auto', columns = 'auto', bilingual = 'auto', cover = false, toc = true, keepRendered = false } = {}) {
+      // Mirror the production print path: wait for font metrics and a layout frame
+      // before measuring. This avoids transient false overflow reports in headless
+      // tests and in devices that finish loading system fonts after app startup.
+      if (document.fonts?.ready) await document.fonts.ready;
+      await new Promise((resolve) => window.requestAnimationFrame(() => window.requestAnimationFrame(resolve)));
       const settings = {
         size,
         scope,
@@ -3065,16 +3033,33 @@
         totalPages: pageNodes.length,
         physicalPages: size === 'booklet' ? $$('.booklet-sheet', elements.printRoot).length : pageNodes.length,
         overflowPages,
+        tocPages: result.tocBatches.length,
+        tocLayouts: result.tocBatches.map((batch) => ({
+          title: batch.title,
+          columns: batch.columns || 1,
+          density: batch.density || 'compact',
+          songs: batch.sections.reduce((sum, section) => sum + section.songs.length, 0),
+          weight: Number((batch.weight || 0).toFixed(2)),
+          capacity: batch.capacity || null,
+        })),
         tocLinks,
         singleVersionHeadings,
         songs: songsSummary,
       };
-      cleanupPrint();
+      if (keepRendered) {
+        elements.dynamicPrintStyle.textContent = size === 'booklet'
+          ? '@page { size: A4 landscape; margin: 0; } * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }'
+          : `@page { size: ${size.toUpperCase()} portrait; margin: 0; } * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }`;
+        elements.printRoot.className = `print-root print-size-${size}`;
+      } else {
+        cleanupPrint();
+      }
       return response;
     },
     openSidebar,
     closeSidebar,
     releaseStaleBodyLock,
+    cleanupPrint,
     setActiveSetlist(id) {
       if (!state.setlists.some((setlist) => setlist.id === id)) return false;
       state.activeSetlistId = id;

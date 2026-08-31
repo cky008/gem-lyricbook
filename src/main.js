@@ -1,3 +1,4 @@
+import * as tocLayout from './print/toc-layout.js';
 const dataUrl = new URL('./data/songs.json', import.meta.url);
 const setlistsUrl = new URL('./data/setlists.json', import.meta.url);
 
@@ -10,6 +11,7 @@ if (!setlistsResponse.ok) throw new Error(`歌单数据加载失败：HTTP ${set
 
 window.GEM_LYRICBOOK_DATA = await dataResponse.json();
 window.GEM_LYRICBOOK_SETLISTS = await setlistsResponse.json();
-window.GEM_APP_VERSION = '5.1.1';
+window.GEM_TOC_LAYOUT = tocLayout;
+window.GEM_APP_VERSION = '5.1.2';
 
 await import('./app.js');

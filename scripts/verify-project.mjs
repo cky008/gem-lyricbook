@@ -9,6 +9,7 @@ const pkg = JSON.parse(await fs.readFile(path.join(root, 'package.json'), 'utf8'
 const html = await fs.readFile(path.join(root, 'index.html'), 'utf8');
 const main = await fs.readFile(path.join(root, 'src/main.js'), 'utf8');
 const app = await fs.readFile(path.join(root, 'src/app.js'), 'utf8');
+const tocLayout = await fs.readFile(path.join(root, 'src/print/toc-layout.js'), 'utf8');
 
 const errors = [];
 const ids = new Set();
@@ -63,6 +64,12 @@ for (const marker of [
 }
 if (!html.includes('value="setlist"')) errors.push('打印范围缺少“仅当前演出歌单”');
 if (!app.includes('href="#print-song-')) errors.push('打印目录缺少内部跳转链接');
+if (!tocLayout.includes('chooseTocLayout') || !tocLayout.includes('paginateTocGroups')) {
+  errors.push('目录布局模块缺少自适应栏数或分页入口');
+}
+if (!tocLayout.includes("columns: 1, capacity: 50") || !tocLayout.includes("columns: 1, capacity: 48")) {
+  errors.push('目录布局模块缺少 A4/A5 单栏单页基准');
+}
 
 if (!main.includes(`window.GEM_APP_VERSION = '${pkg.version}'`)) {
   errors.push('src/main.js 中的应用版本与 package.json 不一致');
@@ -74,6 +81,7 @@ if (!main.includes('GEM_LYRICBOOK_SETLISTS')) errors.push('src/main.js 未加载
 
 for (const requiredFile of [
   'README.md',
+  'AGENTS.md',
   'CHANGELOG.md',
   'CONTRIBUTING.md',
   'SECURITY.md',
@@ -81,10 +89,12 @@ for (const requiredFile of [
   '.github/workflows/deploy-pages.yml',
   'docs/DEPLOYMENT.md',
   'docs/PRINTING.md',
+  'docs/TOC_LAYOUT.md',
   'docs/DATA_FORMAT.md',
   'docs/SETLIST_PREDICTION.md',
   'docs/IOS_SCROLL_FIX.md',
   'src/data/setlists.json',
+  'src/print/toc-layout.js',
   'examples/setlists/深圳站2026_预测歌单合集.json',
 ]) {
   try {

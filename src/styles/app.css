@@ -555,7 +555,14 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  padding: 14mm 15mm 13mm;
+  padding: 14mm 15mm 15mm;
+}
+
+.print-root .print-page-content {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .print-root .print-cover {
@@ -601,7 +608,7 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
 
 /* A5 logical pages: used both for standalone A5 and each half of a booklet. */
 .print-root.print-size-a5 .print-page-inner,
-.print-root.print-size-booklet .booklet-half .print-page-inner { padding: 8.5mm 9mm 8mm; }
+.print-root.print-size-booklet .booklet-half .print-page-inner { padding: 8.5mm 9mm 10mm; }
 .print-root.print-size-a5 .print-cover::before,
 .print-root.print-size-booklet .booklet-half .print-cover::before { inset: 5mm; border-radius: 4mm; }
 .print-root.print-size-a5 .print-cover-content,
@@ -955,7 +962,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
   padding-top: var(--fit-section-gap, 3mm);
 }
 
-.print-root .print-meta-compact .print-page-inner { padding-top: 10.5mm; padding-bottom: 9.5mm; }
+.print-root .print-meta-compact .print-page-inner { padding-top: 10.5mm; padding-bottom: 13mm; }
 .print-root .print-meta-compact .print-running-head { padding-bottom: 2mm; font-size: 2.2mm; }
 .print-root .print-meta-compact .print-song-title { margin: 3.4mm 0 1.1mm; font-size: 7.2mm; }
 .print-root .print-meta-compact .print-song-subtitle { font-size: 2.4mm; line-height: 1.25; }
@@ -967,7 +974,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 .print-root .print-meta-compact .print-version-note { margin-bottom: 1.2mm; line-height: 1.25; }
 .print-root .print-meta-compact .print-lyric-label { margin-bottom: .7mm; }
 
-.print-root .print-meta-minimal .print-page-inner { padding-top: 7mm; padding-bottom: 7mm; }
+.print-root .print-meta-minimal .print-page-inner { padding-top: 7mm; padding-bottom: 13mm; }
 .print-root .print-meta-minimal .print-running-head { padding-bottom: 1.2mm; font-size: 1.75mm; }
 .print-root .print-meta-minimal .print-song-title { margin: 2mm 0 .7mm; font-size: 5.6mm; }
 .print-root .print-meta-minimal .print-song-subtitle,
@@ -979,7 +986,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 .print-root .print-meta-minimal .print-lyric-label { margin-bottom: .45mm; }
 
 .print-root.print-size-a5 .print-meta-compact .print-page-inner,
-.print-root.print-size-booklet .booklet-half .print-meta-compact .print-page-inner { padding: 6.2mm 7mm 6mm; }
+.print-root.print-size-booklet .booklet-half .print-meta-compact .print-page-inner { padding: 6.2mm 7mm 8.5mm; }
 .print-root.print-size-a5 .print-meta-compact .print-running-head,
 .print-root.print-size-booklet .booklet-half .print-meta-compact .print-running-head { padding-bottom: 1.2mm; font-size: 1.55mm; }
 .print-root.print-size-a5 .print-meta-compact .print-song-title,
@@ -994,7 +1001,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 .print-root.print-size-booklet .booklet-half .print-meta-compact .print-version-heading small { font-size: 1.25mm; }
 
 .print-root.print-size-a5 .print-meta-minimal .print-page-inner,
-.print-root.print-size-booklet .booklet-half .print-meta-minimal .print-page-inner { padding: 4.6mm 5.3mm 4.7mm; }
+.print-root.print-size-booklet .booklet-half .print-meta-minimal .print-page-inner { padding: 4.6mm 5.3mm 8.2mm; }
 .print-root.print-size-a5 .print-meta-minimal .print-running-head,
 .print-root.print-size-booklet .booklet-half .print-meta-minimal .print-running-head { padding-bottom: .7mm; font-size: 1.25mm; }
 .print-root.print-size-a5 .print-meta-minimal .print-song-title,
@@ -1004,4 +1011,98 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
 
 @media print {
   .site-footer { display: none !important; }
+}
+
+/* ===== v5.1.1 setlist-aware TOC, booklet preview and mobile modal safety ===== */
+.print-logic-tip {
+  padding: .9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, var(--line));
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--brand) 7%, var(--paper));
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: .82rem;
+}
+.print-logic-tip b { color: var(--ink); }
+
+.booklet-preview {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--paper-deep) 88%, transparent);
+}
+.booklet-preview-copy { display: grid; gap: .2rem; }
+.booklet-preview-copy small { color: var(--ink-soft); }
+.booklet-preview-sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: .8rem; }
+.booklet-preview-side { display: grid; grid-template-columns: auto 1fr 1fr; align-items: stretch; gap: .35rem; }
+.booklet-preview-side > span { display: grid; place-items: center; padding: .35rem; border-radius: 8px; background: var(--paper); color: var(--ink-soft); font-size: .72rem; writing-mode: vertical-rl; }
+.booklet-preview-side > div { min-height: 72px; display: grid; place-items: center; align-content: center; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+.booklet-preview-side b { font-family: Georgia, serif; font-size: 1.35rem; }
+.booklet-preview-side i { color: var(--ink-soft); font-size: .68rem; font-style: normal; }
+.booklet-preview p { margin: .75rem 0 0; color: var(--ink-soft); font-size: .78rem; line-height: 1.55; }
+
+.print-root .print-toc-title { margin-bottom: 1.2mm; }
+.print-root .print-toc-note { margin: 0 0 4mm; color: #8d8493; font-size: 2.15mm; line-height: 1.35; }
+.print-root .print-toc-flow {
+  column-count: 3;
+  column-gap: 7mm;
+  column-rule: .18mm solid #e3dce7;
+  column-fill: balance;
+}
+.print-root .print-toc-section { break-inside: auto; margin: 0 0 3.2mm; }
+.print-root .print-toc-section h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4mm;
+  margin: 0 0 1.2mm;
+  padding-bottom: .75mm;
+  border-bottom: .35mm solid #9f7aea;
+  color: #4c1d95;
+  font-size: 3.15mm;
+  line-height: 1.2;
+  break-after: avoid-column;
+}
+.print-root .toc-optional {
+  display: inline-block;
+  padding: .35mm 1mm;
+  border-radius: 99mm;
+  background: #fff3c4;
+  color: #805b00;
+  font-size: 1.65mm;
+  font-weight: 600;
+}
+.print-root .print-toc-list { display: grid; gap: .55mm; }
+.print-root .print-toc-entry {
+  break-inside: avoid;
+  grid-template-columns: 5.5mm minmax(0, 1fr) auto;
+  gap: 1.4mm;
+  padding-bottom: .45mm;
+  font-size: 2.62mm;
+  line-height: 1.18;
+}
+.print-root .print-toc-entry a {
+  min-width: 0;
+  color: #18121f;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.print-root .print-toc-entry a:hover { color: #5b21b6; }
+
+.print-root.print-size-a5 .print-toc-note,
+.print-root.print-size-booklet .booklet-half .print-toc-note { margin-bottom: 2.3mm; font-size: 1.45mm; }
+.print-root.print-size-a5 .print-toc-flow,
+.print-root.print-size-booklet .booklet-half .print-toc-flow { column-count: 1; column-rule: 0; }
+.print-root.print-size-a5 .print-toc-section,
+.print-root.print-size-booklet .booklet-half .print-toc-section { margin-bottom: 2mm; }
+.print-root.print-size-a5 .print-toc-section h3,
+.print-root.print-size-booklet .booklet-half .print-toc-section h3 { margin-bottom: .75mm; padding-bottom: .5mm; font-size: 2.3mm; }
+.print-root.print-size-a5 .toc-optional,
+.print-root.print-size-booklet .booklet-half .toc-optional { font-size: 1.2mm; }
+.print-root.print-size-a5 .print-toc-list,
+.print-root.print-size-booklet .booklet-half .print-toc-list { gap: .35mm; }
+.print-root.print-size-a5 .print-toc-entry,
+.print-root.print-size-booklet .booklet-half .print-toc-entry { grid-template-columns: 5mm minmax(0, 1fr) auto; gap: 1.1mm; padding-bottom: .35mm; font-size: 1.95mm; line-height: 1.16; }
+
+@media (max-width: 575.98px) {
+  .booklet-preview-sides { grid-template-columns: 1fr; }
 }

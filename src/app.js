@@ -7,13 +7,20 @@
     return;
   }
 
-  const APP_VERSION = '5.0.0';
+  const APP_VERSION = '5.1.1';
   const COPYRIGHT_NOTICE = 'Copyright © 2026 iocky.com';
   const BASE_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v2';
   const LEGACY_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v1';
   const STORAGE_KEY = window.GEM_EMBEDDED_ID ? `${BASE_STORAGE_KEY}:${window.GEM_EMBEDDED_ID}` : BASE_STORAGE_KEY;
   const fontScales = [0.84, 0.92, 1, 1.12, 1.26];
-  const sourceShort = { image1: '截图 1', image2: '截图 2', image3: '截图 3', image4: '截图 4', web2026: '2026 现场补充' };
+  const SETLIST_DATA = window.GEM_LYRICBOOK_SETLISTS || {};
+  const sourceShort = {
+    image1: '44 首目录截图（43 首可见）',
+    image2: '深圳演出报备曲库（85 项）',
+    image3: '37 首巡演目录截图',
+    image4: '深圳站返场预测图',
+    web2026: '2026 现场核实补充',
+  };
   const songs = DATA.songs.filter((song) => song.title !== '其他');
   const permitOther = DATA.songs.find((song) => song.title === '其他');
 
@@ -106,7 +113,9 @@
     printLineFlow: $('#printLineFlow'),
     printColumns: $('#printColumns'),
     printBilingual: $('#printBilingual'),
+    printSetlistOptional: $('#printSetlistOptional'),
     printEstimate: $('#printEstimate'),
+    bookletPreview: $('#bookletPreview'),
     setlistSelect: $('#setlistSelect'),
     setlistName: $('#setlistName'),
     setlistStatus: $('#setlistStatus'),
@@ -130,24 +139,32 @@
   }
 
   function builtinSetlists() {
+    const presets = Array.isArray(SETLIST_DATA.presets) ? SETLIST_DATA.presets : [];
+    if (presets.length) return presets.map((setlist, index) => normalizeSetlist({ ...setlist, builtin: true }, index));
+
     const sections = [
       ['Part 1', ['摩天动物园', '灰狼', '来自天堂的魔鬼', '光年之外']],
       ['Part 2', ['差不多姑娘', '透明', '孤独', '冰河时代', '于是', '再见']],
       ['Part 3', ['你不是第一个离开的人', '睡公主', 'A.I.N.Y.', 'Where Did U Go', 'WHAT HAVE U DONE', '想讲你知', '你把我灌醉', '你不是真正的快乐', '龙卷风', '红蔷薇白玫瑰', '唯一', '句号']],
       ['Part 4', ['GLORIA', 'You Raise Me Up', '让世界暂停一分钟', '老人与海', '多远都要在一起', 'FIND YOU', '喜欢你']],
-      ['Part 5', ['夜的尽头', '倒数', '新的心跳', 'G.E.M. (Get Everybody Moving)', 'Walk On Water']],
+      ['Part 5', ['Kingdom Come', '夜的尽头', '倒数', '新的心跳', 'G.E.M. (Get Everybody Moving)', 'Walk On Water']],
+      ['Encore', ['泡沫', '天空没有极限']],
     ].map(([name, titles]) => ({
       name,
+      kind: name === 'Encore' ? 'encore-fixed' : 'main',
+      optional: false,
+      confidence: 'high',
       items: titles.map((title) => ({ raw: title, songId: exactSongId(title) })).filter((item) => item.songId),
     }));
-    return [{
+    return [normalizeSetlist({
       id: 'builtin-shenzhen-preview-2026',
-      name: '深圳站预测图主流程（非官方）',
+      name: '深圳站预测主流程（非官方）',
       status: 'predicted',
       builtin: true,
+      recommended: true,
       sections,
       unmatched: [],
-    }];
+    })];
   }
 
   function createVersion(text = '', options = {}) {
@@ -198,6 +215,10 @@
     const source = setlist && typeof setlist === 'object' ? setlist : {};
     const sections = Array.isArray(source.sections) ? source.sections.map((section, sectionIndex) => ({
       name: String(section?.name || `Part ${sectionIndex + 1}`),
+      kind: String(section?.kind || 'main'),
+      optional: Boolean(section?.optional),
+      confidence: ['high', 'medium', 'low'].includes(section?.confidence) ? section.confidence : '',
+      description: String(section?.description || ''),
       items: Array.isArray(section?.items) ? section.items.map((item) => ({
         raw: String(item?.raw || item?.title || ''),
         songId: String(item?.songId || ''),
@@ -208,6 +229,9 @@
       name: source.name || `自定义歌单 ${index + 1}`,
       status: ['official', 'observed', 'predicted', 'draft'].includes(source.status) ? source.status : 'draft',
       builtin: Boolean(source.builtin),
+      recommended: Boolean(source.recommended),
+      description: String(source.description || ''),
+      predictionBasis: Array.isArray(source.predictionBasis) ? source.predictionBasis.map(String) : [],
       sections,
       unmatched: Array.isArray(source.unmatched) ? source.unmatched.map(String) : [],
     };
@@ -427,6 +451,10 @@
 
   function songMatchesFilter(song, filter) {
     switch (filter) {
+      case 'setlist-core': return setlistSongIds(activeSetlist(), false).includes(song.id);
+      case 'setlist-all': return setlistSongIds(activeSetlist(), true).includes(song.id);
+      case 'setlist-request': return songInSetlistKinds(song, ['request', 'medley', 'surprise']);
+      case 'setlist-rotation': return songInSetlistKinds(song, ['encore-rotation']);
       case '2026-main': return song.tags.includes('2026主歌单');
       case '2026-encore': return song.tags.includes('2026返场');
       case '2026-medley': return song.tags.includes('2026特别串烧');
@@ -455,6 +483,30 @@
 
   function activeSetlist() {
     return state.setlists.find((setlist) => setlist.id === state.activeSetlistId) || state.setlists[0] || null;
+  }
+
+  function setlistSections(setlist = activeSetlist(), includeOptional = true) {
+    if (!setlist || !Array.isArray(setlist.sections)) return [];
+    return setlist.sections.filter((section) => includeOptional || !section.optional);
+  }
+
+  function setlistSongIds(setlist = activeSetlist(), includeOptional = true) {
+    const seen = new Set();
+    const ids = [];
+    setlistSections(setlist, includeOptional).forEach((section) => {
+      section.items.forEach((item) => {
+        if (!item.songId || seen.has(item.songId)) return;
+        seen.add(item.songId);
+        ids.push(item.songId);
+      });
+    });
+    return ids;
+  }
+
+  function songInSetlistKinds(song, kinds) {
+    const wanted = new Set(kinds);
+    return setlistSections(activeSetlist(), true).some((section) =>
+      wanted.has(section.kind) && section.items.some((item) => item.songId === song.id));
   }
 
   function setlistInfo(song) {
@@ -938,18 +990,57 @@
     renderDetail();
   }
 
+  function isModalVisible() {
+    return Boolean(document.querySelector('.modal.show'));
+  }
+
+  function appOwnsBodyLock() {
+    return elements.sidebar.classList.contains('open') || !elements.focusOverlay.hidden;
+  }
+
+  function releaseStaleBodyLock() {
+    if (appOwnsBodyLock() || isModalVisible()) return;
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('padding-right');
+    document.documentElement.style.removeProperty('overflow');
+  }
+
+  function syncBodyScrollLock() {
+    if (appOwnsBodyLock()) {
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    if (!isModalVisible()) releaseStaleBodyLock();
+  }
+
   function openSidebar() {
     elements.sidebar.classList.add('open');
     elements.sidebarBackdrop.classList.add('open');
     elements.sidebarToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    syncBodyScrollLock();
   }
 
   function closeSidebar() {
     elements.sidebar.classList.remove('open');
     elements.sidebarBackdrop.classList.remove('open');
     elements.sidebarToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    syncBodyScrollLock();
+  }
+
+  function launchModalFromSidebar(button, event) {
+    if (!elements.sidebar.classList.contains('open')) return false;
+    const selector = button.getAttribute('data-bs-target');
+    const modalElement = selector ? document.querySelector(selector) : null;
+    if (!modalElement || !window.bootstrap?.Modal) return false;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    closeSidebar();
+    window.requestAnimationFrame(() => {
+      window.bootstrap.Modal.getOrCreateInstance(modalElement).show();
+    });
+    return true;
   }
 
   function applyTheme(theme) {
@@ -983,15 +1074,16 @@
   }
 
   function openFocus() {
+    closeSidebar();
     updateFocusContent();
     elements.focusOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
+    syncBodyScrollLock();
     elements.exitFocus.focus();
   }
 
   function closeFocus() {
     elements.focusOverlay.hidden = true;
-    document.body.style.overflow = '';
+    syncBodyScrollLock();
     elements.focusButton.focus();
   }
 
@@ -1355,7 +1447,8 @@
     if (!setlist) return '';
     return setlist.sections.map((section) => {
       const lines = section.items.map((item) => songs.find((song) => song.id === item.songId)?.title || item.raw).filter(Boolean);
-      return [`## ${section.name}`, ...lines].join('\n');
+      const optional = section.optional ? ' [可选]' : '';
+      return [`## ${section.name}${optional}`, ...lines].join('\n');
     }).join('\n\n');
   }
 
@@ -1366,9 +1459,19 @@
     const duplicates = [];
     const seen = new Set();
     let current = null;
+    const inferKind = (name) => {
+      const value = String(name || '');
+      if (/点歌|黄色区/.test(value)) return 'request';
+      if (/轮换/.test(value)) return 'encore-rotation';
+      if (/串烧/.test(value)) return 'medley';
+      if (/惊喜|未官宣/.test(value)) return 'surprise';
+      if (/收尾|finale/i.test(value)) return 'closing';
+      if (/encore|返场/i.test(value)) return 'encore-fixed';
+      return 'main';
+    };
     const ensure = () => {
       if (!current) {
-        current = { name: 'Main Set', items: [] };
+        current = { name: 'Main Set', kind: 'main', optional: false, items: [] };
         sections.push(current);
       }
       return current;
@@ -1378,7 +1481,10 @@
       if (!line || line.startsWith('>')) return;
       const heading = line.match(/^#{1,3}\s+(.+)$/) || line.match(/^\[(.+)\]$/);
       if (heading) {
-        current = { name: heading[1].trim(), items: [] };
+        const headingText = heading[1].trim();
+        const optional = /\s*\[可选\]\s*$/u.test(headingText);
+        const name = headingText.replace(/\s*\[可选\]\s*$/u, '').trim();
+        current = { name, kind: inferKind(name), optional, items: [] };
         sections.push(current);
         return;
       }
@@ -1414,8 +1520,11 @@
     elements.setlistEditor.value = formatSetlistText(current);
     const matched = current?.sections.reduce((sum, section) => sum + section.items.filter((item) => item.songId).length, 0) || 0;
     const unmatched = current?.sections.reduce((sum, section) => sum + section.items.filter((item) => !item.songId).length, 0) || 0;
+    const optionalSections = current?.sections.filter((section) => section.optional).length || 0;
+    const coreSongs = setlistSongIds(current, false).length;
+    const allSongs = setlistSongIds(current, true).length;
     elements.setlistStats.textContent = current
-      ? `${current.sections.length} 个章节 · ${matched} 首已匹配${unmatched ? ` · ${unmatched} 行待匹配` : ''}${current.builtin ? ' · 内置参考歌单' : ''}`
+      ? `${current.sections.length} 个章节 · 固定 ${coreSongs} 首 · 含可选 ${allSongs} 首${optionalSections ? ` · ${optionalSections} 个可选章节` : ''}${unmatched ? ` · ${unmatched} 行待匹配` : ''}${current.builtin ? ' · 内置参考歌单' : ''}${current.description ? `\n${current.description}` : ''}`
       : '尚未建立歌单。';
     elements.deleteSetlistButton.disabled = !current || current.builtin;
   }
@@ -1688,9 +1797,14 @@
     return Number(a.id.replace(/\D/g, '')) - Number(b.id.replace(/\D/g, ''));
   }
 
-  function printSelection() {
-    const scope = $('input[name="printScope"]:checked')?.value || 'filtered';
+  function printSelection(settings = printSettings()) {
+    const scope = settings.scope || 'filtered';
     if (scope === 'current') return [currentSong()].filter(Boolean);
+    if (scope === 'setlist') {
+      return setlistSongIds(activeSetlist(), settings.includeOptionalSetlistSections)
+        .map((id) => songs.find((song) => song.id === id))
+        .filter(Boolean);
+    }
     if (scope === 'all') return [...songs].sort(printSongComparator);
     return filteredSongs.length ? [...filteredSongs] : [...songs].sort(printSongComparator);
   }
@@ -1709,6 +1823,7 @@
       includeEmpty: elements.printEmpty.checked,
       notes: elements.printNotes.checked,
       compactWhitespace: elements.printCompact?.checked !== false,
+      includeOptionalSetlistSections: elements.printSetlistOptional?.checked !== false,
     };
   }
 
@@ -1744,11 +1859,125 @@
     }, 0);
   }
 
+  function tocGroupsForSongs(songList, settings) {
+    const selectedIds = new Set(songList.map((song) => song.id));
+    const used = new Set();
+    const groups = [];
+    const setlist = activeSetlist();
+
+    if (setlist && settings.scope !== 'current') {
+      const includeOptional = settings.scope === 'setlist'
+        ? settings.includeOptionalSetlistSections
+        : true;
+      const sections = setlistSections(setlist, includeOptional).map((section) => {
+        const sectionSongs = [];
+        section.items.forEach((item) => {
+          if (!item.songId || used.has(item.songId) || !selectedIds.has(item.songId)) return;
+          const song = songList.find((entry) => entry.id === item.songId);
+          if (!song) return;
+          used.add(item.songId);
+          sectionSongs.push(song);
+        });
+        return sectionSongs.length ? {
+          name: section.name,
+          kind: section.kind,
+          optional: Boolean(section.optional),
+          songs: sectionSongs,
+        } : null;
+      }).filter(Boolean);
+
+      if (sections.length) {
+        groups.push({
+          title: settings.scope === 'setlist' ? setlist.name : `当前演出歌单 · ${setlist.name}`,
+          kicker: settings.scope === 'setlist' ? 'SETLIST CONTENTS' : 'SETLIST FIRST',
+          type: 'setlist',
+          sections,
+        });
+      }
+    }
+
+    if (settings.scope !== 'setlist') {
+      const remaining = songList.filter((song) => !used.has(song.id));
+      if (remaining.length) {
+        groups.push({
+          title: groups.length ? '候选与其他曲目' : '曲目目录',
+          kicker: groups.length ? 'ADDITIONAL SONGS' : 'CONTENTS',
+          type: groups.length ? 'extra' : 'all',
+          sections: [{ name: groups.length ? '未列入当前演出歌单' : '全部曲目', optional: false, kind: 'extra', songs: remaining }],
+        });
+      }
+    }
+
+    if (!groups.length && songList.length) {
+      groups.push({
+        title: '曲目目录',
+        kicker: 'CONTENTS',
+        type: 'all',
+        sections: [{ name: '全部曲目', optional: false, kind: 'all', songs: songList }],
+      });
+    }
+    return groups;
+  }
+
+  function paginateTocGroups(groups, targetSize) {
+    const capacity = targetSize === 'a4' ? 104 : 24;
+    const headingWeight = targetSize === 'a4' ? 2.35 : 1.8;
+    const batches = [];
+
+    groups.forEach((group) => {
+      let pageIndex = 0;
+      let current = null;
+      const startPage = () => ({
+        title: pageIndex ? `${group.title}（续）` : group.title,
+        kicker: group.kicker,
+        type: group.type,
+        sections: [],
+        weight: 0,
+      });
+      const flush = () => {
+        if (!current || !current.sections.length) return;
+        batches.push(current);
+        pageIndex += 1;
+        current = null;
+      };
+
+      group.sections.forEach((section) => {
+        let offset = 0;
+        while (offset < section.songs.length) {
+          if (!current) current = startPage();
+          const headingNeeded = headingWeight;
+          let room = Math.floor(capacity - current.weight - headingNeeded);
+          if (room < 1) {
+            flush();
+            current = startPage();
+            room = Math.floor(capacity - headingWeight);
+          }
+          const take = Math.max(1, Math.min(room, section.songs.length - offset));
+          current.sections.push({
+            ...section,
+            name: offset ? `${section.name}（续）` : section.name,
+            songs: section.songs.slice(offset, offset + take),
+          });
+          current.weight += headingWeight + take;
+          offset += take;
+          if (offset < section.songs.length) flush();
+        }
+      });
+      flush();
+    });
+    return batches;
+  }
+
+  function estimateTocPageCount(songList, settings, targetSize) {
+    if (!settings.toc || !songList.length) return 0;
+    return paginateTocGroups(tocGroupsForSongs(songList, settings), targetSize).length;
+  }
+
   function estimateLogicalPages(selection, settings) {
     const targetSize = settings.size === 'a4' ? 'a4' : 'a5';
     const printable = selection.filter((song) => settings.includeEmpty || hasLyrics(song));
     let count = settings.cover ? 1 : 0;
-    if (settings.toc && printable.length) count += Math.max(1, Math.ceil(printable.length / (targetSize === 'a4' ? 32 : 18)));
+    if (settings.toc && printable.length) count += estimateTocPageCount(printable, settings, targetSize);
 
     printable.forEach((song) => {
       const versions = versionsForPrint(song, settings);
@@ -1792,26 +2021,52 @@
     return { count, printable };
   }
 
+  function updateBookletPreview(logicalCount, settings) {
+    if (!elements.bookletPreview) return;
+    const visible = settings.size === 'booklet' && logicalCount > 0;
+    elements.bookletPreview.hidden = !visible;
+    if (!visible) {
+      elements.bookletPreview.replaceChildren();
+      return;
+    }
+    const padded = Math.max(4, Math.ceil(logicalCount / 4) * 4);
+    const blankCount = padded - logicalCount;
+    elements.bookletPreview.innerHTML = `
+      <div class="booklet-preview-copy"><b>第 1 张 A4 纸的拼版预览</b><small>${padded} 个逻辑页 · ${padded / 4} 张双面 A4${blankCount ? ` · 自动补 ${blankCount} 个空白页` : ''}</small></div>
+      <div class="booklet-preview-sides">
+        <div class="booklet-preview-side"><span>正面</span><div><b>${padded}</b><i>左</i></div><div><b>1</b><i>右</i></div></div>
+        <div class="booklet-preview-side"><span>背面</span><div><b>2</b><i>左</i></div><div><b>${padded - 1}</b><i>右</i></div></div>
+      </div>
+      <p>系统打印时选 A4 横向、双面、短边翻转、每张 1 页、100% 实际尺寸；不要再次选择“小册子”或“每张 2 页”。</p>`;
+  }
+
   function updatePrintEstimate() {
     const settings = printSettings();
-    const selection = printSelection();
+    const selection = printSelection(settings);
     const { count, printable } = estimateLogicalPages(selection, settings);
+    const optionalSwitch = elements.printSetlistOptional?.closest('.form-check');
+    if (optionalSwitch) optionalSwitch.hidden = settings.scope !== 'setlist';
+    updateBookletPreview(count, settings);
     if (!printable.length) {
       elements.printEstimate.textContent = '当前设置没有可输出歌曲；请勾选“包含尚未导入歌词的曲目”或先导入歌词。';
       return;
     }
     const versionLabel = settings.versionMode === 'all' ? '全部歌词版本' : settings.versionMode === 'current' ? '当前歌曲当前版本，其余默认版' : '默认版本';
     const policyLabel = settings.pagePolicy === 'limit' ? '单版本 1 页 / 多版本最多 2 页，并自动寻找最大字号' : '可读性优先，必要时续页';
+    const scopeLabel = settings.scope === 'setlist'
+      ? `仅当前歌单${settings.includeOptionalSetlistSections ? '（含可选章节）' : '（仅固定章节）'}`
+      : settings.scope === 'all' ? '全部曲库' : settings.scope === 'current' ? '当前歌曲' : '当前筛选结果';
     if (settings.size === 'booklet') {
       const padded = Math.ceil(count / 4) * 4;
-      elements.printEstimate.textContent = `预计 ${printable.length} 首、约 ${padded} 个 A5 逻辑页，拼成约 ${padded / 4} 张双面 A4 纸；输出：${versionLabel}；策略：${policyLabel}。最终页数以实测排版为准。`;
+      elements.printEstimate.textContent = `预计 ${printable.length} 首、约 ${padded} 个 A5 逻辑页，拼成约 ${padded / 4} 张双面 A4 纸；范围：${scopeLabel}；输出：${versionLabel}；策略：${policyLabel}。最终页数以实测排版为准。`;
     } else {
-      elements.printEstimate.textContent = `预计 ${printable.length} 首、约 ${count} 页 ${settings.size.toUpperCase()}；输出：${versionLabel}；策略：${policyLabel}。生成时会逐页实测。`;
+      elements.printEstimate.textContent = `预计 ${printable.length} 首、约 ${count} 页 ${settings.size.toUpperCase()}；范围：${scopeLabel}；输出：${versionLabel}；策略：${policyLabel}。生成时会逐页实测。`;
     }
   }
 
-  function pageShell(content, classes = '', pageNumber = '') {
-    return `<section class="print-page ${classes}"><div class="print-page-inner">${content}</div>${pageNumber ? `<div class="print-page-number">${escapeHTML(pageNumber)}</div>` : ''}</section>`;
+  function pageShell(content, classes = '', pageNumber = '', anchorId = '') {
+    const idAttribute = anchorId ? ` id="${escapeHTML(anchorId)}"` : '';
+    return `<section class="print-page ${classes}"${idAttribute}><div class="print-page-inner"><div class="print-page-content">${content}</div></div>${pageNumber ? `<div class="print-page-number">${escapeHTML(pageNumber)}</div>` : ''}</section>`;
   }
 
   function coverPage(settings) {
@@ -1870,7 +2125,7 @@
       ${tags ? `<div class="print-tags">${tags}</div>` : ''}
       ${note}
       ${fitWrapper}
-    `, classes, pageNumber);
+    `, classes, pageNumber, pageIndex === 0 ? `print-song-${song.id}` : '');
   }
 
   function beginMeasurement(targetSize) {
@@ -1889,9 +2144,18 @@
     elements.printRoot.innerHTML = songPage(song, bodyHtml, pageIndex, 99, 888, settings, density, extraClasses, fit);
     const page = elements.printRoot.firstElementChild;
     const inner = page?.querySelector('.print-page-inner');
-    if (!page || !inner) return false;
-    const tolerance = 0.65;
-    return page.scrollHeight <= page.clientHeight + tolerance && inner.scrollHeight <= inner.clientHeight + tolerance;
+    const content = page?.querySelector('.print-page-content');
+    const number = page?.querySelector('.print-page-number');
+    if (!page || !inner || !content) return false;
+    const tolerance = 0.45;
+    const heightFits = page.scrollHeight <= page.clientHeight + tolerance
+      && inner.scrollHeight <= inner.clientHeight + tolerance
+      && content.scrollHeight <= content.clientHeight + tolerance;
+    if (!heightFits) return false;
+    if (!number) return true;
+    const contentRect = content.getBoundingClientRect();
+    const numberRect = number.getBoundingClientRect();
+    return contentRect.bottom <= numberRect.top - 1.5;
   }
 
   function renderTextLines(lines, wrapperClass = 'print-version-body') {
@@ -2021,16 +2285,17 @@
       return bodyFits(song, bodyHtml, pageIndex, settings, 'fit', extraClasses, profile);
     };
 
-    if (fits(max)) return fitProfile(max, targetSize, metaLevel);
+    const safety = targetSize === 'a4' ? 0.055 : 0.038;
+    if (fits(max)) return fitProfile(Math.max(min, max - safety), targetSize, metaLevel);
     if (!fits(min)) return null;
     let low = min;
     let high = max;
-    for (let index = 0; index < 11; index += 1) {
+    for (let index = 0; index < 12; index += 1) {
       const middle = (low + high) / 2;
       if (fits(middle)) low = middle;
       else high = middle;
     }
-    return fitProfile(low, targetSize, metaLevel);
+    return fitProfile(Math.max(min, low - safety), targetSize, metaLevel);
   }
 
   function constrainedCandidatePenalty(candidate) {
@@ -2199,7 +2464,8 @@
   function buildConstrainedSongPlan(song, settings, targetSize) {
     const versions = versionsForPrint(song, settings);
     if (!versions.length) return [];
-    const showVersionHeadings = versions.length > 1 || settings.versionMode === 'all' || versions.some((version) => version.name !== '默认版' || version.translation);
+    const storedContentVersionCount = versionsFor(song, false).filter(versionHasContent).length;
+    const showVersionHeadings = storedContentVersionCount > 1;
     const singlePage = fitVersionGroup(song, versions, settings, targetSize, showVersionHeadings, 0);
     if (versions.length <= 1) return [singlePage];
 
@@ -2375,7 +2641,8 @@
   function buildSongPlan(song, settings, targetSize) {
     const versions = versionsForPrint(song, settings);
     if (!versions.length) return [];
-    const showVersionHeadings = versions.length > 1 || settings.versionMode === 'all' || versions.some((version) => version.name !== '默认版' || version.translation);
+    const storedContentVersionCount = versionsFor(song, false).filter(versionHasContent).length;
+    const showVersionHeadings = storedContentVersionCount > 1;
     const versionPlans = versions.map((version) => paginateVersion(song, version, settings, targetSize, showVersionHeadings));
 
     if (versionPlans.length > 1) {
@@ -2437,31 +2704,38 @@
       endMeasurement();
     }
 
-    const tocPerPage = targetSize === 'a4' ? 32 : 18;
-    const tocPageCount = settings.toc && songPlans.length ? Math.max(1, Math.ceil(songPlans.length / tocPerPage)) : 0;
+    const tocGroups = settings.toc ? tocGroupsForSongs(songPlans.map((entry) => entry.song), settings) : [];
+    const tocBatches = settings.toc ? paginateTocGroups(tocGroups, targetSize) : [];
     const coverCount = settings.cover ? 1 : 0;
-    let nextSongPage = coverCount + tocPageCount + 1;
-    const tocEntries = [];
-    songPlans.forEach(({ song, pages }) => {
-      tocEntries.push({ song, page: nextSongPage });
+    let nextSongPage = coverCount + tocBatches.length + 1;
+    const pageBySongId = new Map();
+    const numberBySongId = new Map();
+    songPlans.forEach(({ song, pages }, index) => {
+      pageBySongId.set(song.id, nextSongPage);
+      numberBySongId.set(song.id, index + 1);
       nextSongPage += pages.length;
     });
 
     const pages = [];
     if (settings.cover) pages.push(coverPage(settings));
-    if (settings.toc && tocEntries.length) {
-      for (let index = 0; index < tocEntries.length; index += tocPerPage) {
-        const batch = tocEntries.slice(index, index + tocPerPage);
-        const entries = batch.map((entry, offset) => {
-          const number = index + offset + 1;
-          const info = setlistInfo(entry.song);
-          const section = state.sort === 'setlist' && info ? `<small>${escapeHTML(info.section.name)}</small>` : '';
-          return `<div class="print-toc-entry"><span class="toc-num">${String(number).padStart(2, '0')}</span><span>${escapeHTML(entry.song.title)}${section}</span><span class="toc-page">${entry.page}</span></div>`;
+    tocBatches.forEach((batch) => {
+      const sections = batch.sections.map((section) => {
+        const entries = section.songs.map((song) => {
+          const number = numberBySongId.get(song.id) || 0;
+          const page = pageBySongId.get(song.id) || '';
+          return `<div class="print-toc-entry"><span class="toc-num">${String(number).padStart(2, '0')}</span><a href="#print-song-${escapeHTML(song.id)}">${escapeHTML(song.title)}</a><span class="toc-page">${page}</span></div>`;
         }).join('');
-        const pageNo = pages.length + 1;
-        pages.push(pageShell(`<div class="print-running-head"><span>G.E.M. · I AM GLORIA</span><span>曲目目录</span></div><h2 class="print-toc-title">目录</h2><div class="print-toc-grid">${entries}</div>`, 'print-toc-page', pageNo));
-      }
-    }
+        const optional = section.optional ? '<span class="toc-optional">可选</span>' : '';
+        return `<section class="print-toc-section"><h3>${escapeHTML(section.name)}${optional}</h3><div class="print-toc-list">${entries}</div></section>`;
+      }).join('');
+      const pageNo = pages.length + 1;
+      pages.push(pageShell(`
+        <div class="print-running-head"><span>G.E.M. · I AM GLORIA</span><span>${escapeHTML(batch.kicker)}</span></div>
+        <h2 class="print-toc-title">${escapeHTML(batch.title)}</h2>
+        <p class="print-toc-note">点击电子 PDF 中的歌名，可跳转到对应歌词页。</p>
+        <div class="print-toc-flow print-toc-${escapeHTML(batch.type)}">${sections}</div>
+      `, 'print-toc-page', pageNo));
+    });
 
     songPlans.forEach(({ song, pages: songPages }) => {
       songPages.forEach((plan, index) => {
@@ -2470,7 +2744,7 @@
       });
     });
     pages.push(colophonPage(pages.length + 1));
-    return { pages, printable: songPlans.map((entry) => entry.song), songPlans };
+    return { pages, printable: songPlans.map((entry) => entry.song), songPlans, tocBatches };
   }
 
   function imposeBooklet(logicalPages) {
@@ -2489,9 +2763,96 @@
     return sheets.join('');
   }
 
+  function renderedLogicalPages(settings) {
+    if (settings.size === 'booklet') return $$('.booklet-half .print-page', elements.printRoot);
+    return Array.from(elements.printRoot.children).filter((node) => node.classList?.contains('print-page'));
+  }
+
+  function renderedPageIssue(page, index) {
+    const inner = page.querySelector('.print-page-inner');
+    const content = page.querySelector('.print-page-content');
+    const number = page.querySelector('.print-page-number');
+    if (!inner || !content) return null;
+    const tolerance = 0.8;
+    const overflow = page.scrollHeight > page.clientHeight + tolerance
+      || page.scrollWidth > page.clientWidth + tolerance
+      || inner.scrollHeight > inner.clientHeight + tolerance
+      || inner.scrollWidth > inner.clientWidth + tolerance
+      || content.scrollHeight > content.clientHeight + tolerance
+      || content.scrollWidth > content.clientWidth + tolerance;
+    let footerCollision = false;
+    if (number) {
+      const contentRect = content.getBoundingClientRect();
+      const numberRect = number.getBoundingClientRect();
+      footerCollision = contentRect.bottom > numberRect.top - 1.2;
+    }
+    if (!overflow && !footerCollision) return null;
+    return {
+      index: index + 1,
+      page,
+      overflow,
+      footerCollision,
+      title: page.querySelector('.print-song-title')?.textContent?.trim()
+        || page.querySelector('.print-toc-title')?.textContent?.trim()
+        || '非歌曲页',
+    };
+  }
+
+  function inspectRenderedPrint(settings) {
+    return renderedLogicalPages(settings)
+      .map((page, index) => renderedPageIssue(page, index))
+      .filter(Boolean);
+  }
+
+  function shrinkFittingPage(page, factor = 0.974) {
+    const scope = page.querySelector('.print-fit-scope');
+    if (!scope) return false;
+    const variables = [
+      ['--fit-font-size', 0.72],
+      ['--fit-version-heading-size', 1.1],
+      ['--fit-label-size', 0.85],
+      ['--fit-note-size', 0.9],
+      ['--fit-section-gap', 0.65],
+    ];
+    let changed = false;
+    variables.forEach(([name, floor]) => {
+      const raw = scope.style.getPropertyValue(name);
+      const value = Number.parseFloat(raw);
+      if (!Number.isFinite(value)) return;
+      const next = Math.max(floor, value * factor);
+      if (next < value - 0.001) {
+        scope.style.setProperty(name, `${next.toFixed(3)}mm`);
+        changed = true;
+      }
+    });
+    const lineHeight = Number.parseFloat(scope.style.getPropertyValue('--fit-line-height'));
+    if (Number.isFinite(lineHeight)) {
+      const next = Math.max(1.08, lineHeight - 0.012);
+      if (next < lineHeight) {
+        scope.style.setProperty('--fit-line-height', next.toFixed(3));
+        changed = true;
+      }
+    }
+    if (changed) page.dataset.printStabilized = 'true';
+    return changed;
+  }
+
+  async function stabilizeRenderedPrint(settings, maxPasses = 5) {
+    let issues = [];
+    for (let pass = 0; pass < maxPasses; pass += 1) {
+      await new Promise((resolve) => window.requestAnimationFrame(() => window.requestAnimationFrame(resolve)));
+      issues = inspectRenderedPrint(settings);
+      if (!issues.length) return [];
+      const changed = issues.reduce((count, issue) => count + Number(shrinkFittingPage(issue.page)), 0);
+      if (!changed) break;
+    }
+    await new Promise((resolve) => window.requestAnimationFrame(resolve));
+    return inspectRenderedPrint(settings);
+  }
+
   async function preparePrint() {
     const settings = printSettings();
-    const selection = printSelection();
+    const selection = printSelection(settings);
     const originalLabel = elements.printBuildButton.textContent;
     elements.printBuildButton.disabled = true;
     elements.printBuildButton.textContent = '正在智能排版…';
@@ -2504,12 +2865,19 @@
         showToast('没有可输出曲目：请导入歌词或勾选空白曲目');
         return;
       }
-      elements.printRoot.className = `print-root print-size-${settings.size}`;
+      elements.printRoot.className = `print-root print-measuring print-size-${settings.size}`;
       elements.printRoot.innerHTML = settings.size === 'booklet' ? imposeBooklet(pages) : pages.join('');
       elements.printRoot.setAttribute('aria-hidden', 'false');
       elements.dynamicPrintStyle.textContent = settings.size === 'booklet'
         ? '@page { size: A4 landscape; margin: 0; } * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }'
         : `@page { size: ${settings.size.toUpperCase()} portrait; margin: 0; } * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }`;
+
+      const remainingIssues = await stabilizeRenderedPrint(settings);
+      if (remainingIssues.length) {
+        const sample = remainingIssues.slice(0, 4).map((issue) => `${issue.index}（${issue.title}）`).join('、');
+        throw new Error(`最终打印安全检查仍发现 ${remainingIssues.length} 页溢出：${sample}`);
+      }
+      elements.printRoot.className = `print-root print-size-${settings.size}`;
 
       const modalElement = $('#printModal');
       const modal = window.bootstrap?.Modal.getInstance(modalElement);
@@ -2572,6 +2940,20 @@
     elements.sidebarToggle.addEventListener('click', openSidebar);
     elements.sidebarClose.addEventListener('click', closeSidebar);
     elements.sidebarBackdrop.addEventListener('click', closeSidebar);
+    $$('[data-bs-toggle="modal"]', elements.sidebar).forEach((button) => {
+      button.addEventListener('click', (event) => launchModalFromSidebar(button, event), true);
+    });
+    document.addEventListener('show.bs.modal', () => {
+      // Bootstrap records the current inline overflow before applying its own
+      // scroll lock. Close the mobile drawer first so Safari cannot restore a
+      // stale `overflow: hidden` after the modal closes.
+      if (elements.sidebar.classList.contains('open')) closeSidebar();
+    });
+    document.addEventListener('hidden.bs.modal', () => {
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(releaseStaleBodyLock);
+      });
+    });
     elements.themeButton.addEventListener('click', () => applyTheme(state.theme === 'dark' ? 'light' : 'dark'));
     elements.focusButton.addEventListener('click', openFocus);
     elements.exitFocus.addEventListener('click', closeFocus);
@@ -2592,7 +2974,7 @@
     elements.exportMarkdown.addEventListener('click', exportMarkdown);
     elements.downloadTemplate.addEventListener('click', exportTemplate);
     elements.printBuildButton.addEventListener('click', preparePrint);
-    $$('input[name="printSize"], input[name="printScope"], #printCover, #printToc, #printEmpty, #printNotes, #printCompact, #printPagePolicy, #printVersions, #printLineFlow, #printColumns, #printBilingual').forEach((input) => input.addEventListener('change', updatePrintEstimate));
+    $$('input[name="printSize"], input[name="printScope"], #printCover, #printToc, #printEmpty, #printNotes, #printCompact, #printPagePolicy, #printVersions, #printLineFlow, #printColumns, #printBilingual, #printSetlistOptional').forEach((input) => input.addEventListener('change', updatePrintEstimate));
     $('#printModal').addEventListener('show.bs.modal', updatePrintEstimate);
 
     elements.setlistSelect.addEventListener('change', (event) => {
@@ -2639,31 +3021,38 @@
         versionsWithContent: songs.reduce((sum, song) => sum + versionsFor(song, false).filter(versionHasContent).length, 0),
       };
     },
-    buildPrint({ size = 'a4', pagePolicy = 'limit', versionMode = 'default', songIds = [], includeEmpty = false, lineFlow = 'auto', columns = 'auto', bilingual = 'auto' } = {}) {
-      const selection = (songIds.length ? songIds.map((id) => songs.find((song) => song.id === id)).filter(Boolean) : songs.filter(hasLyrics));
+    async buildPrint({ size = 'a4', scope = 'all', pagePolicy = 'limit', versionMode = 'default', songIds = [], includeEmpty = false, includeOptionalSetlistSections = true, lineFlow = 'auto', columns = 'auto', bilingual = 'auto', cover = false, toc = true } = {}) {
       const settings = {
         size,
-        scope: 'all',
+        scope,
         pagePolicy,
         versionMode,
         lineFlow,
         columns,
         bilingual,
-        cover: false,
-        toc: false,
+        cover,
+        toc,
         includeEmpty,
         notes: true,
         compactWhitespace: true,
+        includeOptionalSetlistSections,
       };
+      const selection = songIds.length
+        ? songIds.map((id) => songs.find((song) => song.id === id)).filter(Boolean)
+        : printSelection(settings);
       const result = buildLogicalPages(selection, settings);
-      elements.printRoot.className = `print-root print-size-${size}`;
-      elements.printRoot.innerHTML = result.pages.join('');
+      elements.printRoot.className = `print-root print-measuring print-size-${size}`;
+      elements.printRoot.innerHTML = size === 'booklet' ? imposeBooklet(result.pages) : result.pages.join('');
       elements.printRoot.setAttribute('aria-hidden', 'false');
-      const pageNodes = $$('.print-page', elements.printRoot);
-      const overflowPages = pageNodes.flatMap((page, index) => {
-        const inner = page.querySelector('.print-page-inner');
-        const overflow = page.scrollHeight > page.clientHeight + 1 || (inner && inner.scrollHeight > inner.clientHeight + 1);
-        return overflow ? [index + 1] : [];
+      const remainingIssues = await stabilizeRenderedPrint(settings);
+      const pageNodes = renderedLogicalPages(settings);
+      const overflowPages = remainingIssues.map((issue) => issue.index);
+      const tocLinks = $$('a[href^="#print-song-"]', elements.printRoot).length;
+      const singleVersionHeadings = result.songPlans.flatMap(({ song }) => {
+        const count = versionsFor(song, false).filter(versionHasContent).length;
+        if (count !== 1) return [];
+        const page = elements.printRoot.querySelector(`#print-song-${song.id}`);
+        return page?.querySelector('.print-version-heading') ? [song.id] : [];
       });
       const songsSummary = result.songPlans.map(({ song, pages }) => ({
         id: song.id,
@@ -2672,9 +3061,30 @@
         fontSizes: pages.map((page) => page.fit?.fontSize || null),
         metaLevels: pages.map((page) => page.fit?.metaLevel ?? null),
       }));
+      const response = {
+        totalPages: pageNodes.length,
+        physicalPages: size === 'booklet' ? $$('.booklet-sheet', elements.printRoot).length : pageNodes.length,
+        overflowPages,
+        tocLinks,
+        singleVersionHeadings,
+        songs: songsSummary,
+      };
       cleanupPrint();
-      return { totalPages: result.pages.length, overflowPages, songs: songsSummary };
+      return response;
     },
+    openSidebar,
+    closeSidebar,
+    releaseStaleBodyLock,
+    setActiveSetlist(id) {
+      if (!state.setlists.some((setlist) => setlist.id === id)) return false;
+      state.activeSetlistId = id;
+      saveState('');
+      renderSetlistEditor();
+      renderList();
+      updatePrintEstimate();
+      return true;
+    },
+
     snapshot() {
       return JSON.parse(JSON.stringify(state));
     },
@@ -2692,6 +3102,7 @@
     elements.sort.value = state.sort || 'setlist';
     if (elements.filter.selectedIndex < 0) elements.filter.value = state.filter = 'all';
     if (elements.sort.selectedIndex < 0) elements.sort.value = state.sort = 'setlist';
+    releaseStaleBodyLock();
     applyTheme(state.theme);
     applyFontLevel(state.fontLevel);
     renderCoverage();

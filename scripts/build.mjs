@@ -39,6 +39,7 @@ async function makeStandalone(indexHtml) {
   const bootstrapJs = escapeInlineScript(await fs.readFile(path.join(root, 'vendor/bootstrap/bootstrap.bundle.min.js'), 'utf8'));
   const appJs = escapeInlineScript(await fs.readFile(path.join(root, 'src/app.js'), 'utf8'));
   const data = JSON.parse(await fs.readFile(path.join(root, 'src/data/songs.json'), 'utf8'));
+  const setlists = JSON.parse(await fs.readFile(path.join(root, 'src/data/setlists.json'), 'utf8'));
   const icon = await fs.readFile(path.join(root, 'public/icons/icon.svg'), 'utf8');
   const iconData = `data:image/svg+xml,${encodeURIComponent(icon)}`;
 
@@ -47,7 +48,7 @@ async function makeStandalone(indexHtml) {
   html = html.replace(/<link href="\.\/src\/styles\/app\.css" rel="stylesheet"\/>\s*/i, () => `<style id="app-inline">${appCss.replace(/<\/style/gi, '<\\/style')}</style>\n`);
   html = html.replace(/<script src="\.\/vendor\/bootstrap\/bootstrap\.bundle\.min\.js"><\/script>\s*/i, () => `<script id="bootstrap-script">${bootstrapJs}</script>\n`);
   html = html.replace(/<script src="\.\/src\/main\.js" type="module"><\/script>\s*/i, () =>
-    `<script id="gem-data">window.GEM_LYRICBOOK_DATA=${JSON.stringify(data).replace(/</g, '\\u003c')};</script>\n` +
+    `<script id="gem-data">window.GEM_LYRICBOOK_DATA=${JSON.stringify(data).replace(/</g, '\\u003c')};window.GEM_LYRICBOOK_SETLISTS=${JSON.stringify(setlists).replace(/</g, '\\u003c')};</script>\n` +
     `<script>window.GEM_SINGLE_FILE=true;window.GEM_BUILD_VERSION=${JSON.stringify(pkg.version)};</script>\n` +
     `<script id="gem-app" type="module">${appJs}</script>\n`);
   html = html.replace(/<link\b[^>]*rel="manifest"[^>]*>\s*/gi, '');

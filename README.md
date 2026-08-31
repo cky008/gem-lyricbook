@@ -2,6 +2,17 @@
 
 > 当前版本：**v5.1.2**
 
+<p align="center">
+  <a href="https://gem.iocky.com/"><strong>🌐 在线使用歌词本</strong></a>
+  ·
+  <a href="https://github.com/cky008/gem-lyricbook">查看 GitHub 仓库</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/cky008/gem-lyricbook/actions/workflows/ci.yml"><img src="https://github.com/cky008/gem-lyricbook/actions/workflows/ci.yml/badge.svg?branch=develop" alt="持续集成"></a>
+  <a href="https://github.com/cky008/gem-lyricbook/actions/workflows/deploy-pages.yml"><img src="https://github.com/cky008/gem-lyricbook/actions/workflows/deploy-pages.yml/badge.svg?branch=main" alt="GitHub Pages 部署"></a>
+</p>
+
 一个面向手机、平板、桌面浏览器与实体打印的本地优先歌词本。项目支持多版本歌词、外语原文与中文翻译、演唱会歌单排序，以及 A4、A5、A4 对折小册打印。
 
 > **隐私与版权提示**  
@@ -35,7 +46,7 @@
 - **Bootstrap 5.3.6**：响应式布局、模态框和基础交互组件，已本地化随仓库提供，不依赖 CDN。
 - **原生 ES Modules**：业务逻辑使用现代浏览器模块，不绑定大型前端框架运行时。
 - **Node.js 22**：零第三方构建依赖的静态构建、开发服务器、数据校验和测试。
-- **GitHub Actions**：提交到 `main` 后自动检查、构建并发布到 GitHub Pages。
+- **GitHub Actions**：`develop` 负责持续集成，Pull Request 自动执行“测试 → 构建”；合并到 `main` 后再次测试、构建并发布到 GitHub Pages。
 - **PWA 基础能力**：Web App Manifest、图标、离线缓存与可安装站点支持。
 
 这套方案的目标是：仓库结构清晰、启动成本低、无供应链安装负担、能够继续拆分功能模块，并可在 GitHub Pages 上稳定托管。
@@ -145,6 +156,22 @@ dist/version.json               # 构建版本与时间信息
 
 详细说明见 [打印与 PDF 指南](docs/PRINTING.md)。
 
+## 分支策略
+
+项目采用适合个人持续开发的双主干方式：
+
+- **`main`**：生产分支，只保存可以部署的稳定版本；合并后自动发布网站。
+- **`develop`**：日常集成分支；小改动可以直接提交到这里，不必每次新建分支。
+- **`feature/*`、`fix/*`**：仅在功能较大、风险较高或需要独立评审时，从 `develop` 临时创建，完成后再合回 `develop`。
+
+推荐发布路径：
+
+```text
+日常开发 → develop → Pull Request → main → GitHub Pages
+```
+
+`develop` 的 push 和面向 `develop` / `main` 的 Pull Request 会运行持续集成。`main` 不承担日常开发，只有发布工作流可以在测试和构建全部通过后部署。
+
 ## GitHub Pages 自动部署
 
 仓库已经包含：
@@ -153,7 +180,11 @@ dist/version.json               # 构建版本与时间信息
 .github/workflows/deploy-pages.yml
 ```
 
-创建 GitHub 仓库、推送到 `main`，并在仓库的 **Settings → Pages → Source** 中选择 **GitHub Actions** 后，每次提交都会自动运行检查并部署 `dist/`。
+在仓库的 **Settings → Pages → Source** 中选择 **GitHub Actions**。之后：
+
+- 推送到 `develop`：先运行语法检查、单元测试和数据验证，全部通过后才执行构建验证；
+- 提交 Pull Request 到 `develop` 或 `main`：执行同样的“测试 → 构建”检查；
+- 合并到 `main`：发布工作流再次执行“测试 → 构建 → 部署”，只有前置步骤全部通过才会更新 GitHub Pages。
 
 完整的 GitHub Pages、Cloudflare DNS、HTTPS、自定义域名与故障排查步骤见 [部署指南](docs/DEPLOYMENT.md)。
 
@@ -197,12 +228,13 @@ dist/version.json               # 构建版本与时间信息
 
 ## 版本发布流程
 
-1. 更新 `package.json` 版本号。
-2. 更新 `CHANGELOG.md`。
-3. 执行 `npm run check`。
-4. 提交到新分支并发起 Pull Request。
-5. 合并到 `main` 后由 GitHub Actions 自动部署。
-6. 如使用 Cloudflare 代理且仍显示旧资源，清理 Cloudflare 缓存并刷新 Service Worker。
+1. 日常修改直接提交到 `develop`；较大功能才使用临时 `feature/*` 或 `fix/*` 分支。
+2. 发布前更新 `package.json` 版本号和 `CHANGELOG.md`。
+3. 本地执行 `npm run check`，然后推送 `develop`。
+4. 确认持续集成中的“测试与项目验证”和“构建验证”全部通过。
+5. 创建 `develop → main` Pull Request；合并后由 GitHub Actions 再次测试、构建并自动部署。
+6. 可选：为正式版本创建 `vX.Y.Z` 标签。
+7. 如使用 Cloudflare 代理且仍显示旧资源，清理 Cloudflare 缓存并刷新 Service Worker。
 
 ## 版权与许可
 

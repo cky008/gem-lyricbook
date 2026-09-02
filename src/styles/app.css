@@ -1013,7 +1013,7 @@ html[data-bs-theme="dark"] .version-tab.active { color: #e4d7ff; }
   .site-footer { display: none !important; }
 }
 
-/* ===== v5.1.2 adaptive TOC, booklet preview and mobile modal safety ===== */
+/* ===== v5.1.3 measured TOC, booklet preview and mobile modal safety ===== */
 .print-logic-tip {
   padding: .9rem 1rem;
   border: 1px solid color-mix(in srgb, var(--brand) 22%, var(--line));

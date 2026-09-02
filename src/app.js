@@ -7,7 +7,7 @@
     return;
   }
 
-  const APP_VERSION = '5.1.2';
+  const APP_VERSION = '5.1.3';
   const COPYRIGHT_NOTICE = 'Copyright © 2026 iocky.com';
   const BASE_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v2';
   const LEGACY_STORAGE_KEY = 'gem-iam-gloria-lyricbook-v1';

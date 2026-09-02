@@ -6,7 +6,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(await fs.readFile(path.join(root, 'src/data/songs.json'), 'utf8'));
 const setlists = JSON.parse(await fs.readFile(path.join(root, 'src/data/setlists.json'), 'utf8'));
 const pkg = JSON.parse(await fs.readFile(path.join(root, 'package.json'), 'utf8'));
+const lockfile = JSON.parse(await fs.readFile(path.join(root, 'package-lock.json'), 'utf8'));
 const html = await fs.readFile(path.join(root, 'index.html'), 'utf8');
+const readme = await fs.readFile(path.join(root, 'README.md'), 'utf8');
 const main = await fs.readFile(path.join(root, 'src/main.js'), 'utf8');
 const app = await fs.readFile(path.join(root, 'src/app.js'), 'utf8');
 const tocLayout = await fs.readFile(path.join(root, 'src/print/toc-layout.js'), 'utf8');
@@ -81,6 +83,15 @@ if (!main.includes(`window.GEM_APP_VERSION = '${pkg.version}'`)) {
 if (!app.includes(`const APP_VERSION = '${pkg.version}'`)) {
   errors.push('src/app.js 中的应用版本与 package.json 不一致');
 }
+if (lockfile.version !== pkg.version || lockfile.packages?.['']?.version !== pkg.version) {
+  errors.push('package-lock.json 中的版本与 package.json 不一致');
+}
+if ((html.match(new RegExp(`v${pkg.version.replaceAll('.', '\\.')}`, 'g')) || []).length < 2) {
+  errors.push('index.html 中的可见版本未完整同步');
+}
+if (!readme.includes(`当前版本：**v${pkg.version}**`)) {
+  errors.push('README.md 中的当前版本与 package.json 不一致');
+}
 if (!main.includes('GEM_LYRICBOOK_SETLISTS')) errors.push('src/main.js 未加载内置歌单数据');
 
 for (const requiredFile of [
@@ -94,6 +105,7 @@ for (const requiredFile of [
   'docs/DEPLOYMENT.md',
   'docs/PRINTING.md',
   'docs/TOC_LAYOUT.md',
+  'docs/TOC_LAYOUT_TEST_PLAN.md',
   'docs/DATA_FORMAT.md',
   'docs/SETLIST_PREDICTION.md',
   'docs/IOS_SCROLL_FIX.md',

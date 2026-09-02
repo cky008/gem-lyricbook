@@ -12,6 +12,6 @@ if (!setlistsResponse.ok) throw new Error(`歌单数据加载失败：HTTP ${set
 window.GEM_LYRICBOOK_DATA = await dataResponse.json();
 window.GEM_LYRICBOOK_SETLISTS = await setlistsResponse.json();
 window.GEM_TOC_LAYOUT = tocLayout;
-window.GEM_APP_VERSION = '5.1.2';
+window.GEM_APP_VERSION = '5.1.3';
 
 await import('./app.js');

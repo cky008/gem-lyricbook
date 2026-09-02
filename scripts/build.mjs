@@ -55,7 +55,7 @@ async function makeStandalone(indexHtml) {
     `<script>window.GEM_SINGLE_FILE=true;window.GEM_BUILD_VERSION=${JSON.stringify(pkg.version)};</script>
 ` +
     `<script id="gem-app" type="module">${tocLayoutJs}
-window.GEM_TOC_LAYOUT={TOC_LAYOUT_PROFILES,tocTextUnits,tocSongWeight,tocSectionWeight,tocHeaderWeight,tocGroupWeight,chooseTocLayout,paginateTocGroups};
+window.GEM_TOC_LAYOUT={TOC_LAYOUT_PROFILES,tocTextUnits,tocSongWeight,tocSectionWeight,tocHeaderWeight,tocGroupWeight,chooseTocLayout,paginateTocGroups,paginateMeasuredTocGroups};
 ${appJs}</script>
 `);
   html = html.replace(/<link\b[^>]*rel="manifest"[^>]*>\s*/gi, '');

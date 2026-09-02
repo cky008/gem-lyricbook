@@ -538,7 +538,7 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
 
 .print-root .print-page {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: #fff;
   color: #18121f;
   break-after: page;
@@ -554,7 +554,7 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
   width: 100%;
   height: 100%;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 14mm 15mm 15mm;
 }
 
@@ -562,7 +562,7 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
   width: 100%;
   height: 100%;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .print-root .print-cover {
@@ -682,10 +682,10 @@ html[data-bs-theme="dark"] .tag-pill { color: #d7c5ff; }
   break-inside: avoid;
   page-break-inside: avoid;
   background: #fff;
-  overflow: hidden;
+  overflow: visible;
 }
 .print-root.print-size-booklet .booklet-sheet:last-child { break-after: auto; page-break-after: auto; }
-.print-root.print-size-booklet .booklet-half { position: relative; width: 148.5mm; height: 210mm; overflow: hidden; border-right: .2mm solid #ddd6e2; }
+.print-root.print-size-booklet .booklet-half { position: relative; width: 148.5mm; height: 210mm; overflow: visible; border-right: .2mm solid #ddd6e2; }
 .print-root.print-size-booklet .booklet-half:last-child { border-right: none; }
 .print-root.print-size-booklet .booklet-half .print-page { width: 148.5mm; height: 210mm; break-after: auto; page-break-after: auto; }
 

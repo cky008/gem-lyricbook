@@ -15,11 +15,11 @@
   const fontScales = [0.84, 0.92, 1, 1.12, 1.26];
   const SETLIST_DATA = window.GEM_LYRICBOOK_SETLISTS || {};
   const TOC_LAYOUT = window.GEM_TOC_LAYOUT;
-  if (!TOC_LAYOUT?.paginateTocGroups) {
+  if (!TOC_LAYOUT?.paginateTocGroups || !TOC_LAYOUT?.paginateMeasuredTocGroups) {
     document.body.innerHTML = '<main style="padding:2rem;font-family:sans-serif">目录排版模块加载失败。</main>';
     return;
   }
-  const { paginateTocGroups } = TOC_LAYOUT;
+  const { paginateMeasuredTocGroups, paginateTocGroups } = TOC_LAYOUT;
   const sourceShort = {
     image1: '44 首目录截图（43 首可见）',
     image2: '深圳演出报备曲库（85 项）',
@@ -2645,6 +2645,69 @@
     return packed;
   }
 
+  function tocBatchPage(batch, pageNo, numberBySongId, pageBySongId) {
+    const sections = batch.sections.map((section) => {
+      const entries = section.songs.map((song) => {
+        const number = numberBySongId.get(song.id) || 0;
+        const page = pageBySongId.get(song.id) || '';
+        return `<div class="print-toc-entry" data-toc-song-id="${escapeHTML(song.id)}"><span class="toc-num">${String(number).padStart(2, '0')}</span><a href="#print-song-${escapeHTML(song.id)}">${escapeHTML(song.title)}</a><span class="toc-page">${page}</span></div>`;
+      }).join('');
+      const optional = section.optional ? '<span class="toc-optional">可选</span>' : '';
+      return `<section class="print-toc-section"><h3>${escapeHTML(section.name)}${optional}</h3><div class="print-toc-list">${entries}</div></section>`;
+    }).join('');
+    const tocClasses = [
+      'print-toc-page',
+      `print-toc-columns-${batch.columns || 1}`,
+      `print-toc-density-${batch.density || 'compact'}`,
+    ].join(' ');
+    return pageShell(`
+      <div class="print-running-head"><span>G.E.M. · I AM GLORIA</span><span>${escapeHTML(batch.kicker)}</span></div>
+      <h2 class="print-toc-title">${escapeHTML(batch.title)}</h2>
+      <p class="print-toc-note">点击电子 PDF 中的歌名，可跳转到对应歌词页。</p>
+      <div class="print-toc-flow print-toc-${escapeHTML(batch.type)}" data-toc-columns="${batch.columns || 1}" data-toc-density="${escapeHTML(batch.density || 'compact')}">${sections}</div>
+    `, tocClasses, pageNo);
+  }
+
+  function tocBatchFits(batch, numberBySongId, pageBySongId) {
+    elements.printRoot.innerHTML = tocBatchPage(batch, 888, numberBySongId, pageBySongId);
+    const page = elements.printRoot.firstElementChild;
+    if (!page || renderedPageIssue(page, 0)) return false;
+    const content = page.querySelector('.print-page-content');
+    const footer = page.querySelector('.print-page-number');
+    const flow = page.querySelector('.print-toc-flow');
+    if (!content || !footer || !flow) return false;
+
+    const expectedSongIds = batch.sections.flatMap((section) => section.songs.map((song) => song.id));
+    const entries = [...page.querySelectorAll('.print-toc-entry')];
+    if (
+      entries.length !== expectedSongIds.length
+      || entries.some((entry, index) => entry.dataset.tocSongId !== expectedSongIds[index])
+    ) return false;
+
+    const tolerance = 0.8;
+    if (
+      flow.scrollHeight > flow.clientHeight + tolerance
+      || flow.scrollWidth > flow.clientWidth + tolerance
+    ) return false;
+
+    const contentRect = content.getBoundingClientRect();
+    const footerRect = footer.getBoundingClientRect();
+    const footerClearance = 2 * (96 / 25.4);
+    const safeBottom = Math.min(contentRect.bottom, footerRect.top - footerClearance);
+    const measuredNodes = page.querySelectorAll(
+      '.print-running-head, .print-toc-title, .print-toc-note, .print-toc-flow, .print-toc-section h3, .toc-optional, .print-toc-entry',
+    );
+    return [...measuredNodes].every((node) => {
+      const rects = [...node.getClientRects()];
+      return rects.length > 0 && rects.every((rect) => (
+        rect.left >= contentRect.left - tolerance
+        && rect.right <= contentRect.right + tolerance
+        && rect.top >= contentRect.top - tolerance
+        && rect.bottom <= safeBottom + tolerance
+      ));
+    });
+  }
+
   function buildLogicalPages(selection, settings) {
     const targetSize = settings.size === 'a4' ? 'a4' : 'a5';
     const printable = selection.filter((song) => settings.includeEmpty || hasLyrics(song));
@@ -2663,41 +2726,62 @@
     }
 
     const tocGroups = settings.toc ? tocGroupsForSongs(songPlans.map((entry) => entry.song), settings) : [];
-    const tocBatches = settings.toc ? paginateTocGroups(tocGroups, targetSize) : [];
+    const numberBySongId = new Map(
+      songPlans.map(({ song }, index) => [song.id, index + 1]),
+    );
     const coverCount = settings.cover ? 1 : 0;
-    let nextSongPage = coverCount + tocBatches.length + 1;
-    const pageBySongId = new Map();
-    const numberBySongId = new Map();
-    songPlans.forEach(({ song, pages }, index) => {
-      pageBySongId.set(song.id, nextSongPage);
-      numberBySongId.set(song.id, index + 1);
-      nextSongPage += pages.length;
-    });
+    const pageMapForTocCount = (tocCount) => {
+      let nextSongPage = coverCount + tocCount + 1;
+      const pageMap = new Map();
+      songPlans.forEach(({ song, pages }) => {
+        pageMap.set(song.id, nextSongPage);
+        nextSongPage += pages.length;
+      });
+      return pageMap;
+    };
+    let tocBatches = [];
+    let pageBySongId = pageMapForTocCount(0);
+    if (settings.toc) {
+      beginMeasurement(targetSize);
+      try {
+        pageBySongId = new Map(songPlans.map(({ song }) => [song.id, 888]));
+        let settled = false;
+        for (let attempt = 0; attempt < 6; attempt += 1) {
+          const measuredBatches = paginateMeasuredTocGroups(
+            tocGroups,
+            targetSize,
+            (candidate) => tocBatchFits(candidate, numberBySongId, pageBySongId),
+          );
+          const measuredPageBySongId = pageMapForTocCount(measuredBatches.length);
+          tocBatches = measuredBatches;
+          pageBySongId = measuredPageBySongId;
+          if (tocBatches.every((batch) => tocBatchFits(batch, numberBySongId, pageBySongId))) {
+            settled = true;
+            break;
+          }
+        }
+        if (!settled) throw new Error('目录页数与最终歌曲页码无法稳定到安全布局');
+      } finally {
+        endMeasurement();
+      }
+    }
+
+    const expectedSongIds = songPlans.map(({ song }) => song.id);
+    const plannedTocSongIds = tocBatches.flatMap((batch) => (
+      batch.sections.flatMap((section) => section.songs.map((song) => song.id))
+    ));
+    if (settings.toc && plannedTocSongIds.some((id, index) => id !== expectedSongIds[index])) {
+      throw new Error('目录分页改变了歌曲顺序或遗漏了歌曲');
+    }
+    if (settings.toc && plannedTocSongIds.length !== expectedSongIds.length) {
+      throw new Error('目录分页的歌曲数量与打印歌曲数量不一致');
+    }
 
     const pages = [];
     if (settings.cover) pages.push(coverPage(settings));
     tocBatches.forEach((batch) => {
-      const sections = batch.sections.map((section) => {
-        const entries = section.songs.map((song) => {
-          const number = numberBySongId.get(song.id) || 0;
-          const page = pageBySongId.get(song.id) || '';
-          return `<div class="print-toc-entry"><span class="toc-num">${String(number).padStart(2, '0')}</span><a href="#print-song-${escapeHTML(song.id)}">${escapeHTML(song.title)}</a><span class="toc-page">${page}</span></div>`;
-        }).join('');
-        const optional = section.optional ? '<span class="toc-optional">可选</span>' : '';
-        return `<section class="print-toc-section"><h3>${escapeHTML(section.name)}${optional}</h3><div class="print-toc-list">${entries}</div></section>`;
-      }).join('');
       const pageNo = pages.length + 1;
-      const tocClasses = [
-        'print-toc-page',
-        `print-toc-columns-${batch.columns || 1}`,
-        `print-toc-density-${batch.density || 'compact'}`,
-      ].join(' ');
-      pages.push(pageShell(`
-        <div class="print-running-head"><span>G.E.M. · I AM GLORIA</span><span>${escapeHTML(batch.kicker)}</span></div>
-        <h2 class="print-toc-title">${escapeHTML(batch.title)}</h2>
-        <p class="print-toc-note">点击电子 PDF 中的歌名，可跳转到对应歌词页。</p>
-        <div class="print-toc-flow print-toc-${escapeHTML(batch.type)}" data-toc-columns="${batch.columns || 1}" data-toc-density="${escapeHTML(batch.density || 'compact')}">${sections}</div>
-      `, tocClasses, pageNo));
+      pages.push(tocBatchPage(batch, pageNo, numberBySongId, pageBySongId));
     });
 
     songPlans.forEach(({ song, pages: songPages }) => {
@@ -2767,6 +2851,29 @@
       .filter(Boolean);
   }
 
+  function renderedTocIssue(expectedSongIds) {
+    const entries = $$('.print-toc-entry', elements.printRoot);
+    if (entries.length !== expectedSongIds.length) {
+      return `目录条目数 ${entries.length} 与打印歌曲数 ${expectedSongIds.length} 不一致`;
+    }
+    const targets = new Map();
+    $$('[id^="print-song-"]', elements.printRoot).forEach((target) => {
+      const songId = target.id.slice('print-song-'.length);
+      targets.set(songId, (targets.get(songId) || 0) + 1);
+    });
+    const seen = new Set();
+    for (let index = 0; index < entries.length; index += 1) {
+      const songId = entries[index].dataset.tocSongId || '';
+      const link = entries[index].querySelector('a');
+      if (songId !== expectedSongIds[index]) return `第 ${index + 1} 条目录顺序不正确`;
+      if (seen.has(songId)) return `目录歌曲 ${songId} 重复`;
+      if (link?.getAttribute('href') !== `#print-song-${songId}`) return `目录歌曲 ${songId} 的链接不正确`;
+      if (targets.get(songId) !== 1) return `目录歌曲 ${songId} 没有唯一的歌词首页目标`;
+      seen.add(songId);
+    }
+    return null;
+  }
+
   function shrinkFittingPage(page, factor = 0.974) {
     const scope = page.querySelector('.print-fit-scope');
     if (!scope) return false;
@@ -2822,7 +2929,7 @@
 
     try {
       if (document.fonts?.ready) await document.fonts.ready;
-      await new Promise((resolve) => window.requestAnimationFrame(() => resolve()));
+      await new Promise((resolve) => window.requestAnimationFrame(() => window.requestAnimationFrame(resolve)));
       const { pages, printable } = buildLogicalPages(selection, settings);
       if (!printable.length) {
         showToast('没有可输出曲目：请导入歌词或勾选空白曲目');
@@ -2840,6 +2947,8 @@
         const sample = remainingIssues.slice(0, 4).map((issue) => `${issue.index}（${issue.title}）`).join('、');
         throw new Error(`最终打印安全检查仍发现 ${remainingIssues.length} 页溢出：${sample}`);
       }
+      const tocIssue = renderedTocIssue(settings.toc ? printable.map((song) => song.id) : []);
+      if (tocIssue) throw new Error(`目录完整性检查失败：${tocIssue}`);
       elements.printRoot.className = `print-root print-size-${settings.size}`;
 
       const modalElement = $('#printModal');
@@ -3013,6 +3122,11 @@
       elements.printRoot.innerHTML = size === 'booklet' ? imposeBooklet(result.pages) : result.pages.join('');
       elements.printRoot.setAttribute('aria-hidden', 'false');
       const remainingIssues = await stabilizeRenderedPrint(settings);
+      const tocIssue = renderedTocIssue(settings.toc ? result.printable.map((song) => song.id) : []);
+      if (tocIssue) {
+        cleanupPrint();
+        throw new Error(`目录完整性检查失败：${tocIssue}`);
+      }
       const pageNodes = renderedLogicalPages(settings);
       const overflowPages = remainingIssues.map((issue) => issue.index);
       const tocLinks = $$('a[href^="#print-song-"]', elements.printRoot).length;
@@ -3041,8 +3155,10 @@
           songs: batch.sections.reduce((sum, section) => sum + section.songs.length, 0),
           weight: Number((batch.weight || 0).toFixed(2)),
           capacity: batch.capacity || null,
+          songIds: batch.sections.flatMap((section) => section.songs.map((song) => song.id)),
         })),
         tocLinks,
+        tocIntegrity: 'safe',
         singleVersionHeadings,
         songs: songsSummary,
       };

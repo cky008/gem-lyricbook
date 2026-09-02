@@ -58,14 +58,18 @@ for (const marker of [
   'releaseStaleBodyLock',
   'stabilizeRenderedPrint',
   'tocGroupsForSongs',
+  'tocBatchFits',
+  'paginateMeasuredTocGroups',
   'Copyright © 2026 iocky.com',
 ]) {
   if (!app.includes(marker) && !html.includes(marker)) errors.push(`缺少关键标记：${marker}`);
 }
 if (!html.includes('value="setlist"')) errors.push('打印范围缺少“仅当前演出歌单”');
 if (!app.includes('href="#print-song-')) errors.push('打印目录缺少内部跳转链接');
-if (!tocLayout.includes('chooseTocLayout') || !tocLayout.includes('paginateTocGroups')) {
-  errors.push('目录布局模块缺少自适应栏数或分页入口');
+if (!tocLayout.includes('chooseTocLayout')
+  || !tocLayout.includes('paginateTocGroups')
+  || !tocLayout.includes('paginateMeasuredTocGroups')) {
+  errors.push('目录布局模块缺少自适应栏数、估算分页或实测分页入口');
 }
 if (!tocLayout.includes("columns: 1, capacity: 50") || !tocLayout.includes("columns: 1, capacity: 48")) {
   errors.push('目录布局模块缺少 A4/A5 单栏单页基准');
